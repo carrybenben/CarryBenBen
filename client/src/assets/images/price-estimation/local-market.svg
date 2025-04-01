@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fee2e2" />
+      <stop offset="100%" stop-color="#fef2f2" />
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="60" fill="url(#bg-gradient)" />
+  
+  <!-- Coal Storage Building -->
+  <g transform="translate(30, 35)">
+    <!-- Building Base -->
+    <path d="M0,35 L10,15 L50,15 L60,35 Z" fill="#dc2626" opacity="0.9" />
+    <path d="M0,35 L60,35 L60,50 L0,50 Z" fill="#b91c1c" />
+    
+    <!-- Door -->
+    <rect x="25" y="40" width="10" height="10" fill="#7f1d1d" />
+    
+    <!-- Windows -->
+    <rect x="5" y="20" width="5" height="5" fill="#7f1d1d" />
+    <rect x="15" y="20" width="5" height="5" fill="#7f1d1d" />
+    <rect x="40" y="20" width="5" height="5" fill="#7f1d1d" />
+    <rect x="50" y="20" width="5" height="5" fill="#7f1d1d" />
+    
+    <!-- Roof -->
+    <path d="M10,15 L30,0 L50,15" fill="none" stroke="#7f1d1d" stroke-width="3" />
+  </g>
+  
+  <!-- Local Market Sign -->
+  <g transform="translate(40, 20)">
+    <!-- Sign Board -->
+    <rect x="0" y="0" width="40" height="15" rx="2" fill="white" stroke="#dc2626" stroke-width="1" />
+    
+    <!-- Text "Local Market" represented as lines -->
+    <line x1="5" y1="5" x2="35" y2="5" stroke="#b91c1c" stroke-width="1" />
+    <line x1="5" y1="8" x2="25" y2="8" stroke="#b91c1c" stroke-width="1" />
+    <line x1="5" y1="11" x2="30" y2="11" stroke="#b91c1c" stroke-width="1" />
+  </g>
+  
+  <!-- Coal Piles -->
+  <g transform="translate(15, 65)">
+    <path d="M0,0 C5,-5 10,-1 15,0 C20,1 25,-5 30,0 C35,5 40,0 45,-3 C50,-5 55,-2 60,0 L60,15 L0,15 Z" fill="#1f2937" />
+    <path d="M30,0 C35,5 40,0 45,-3 C50,-5 55,-2 60,0 L60,8 L30,8 Z" fill="#111827" />
+  </g>
+  
+  <!-- Price Tag -->
+  <g transform="translate(70, 50)">
+    <!-- Tag -->
+    <rect x="0" y="0" width="20" height="15" rx="2" fill="white" stroke="#dc2626" stroke-width="1" />
+    <circle cx="17" cy="3" r="2" fill="white" stroke="#dc2626" stroke-width="1" />
+    <path d="M17,3 L22,8" stroke="#dc2626" stroke-width="1" />
+    
+    <!-- Yuan Symbol -->
+    <text x="10" y="11" font-family="Arial" font-size="10" fill="#dc2626" font-weight="bold" text-anchor="middle">¥</text>
+  </g>
+  
+  <!-- Text Label -->
+  <text x="60" y="95" font-family="Arial" font-size="11" fill="#b91c1c" text-anchor="middle" font-weight="bold">地销估价</text>
+  <text x="60" y="108" font-family="Arial" font-size="9" fill="#b91c1c" text-anchor="middle">Local Market</text>
+</svg>

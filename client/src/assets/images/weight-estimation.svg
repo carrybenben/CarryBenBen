@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c3e50" />
+      <stop offset="100%" stop-color="#1a2a3a" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg-gradient)" />
+  
+  <!-- 3D Coal Pile with Measurement Grid -->
+  <g>
+    <!-- Base Coal Pile -->
+    <ellipse cx="400" cy="400" rx="300" ry="120" fill="#333" />
+    <ellipse cx="400" cy="350" rx="250" ry="100" fill="#444" />
+    <ellipse cx="400" cy="300" rx="200" ry="80" fill="#555" />
+    <ellipse cx="400" cy="250" rx="150" ry="60" fill="#666" />
+    <ellipse cx="400" cy="210" rx="100" ry="40" fill="#777" />
+    
+    <!-- Measurement Grid -->
+    <path d="M100,400 L700,400" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M150,350 L650,350" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M200,300 L600,300" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M250,250 L550,250" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M300,210 L500,210" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    
+    <path d="M400,170 L400,400" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M350,180 L350,400" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M450,180 L450,400" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M300,210 L300,400" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M500,210 L500,400" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M250,250 L250,400" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M550,250 L550,400" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M200,300 L200,400" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M600,300 L600,400" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    
+    <!-- Measurement Points -->
+    <circle cx="400" cy="170" r="4" fill="#e74c3c" />
+    <circle cx="350" cy="180" r="4" fill="#e74c3c" />
+    <circle cx="450" cy="180" r="4" fill="#e74c3c" />
+    <circle cx="300" cy="210" r="4" fill="#e74c3c" />
+    <circle cx="500" cy="210" r="4" fill="#e74c3c" />
+    <circle cx="250" cy="250" r="4" fill="#e74c3c" />
+    <circle cx="550" cy="250" r="4" fill="#e74c3c" />
+    <circle cx="200" cy="300" r="4" fill="#e74c3c" />
+    <circle cx="600" cy="300" r="4" fill="#e74c3c" />
+    <circle cx="150" cy="350" r="4" fill="#e74c3c" />
+    <circle cx="650" cy="350" r="4" fill="#e74c3c" />
+    <circle cx="100" cy="400" r="4" fill="#e74c3c" />
+    <circle cx="700" cy="400" r="4" fill="#e74c3c" />
+  </g>
+  
+  <!-- Drone with Scanning Laser -->
+  <g>
+    <!-- Drone Body -->
+    <circle cx="400" cy="100" r="20" fill="#34495e" />
+    
+    <!-- Drone Arms -->
+    <line x1="380" y1="100" x2="350" y2="110" stroke="#95a5a6" stroke-width="4" />
+    <line x1="420" y1="100" x2="450" y2="110" stroke="#95a5a6" stroke-width="4" />
+    <line x1="400" y1="80" x2="400" y2="50" stroke="#95a5a6" stroke-width="4" />
+    <line x1="400" y1="120" x2="400" y2="150" stroke="#95a5a6" stroke-width="4" />
+    
+    <!-- Propellers -->
+    <circle cx="350" cy="110" r="8" fill="#bdc3c7">
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 350 110" to="360 350 110" dur="1s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="450" cy="110" r="8" fill="#bdc3c7">
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 450 110" to="360 450 110" dur="1s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="400" cy="50" r="8" fill="#bdc3c7">
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 400 50" to="360 400 50" dur="1s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="400" cy="150" r="8" fill="#bdc3c7">
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 400 150" to="360 400 150" dur="1s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Camera/Sensor -->
+    <circle cx="400" cy="115" r="5" fill="#e74c3c" />
+    
+    <!-- Scanning Laser -->
+    <line x1="400" y1="115" x2="400" y2="170" stroke="#e74c3c" stroke-width="2">
+      <animate attributeName="stroke-opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite" />
+    </line>
+    
+    <line x1="400" y1="115" x2="350" y2="180" stroke="#e74c3c" stroke-width="2" opacity="0.7">
+      <animate attributeName="stroke-opacity" values="0.7;0.1;0.7" dur="2s" repeatCount="indefinite" />
+    </line>
+    
+    <line x1="400" y1="115" x2="450" y2="180" stroke="#e74c3c" stroke-width="2" opacity="0.7">
+      <animate attributeName="stroke-opacity" values="0.7;0.1;0.7" dur="2s" repeatCount="indefinite" />
+    </line>
+    
+    <line x1="400" y1="115" x2="300" y2="210" stroke="#e74c3c" stroke-width="2" opacity="0.5">
+      <animate attributeName="stroke-opacity" values="0.5;0.1;0.5" dur="2s" repeatCount="indefinite" />
+    </line>
+    
+    <line x1="400" y1="115" x2="500" y2="210" stroke="#e74c3c" stroke-width="2" opacity="0.5">
+      <animate attributeName="stroke-opacity" values="0.5;0.1;0.5" dur="2s" repeatCount="indefinite" />
+    </line>
+  </g>
+  
+  <!-- Data Visualization Panel -->
+  <g>
+    <!-- Panel Background -->
+    <rect x="50" y="50" width="180" height="240" rx="10" fill="#34495e" opacity="0.9" />
+    
+    <!-- Panel Header -->
+    <rect x="50" y="50" width="180" height="40" rx="10" fill="#2c3e50" />
+    <text x="140" y="75" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Weight Estimation</text>
+    
+    <!-- Panel Content -->
+    <text x="65" y="110" font-family="Arial" font-size="12" fill="white">Volume: 3,562 m³</text>
+    <rect x="65" y="120" width="150" height="10" rx="5" fill="#ecf0f1" />
+    <rect x="65" y="120" width="120" height="10" rx="5" fill="#3498db" />
+    
+    <text x="65" y="150" font-family="Arial" font-size="12" fill="white">Density: 1.3 t/m³</text>
+    <rect x="65" y="160" width="150" height="10" rx="5" fill="#ecf0f1" />
+    <rect x="65" y="160" width="135" height="10" rx="5" fill="#2ecc71" />
+    
+    <text x="65" y="190" font-family="Arial" font-size="12" fill="white">Est. Weight: 4,631 tons</text>
+    <rect x="65" y="200" width="150" height="10" rx="5" fill="#ecf0f1" />
+    <rect x="65" y="200" width="140" height="10" rx="5" fill="#f1c40f" />
+    
+    <text x="65" y="230" font-family="Arial" font-size="12" fill="white">Accuracy: ±1.2%</text>
+    <rect x="65" y="240" width="150" height="10" rx="5" fill="#ecf0f1" />
+    <rect x="65" y="240" width="145" height="10" rx="5" fill="#9b59b6" />
+    
+    <text x="65" y="270" font-family="Arial" font-size="10" fill="#3498db">Last updated: 10:42 AM</text>
+  </g>
+  
+  <!-- Computer/Tablet -->
+  <g>
+    <!-- Tablet Body -->
+    <rect x="570" y="50" width="180" height="140" rx="10" fill="#34495e" />
+    <rect x="580" y="60" width="160" height="110" rx="5" fill="#ecf0f1" />
+    
+    <!-- 3D Model on Screen -->
+    <ellipse cx="660" cy="95" rx="70" ry="25" fill="#555" opacity="0.7" />
+    <ellipse cx="660" cy="85" rx="60" ry="20" fill="#666" opacity="0.7" />
+    <ellipse cx="660" cy="75" rx="50" ry="15" fill="#777" opacity="0.7" />
+    
+    <!-- Grid Lines -->
+    <line x1="600" y1="95" x2="720" y2="95" stroke="#3498db" stroke-width="1" stroke-dasharray="2,2" />
+    <line x1="610" y1="85" x2="710" y2="85" stroke="#3498db" stroke-width="1" stroke-dasharray="2,2" />
+    <line x1="620" y1="75" x2="700" y2="75" stroke="#3498db" stroke-width="1" stroke-dasharray="2,2" />
+    
+    <!-- Data Values -->
+    <text x="600" y="130" font-family="Arial" font-size="8" fill="#333">Height: 42m</text>
+    <text x="600" y="145" font-family="Arial" font-size="8" fill="#333">Base: 124m x 86m</text>
+    <text x="600" y="160" font-family="Arial" font-size="8" fill="#333">Est. Weight: 4,631 tons</text>
+    
+    <!-- Tablet Button -->
+    <circle cx="660" cy="180" r="7" fill="#bdc3c7" />
+  </g>
+  
+  <!-- Truck for Scale Reference -->
+  <g>
+    <!-- Truck Body -->
+    <rect x="120" y="450" width="100" height="40" rx="5" fill="#e74c3c" />
+    <rect x="150" y="420" width="70" height="30" rx="5" fill="#c0392b" />
+    
+    <!-- Truck Windshield -->
+    <rect x="155" y="425" width="60" height="20" rx="3" fill="#3498db" opacity="0.7" />
+    
+    <!-- Truck Wheels -->
+    <circle cx="140" cy="490" r="15" fill="#34495e" />
+    <circle cx="140" cy="490" r="8" fill="#7f8c8d" />
+    <circle cx="200" cy="490" r="15" fill="#34495e" />
+    <circle cx="200" cy="490" r="8" fill="#7f8c8d" />
+    
+    <!-- Scale Indicator -->
+    <line x1="100" y1="490" x2="240" y2="490" stroke="#f1c40f" stroke-width="2" />
+    <text x="170" y="510" font-family="Arial" font-size="12" fill="#f1c40f" text-anchor="middle">Scale Reference (8m)</text>
+  </g>
+</svg>

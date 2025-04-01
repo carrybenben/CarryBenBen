@@ -1,0 +1,53 @@
+<svg width="500" height="120" viewBox="0 0 500 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with gradient -->
+  <rect width="500" height="120" rx="10" fill="url(#paint0_linear)" />
+  
+  <!-- Grid lines -->
+  <path d="M25 25H475" stroke="white" stroke-opacity="0.2" stroke-width="1" />
+  <path d="M25 50H475" stroke="white" stroke-opacity="0.2" stroke-width="1" />
+  <path d="M25 75H475" stroke="white" stroke-opacity="0.2" stroke-width="1" />
+  <path d="M25 100H475" stroke="white" stroke-opacity="0.2" stroke-width="1" />
+  <path d="M50 25V100" stroke="white" stroke-opacity="0.2" stroke-width="1" />
+  <path d="M100 25V100" stroke="white" stroke-opacity="0.2" stroke-width="1" />
+  <path d="M150 25V100" stroke="white" stroke-opacity="0.2" stroke-width="1" />
+  <path d="M200 25V100" stroke="white" stroke-opacity="0.2" stroke-width="1" />
+  <path d="M250 25V100" stroke="white" stroke-opacity="0.2" stroke-width="1" />
+  <path d="M300 25V100" stroke="white" stroke-opacity="0.2" stroke-width="1" />
+  <path d="M350 25V100" stroke="white" stroke-opacity="0.2" stroke-width="1" />
+  <path d="M400 25V100" stroke="white" stroke-opacity="0.2" stroke-width="1" />
+  <path d="M450 25V100" stroke="white" stroke-opacity="0.2" stroke-width="1" />
+  
+  <!-- Circles for coal storage locations -->
+  <circle cx="100" cy="45" r="12" fill="#BFDBFE" />
+  <circle cx="170" cy="60" r="15" fill="#93C5FD" />
+  <circle cx="250" cy="75" r="20" fill="#60A5FA" />
+  <circle cx="350" cy="50" r="10" fill="#BFDBFE" />
+  <circle cx="400" cy="80" r="15" fill="#93C5FD" />
+  
+  <!-- Facility outlines -->
+  <rect x="80" y="30" width="350" height="60" rx="5" stroke="white" stroke-width="2" fill="none" />
+  <rect x="120" y="40" width="50" height="30" rx="2" stroke="white" stroke-width="1.5" fill="none" />
+  <rect x="200" y="45" width="70" height="35" rx="2" stroke="white" stroke-width="1.5" fill="none" />
+  <rect x="300" y="35" width="80" height="40" rx="2" stroke="white" stroke-width="1.5" fill="none" />
+  
+  <!-- Measurement tools -->
+  <path d="M70 85L90 65" stroke="#EF4444" stroke-width="2" />
+  <path d="M75 85L85 75" stroke="#EF4444" stroke-width="2" />
+  <circle cx="70" cy="85" r="3" fill="#EF4444" />
+  <circle cx="90" cy="65" r="3" fill="#EF4444" />
+  
+  <path d="M380 40L420 70" stroke="#EF4444" stroke-width="2" />
+  <path d="M385 45L415 65" stroke="#EF4444" stroke-width="2" />
+  <circle cx="380" cy="40" r="3" fill="#EF4444" />
+  <circle cx="420" cy="70" r="3" fill="#EF4444" />
+  
+<!-- Removed text label -->
+  
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="500" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6" />
+      <stop offset="1" stop-color="#2563EB" />
+    </linearGradient>
+  </defs>
+</svg>

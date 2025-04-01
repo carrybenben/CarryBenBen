@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c3e50" />
+      <stop offset="100%" stop-color="#1a293a" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg-gradient)" />
+  
+  <!-- AI Consultation Interface -->
+  <g>
+    <!-- Interface Background -->
+    <rect x="100" y="120" width="600" height="400" rx="20" fill="#34495e" />
+    <rect x="120" y="180" width="560" height="320" rx="10" fill="#2c3e50" />
+    
+    <!-- Interface Header -->
+    <rect x="100" y="120" width="600" height="60" rx="20" fill="#3498db" />
+    <text x="400" y="160" font-family="Arial" font-size="24" fill="white" text-anchor="middle">煤事咨询服务 | Coal Industry Consultation</text>
+    
+    <!-- AI Chat Window -->
+    <rect x="140" y="200" width="520" height="250" rx="5" fill="#ecf0f1" />
+    
+    <!-- AI Messages -->
+    <g>
+      <!-- AI Avatar -->
+      <circle cx="170" cy="230" r="15" fill="#3498db" />
+      <text x="170" y="235" font-family="Arial" font-size="14" fill="white" text-anchor="middle">AI</text>
+      
+      <!-- AI Message 1 -->
+      <rect x="190" y="210" width="350" height="40" rx="10" fill="#bdc3c7" />
+      <text x="200" y="230" font-family="Arial" font-size="12" fill="#2c3e50">您好！欢迎使用煤事咨询服务。有什么可以帮您的吗？</text>
+      <text x="200" y="245" font-family="Arial" font-size="12" fill="#2c3e50">Hello! How can I assist you with coal industry questions?</text>
+      
+      <!-- User Avatar -->
+      <circle cx="490" cy="285" r="15" fill="#e74c3c" />
+      <text x="490" y="290" font-family="Arial" font-size="14" fill="white" text-anchor="middle">U</text>
+      
+      <!-- User Message -->
+      <rect x="260" y="265" width="220" height="40" rx="10" fill="#e74c3c" opacity="0.8" />
+      <text x="270" y="285" font-family="Arial" font-size="12" fill="white">我想了解最近的煤炭市场趋势</text>
+      <text x="270" y="300" font-family="Arial" font-size="12" fill="white">I want to know recent coal market trends</text>
+      
+      <!-- AI Avatar 2 -->
+      <circle cx="170" cy="340" r="15" fill="#3498db" />
+      <text x="170" y="345" font-family="Arial" font-size="14" fill="white" text-anchor="middle">AI</text>
+      
+      <!-- AI Message 2 -->
+      <rect x="190" y="320" width="400" height="80" rx="10" fill="#bdc3c7" />
+      <text x="200" y="340" font-family="Arial" font-size="12" fill="#2c3e50">据最新分析，动力煤价格在过去两个月上涨了约8%，主要</text>
+      <text x="200" y="355" font-family="Arial" font-size="12" fill="#2c3e50">受冬季供暖需求和电力消耗增加影响。焦煤市场则相对稳定。</text>
+      <text x="200" y="380" font-family="Arial" font-size="12" fill="#2c3e50">Recent analysis shows thermal coal prices have increased by</text>
+      <text x="200" y="395" font-family="Arial" font-size="12" fill="#2c3e50">about 8% in the last two months, driven by winter heating demand.</text>
+    </g>
+    
+    <!-- Chat Input Area -->
+    <rect x="140" y="460" width="520" height="40" rx="20" fill="white" />
+    <text x="170" y="485" font-family="Arial" font-size="14" fill="#95a5a6">输入您的问题... | Type your question...</text>
+    <circle cx="620" cy="480" r="15" fill="#3498db" />
+    <polygon points="615,480 625,475 625,485" fill="white" />
+  </g>
+  
+  <!-- Brain and Coal Graphic -->
+  <g>
+    <!-- AI Brain Visual -->
+    <circle cx="400" cy="60" r="40" fill="none" stroke="#3498db" stroke-width="2" />
+    
+    <!-- Neural Network Pattern -->
+    <circle cx="370" cy="40" r="3" fill="#3498db" />
+    <circle cx="390" cy="30" r="3" fill="#3498db" />
+    <circle cx="410" cy="35" r="3" fill="#3498db" />
+    <circle cx="430" cy="45" r="3" fill="#3498db" />
+    <circle cx="365" cy="65" r="3" fill="#3498db" />
+    <circle cx="385" cy="75" r="3" fill="#3498db" />
+    <circle cx="405" cy="80" r="3" fill="#3498db" />
+    <circle cx="425" cy="70" r="3" fill="#3498db" />
+    
+    <line x1="370" y1="40" x2="390" y2="30" stroke="#3498db" stroke-width="1" />
+    <line x1="390" y1="30" x2="410" y2="35" stroke="#3498db" stroke-width="1" />
+    <line x1="410" y1="35" x2="430" y2="45" stroke="#3498db" stroke-width="1" />
+    <line x1="430" y1="45" x2="425" y2="70" stroke="#3498db" stroke-width="1" />
+    <line x1="425" y1="70" x2="405" y2="80" stroke="#3498db" stroke-width="1" />
+    <line x1="405" y1="80" x2="385" y2="75" stroke="#3498db" stroke-width="1" />
+    <line x1="385" y1="75" x2="365" y2="65" stroke="#3498db" stroke-width="1" />
+    <line x1="365" y1="65" x2="370" y2="40" stroke="#3498db" stroke-width="1" />
+    
+    <line x1="370" y1="40" x2="410" y2="35" stroke="#3498db" stroke-width="1" />
+    <line x1="390" y1="30" x2="425" y2="70" stroke="#3498db" stroke-width="1" />
+    <line x1="430" y1="45" x2="385" y2="75" stroke="#3498db" stroke-width="1" />
+    <line x1="405" y1="80" x2="365" y2="65" stroke="#3498db" stroke-width="1" />
+    
+    <!-- Circuit-like Pattern -->
+    <path d="M340,60 C350,20 450,20 460,60" stroke="#3498db" stroke-width="1" fill="none" />
+    <path d="M340,60 C350,100 450,100 460,60" stroke="#3498db" stroke-width="1" fill="none" />
+    
+    <!-- Coal Pieces -->
+    <path d="M320,530 L340,510 L360,520 L380,500 L400,515 L390,540 L410,550 L390,560 L370,550 L350,570 L320,530" fill="#333" />
+    <path d="M420,540 L440,520 L460,530 L480,510 L500,525 L490,550 L510,560 L490,570 L470,560 L450,580 L420,540" fill="#333" />
+  </g>
+  
+  <!-- Expertise Fields Display -->
+  <g>
+    <!-- Field Labels -->
+    <g transform="translate(700,250) rotate(30)">
+      <text x="0" y="0" font-family="Arial" font-size="12" fill="#3498db" text-anchor="middle">市场分析</text>
+      <text x="0" y="15" font-family="Arial" font-size="12" fill="#3498db" text-anchor="middle">Market Analysis</text>
+    </g>
+    
+    <g transform="translate(700,300) rotate(30)">
+      <text x="0" y="0" font-family="Arial" font-size="12" fill="#2ecc71" text-anchor="middle">政策法规</text>
+      <text x="0" y="15" font-family="Arial" font-size="12" fill="#2ecc71" text-anchor="middle">Policy & Regulations</text>
+    </g>
+    
+    <g transform="translate(700,350) rotate(30)">
+      <text x="0" y="0" font-family="Arial" font-size="12" fill="#e74c3c" text-anchor="middle">技术咨询</text>
+      <text x="0" y="15" font-family="Arial" font-size="12" fill="#e74c3c" text-anchor="middle">Technical Advice</text>
+    </g>
+    
+    <g transform="translate(700,400) rotate(30)">
+      <text x="0" y="0" font-family="Arial" font-size="12" fill="#f1c40f" text-anchor="middle">行业报告</text>
+      <text x="0" y="15" font-family="Arial" font-size="12" fill="#f1c40f" text-anchor="middle">Industry Reports</text>
+    </g>
+    
+    <g transform="translate(100,250) rotate(-30)">
+      <text x="0" y="0" font-family="Arial" font-size="12" fill="#9b59b6" text-anchor="middle">供应链优化</text>
+      <text x="0" y="15" font-family="Arial" font-size="12" fill="#9b59b6" text-anchor="middle">Supply Chain</text>
+    </g>
+    
+    <g transform="translate(100,300) rotate(-30)">
+      <text x="0" y="0" font-family="Arial" font-size="12" fill="#1abc9c" text-anchor="middle">质量控制</text>
+      <text x="0" y="15" font-family="Arial" font-size="12" fill="#1abc9c" text-anchor="middle">Quality Control</text>
+    </g>
+    
+    <g transform="translate(100,350) rotate(-30)">
+      <text x="0" y="0" font-family="Arial" font-size="12" fill="#d35400" text-anchor="middle">风险评估</text>
+      <text x="0" y="15" font-family="Arial" font-size="12" fill="#d35400" text-anchor="middle">Risk Assessment</text>
+    </g>
+    
+    <g transform="translate(100,400) rotate(-30)">
+      <text x="0" y="0" font-family="Arial" font-size="12" fill="#16a085" text-anchor="middle">环保合规</text>
+      <text x="0" y="15" font-family="Arial" font-size="12" fill="#16a085" text-anchor="middle">Environmental</text>
+    </g>
+  </g>
+  
+  <!-- Model Information -->
+  <text x="400" y="550" font-family="Arial" font-size="14" fill="#bdc3c7" text-anchor="middle">Powered by Deepseek-R1 AI Model</text>
+  <text x="400" y="570" font-family="Arial" font-size="12" fill="#95a5a6" text-anchor="middle">专业煤炭行业知识库 · 实时数据分析 · 多语言支持</text>
+  <text x="400" y="585" font-family="Arial" font-size="12" fill="#95a5a6" text-anchor="middle">Coal Industry Knowledge Base · Real-time Analysis · Multilingual</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="60" cy="60" r="60" fill="#EFF6FF" />
+
+  <!-- Laboratory Flask -->
+  <path d="M45 30H75V50L85 80C85 85.5228 73.8071 90 60 90C46.1929 90 35 85.5228 35 80L45 50V30Z" fill="#BFDBFE" stroke="#3B82F6" stroke-width="2" />
+
+  <!-- Flask Content -->
+  <path d="M45 50H75L85 80C85 85.5228 73.8071 90 60 90C46.1929 90 35 85.5228 35 80L45 50Z" fill="#93C5FD" stroke="#3B82F6" stroke-width="2" />
+
+  <!-- Flask Neck -->
+  <rect x="51" y="24" width="18" height="12" rx="2" fill="#BFDBFE" stroke="#3B82F6" stroke-width="2" />
+
+  <!-- Bubbles -->
+  <circle cx="52" cy="65" r="4" fill="#EFF6FF" />
+  <circle cx="68" cy="70" r="3" fill="#EFF6FF" />
+  <circle cx="57" cy="78" r="2.5" fill="#EFF6FF" />
+
+  <!-- Quality Chart -->
+  <rect x="70" y="35" width="25" height="25" rx="2" fill="white" stroke="#3B82F6" stroke-width="2" />
+  <line x1="75" y1="43" x2="90" y2="43" stroke="#3B82F6" stroke-width="1.5" />
+  <line x1="75" y1="48" x2="90" y2="48" stroke="#3B82F6" stroke-width="1.5" />
+  <line x1="75" y1="53" x2="90" y2="53" stroke="#3B82F6" stroke-width="1.5" />
+  <line x1="78" y1="40" x2="78" y2="56" stroke="#3B82F6" stroke-width="1.5" />
+  <line x1="83" y1="40" x2="83" y2="56" stroke="#3B82F6" stroke-width="1.5" />
+  <line x1="88" y1="40" x2="88" y2="56" stroke="#3B82F6" stroke-width="1.5" />
+
+  <!-- Checkmark -->
+  <circle cx="30" cy="40" r="10" fill="#22C55E" />
+  <path d="M25 40L28 43L35 36" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

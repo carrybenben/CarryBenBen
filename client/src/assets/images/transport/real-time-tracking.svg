@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0f2fe" />
+      <stop offset="100%" stop-color="#f0f9ff" />
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="60" fill="url(#bg-gradient)" />
+  
+  <!-- Phone Frame -->
+  <rect x="35" y="20" width="50" height="80" rx="5" fill="#475569" />
+  <rect x="38" y="23" width="44" height="72" rx="3" fill="#f0f9ff" />
+  
+  <!-- Map interface -->
+  <rect x="40" y="27" width="40" height="50" rx="2" fill="#e0f7fa" />
+  
+  <!-- Map features -->
+  <path d="M40,47 L80,47" stroke="#94a3b8" stroke-width="1" />
+  <path d="M40,57 L80,57" stroke="#94a3b8" stroke-width="1" />
+  <path d="M40,67 L80,67" stroke="#94a3b8" stroke-width="1" />
+  <path d="M50,27 L50,77" stroke="#94a3b8" stroke-width="1" />
+  <path d="M60,27 L60,77" stroke="#94a3b8" stroke-width="1" />
+  <path d="M70,27 L70,77" stroke="#94a3b8" stroke-width="1" />
+  
+  <!-- Route Path -->
+  <path d="M45,32 C45,47 60,37 60,47 C60,57 75,57 75,72" fill="none" stroke="#0369a1" stroke-width="2" />
+  
+  <!-- Start Location -->
+  <circle cx="45" cy="32" r="3" fill="#0ea5e9" />
+  <circle cx="45" cy="32" r="5" fill="#0ea5e9" fill-opacity="0.3" />
+  
+  <!-- End Location -->
+  <circle cx="75" cy="72" r="3" fill="#0369a1" />
+  <circle cx="75" cy="72" r="5" fill="#0369a1" fill-opacity="0.3" />
+  
+  <!-- Truck Current Position -->
+  <g transform="translate(60, 47)">
+    <circle cx="0" cy="0" r="4" fill="#0284c7" />
+    <path d="M-3,-3 L3,3 M-3,3 L3,-3" stroke="white" stroke-width="1.5" />
+    <circle cx="0" cy="0" r="6" fill="#0284c7" fill-opacity="0.3" />
+    <animateTransform attributeName="transform" type="translate" values="60,47; 62,50; 64,53; 67,57; 70,62; 72,67; 75,72" dur="3s" repeatCount="indefinite" />
+  </g>
+  
+  <!-- Status Information -->
+  <rect x="40" y="80" width="40" height="12" rx="2" fill="#f1f5f9" />
+  <text x="60" y="86" font-family="Arial" font-size="4" fill="#0369a1" text-anchor="middle">实时位置: 高速公路K45</text>
+  <text x="60" y="90" font-family="Arial" font-size="4" fill="#0369a1" text-anchor="middle">预计到达: 14:30</text>
+  
+  <!-- Pulse Effect -->
+  <circle cx="60" cy="47" r="8" fill="#0284c7" fill-opacity="0.2">
+    <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="fill-opacity" values="0.2;0;0.2" dur="2s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Status Bar -->
+  <rect x="43" y="27" width="34" height="4" rx="1" fill="#f8fafc" fill-opacity="0.9" />
+  <text x="60" y="30" font-family="Arial" font-size="3" fill="#0369a1" text-anchor="middle">运输进行中</text>
+  
+  <!-- Controller -->
+  <circle cx="60" cy="97" r="6" fill="#0369a1" />
+  <path d="M56,97 L64,97 M60,93 L60,101" stroke="white" stroke-width="1.5" />
+  
+  <!-- Text Label -->
+  <text x="60" y="110" font-family="Arial" font-size="9" fill="#0369a1" text-anchor="middle" font-weight="bold">实时跟踪</text>
+  <text x="60" y="118" font-family="Arial" font-size="7" fill="#0369a1" text-anchor="middle">Real-time Tracking</text>
+</svg>

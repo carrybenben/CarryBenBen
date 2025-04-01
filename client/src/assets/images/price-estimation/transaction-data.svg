@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d1fae5" />
+      <stop offset="100%" stop-color="#ecfdf5" />
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="60" fill="url(#bg-gradient)" />
+  
+  <!-- Database Icon -->
+  <g transform="translate(35, 30)">
+    <!-- Database Cylinder -->
+    <path d="M0,10 Q25,-5 50,10 L50,50 Q25,65 0,50 Z" fill="#047857" opacity="0.8" />
+    <path d="M0,10 Q25,-5 50,10 Q25,25 0,10 Z" fill="#065f46" />
+    <ellipse cx="25" cy="50" rx="25" ry="15" fill="#047857" opacity="0.9" />
+    
+    <!-- Database Lines -->
+    <path d="M0,20 Q25,35 50,20" fill="none" stroke="#d1fae5" stroke-width="1" />
+    <path d="M0,30 Q25,45 50,30" fill="none" stroke="#d1fae5" stroke-width="1" />
+    <path d="M0,40 Q25,55 50,40" fill="none" stroke="#d1fae5" stroke-width="1" />
+  </g>
+  
+  <!-- Historical Chart Icon -->
+  <g transform="translate(48, 35)">
+    <!-- Chart Paper Background -->
+    <rect x="0" y="0" width="36" height="30" rx="2" fill="white" stroke="#047857" stroke-width="1" />
+    
+    <!-- Chart Lines -->
+    <line x1="5" y1="5" x2="5" y2="25" stroke="#064e3b" stroke-width="1" />
+    <line x1="5" y1="25" x2="31" y2="25" stroke="#064e3b" stroke-width="1" />
+    
+    <!-- Chart Bars -->
+    <rect x="8" y="10" width="4" height="15" fill="#10b981" opacity="0.8" />
+    <rect x="14" y="15" width="4" height="10" fill="#10b981" opacity="0.8" />
+    <rect x="20" y="8" width="4" height="17" fill="#10b981" opacity="0.8" />
+    <rect x="26" y="12" width="4" height="13" fill="#10b981" opacity="0.8" />
+  </g>
+  
+  <!-- Transaction Icon -->
+  <g transform="translate(45, 30)">
+    <!-- Document -->
+    <rect x="-10" y="-5" width="17" height="22" rx="2" fill="white" stroke="#047857" stroke-width="1" />
+    <line x1="-6" y1="0" x2="3" y2="0" stroke="#064e3b" stroke-width="1" />
+    <line x1="-6" y1="5" x2="3" y2="5" stroke="#064e3b" stroke-width="1" />
+    <line x1="-6" y1="10" x2="3" y2="10" stroke="#064e3b" stroke-width="1" />
+    
+    <!-- Yuan Symbol -->
+    <text x="-1.5" y="7" font-family="Arial" font-size="14" fill="#059669" font-weight="bold">¥</text>
+  </g>
+  
+  <!-- Text Label -->
+  <text x="60" y="95" font-family="Arial" font-size="11" fill="#047857" text-anchor="middle" font-weight="bold">历史交易数据</text>
+  <text x="60" y="108" font-family="Arial" font-size="9" fill="#047857" text-anchor="middle">Transaction Data</text>
+</svg>

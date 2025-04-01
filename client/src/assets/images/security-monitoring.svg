@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="600px" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Security Monitoring</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#FFFFFF" x="0" y="0" width="800" height="600"></rect>
+        <g transform="translate(170, 100)">
+            <!-- CCTV cameras -->
+            <g transform="translate(0, 50)">
+                <!-- Camera body -->
+                <rect x="0" y="0" width="80" height="50" rx="5" fill="#444444" />
+                <!-- Lens -->
+                <circle cx="40" cy="25" r="18" fill="#333333" stroke="#222222" stroke-width="2" />
+                <circle cx="40" cy="25" r="12" fill="#222222" />
+                <circle cx="40" cy="25" r="6" fill="#111111" />
+                <circle cx="37" cy="22" r="2" fill="#FFFFFF" opacity="0.5" />
+                <!-- Bracket mount -->
+                <rect x="30" y="50" width="20" height="30" fill="#555555" />
+                <rect x="20" y="80" width="40" height="10" rx="2" fill="#555555" />
+                <!-- Camera status light -->
+                <circle cx="70" cy="10" r="5" fill="#FF4444" />
+            </g>
+            
+            <!-- Security monitoring center -->
+            <g transform="translate(180, 40)">
+                <!-- Control room enclosure -->
+                <rect x="0" y="0" width="180" height="120" rx="5" fill="#EEEEEE" stroke="#DDDDDD" stroke-width="2" />
+                
+                <!-- Multiple screens -->
+                <g transform="translate(10, 10)">
+                    <!-- Screen 1 -->
+                    <rect x="0" y="0" width="50" height="40" rx="2" fill="#333333" stroke="#222222" />
+                    <rect x="3" y="3" width="44" height="34" rx="1" fill="#444444" />
+                    <!-- Screen content 1 -->
+                    <rect x="5" y="5" width="40" height="30" fill="#666666" />
+                    <polyline points="10,25 15,20 20,22 25,15 30,18" stroke="#FFFFFF" stroke-width="1" />
+                    
+                    <!-- Screen 2 -->
+                    <rect x="60" y="0" width="50" height="40" rx="2" fill="#333333" stroke="#222222" />
+                    <rect x="63" y="3" width="44" height="34" rx="1" fill="#444444" />
+                    <!-- Screen content 2 -->
+                    <rect x="65" y="5" width="40" height="30" fill="#666666" />
+                    <circle cx="85" cy="20" r="10" stroke="#FF4444" stroke-width="1.5" fill="none" />
+                    
+                    <!-- Screen 3 -->
+                    <rect x="120" y="0" width="50" height="40" rx="2" fill="#333333" stroke="#222222" />
+                    <rect x="123" y="3" width="44" height="34" rx="1" fill="#444444" />
+                    <!-- Screen content 3 -->
+                    <rect x="125" y="5" width="40" height="30" fill="#666666" />
+                    <rect x="135" y="15" width="20" height="10" stroke="#FFAA44" stroke-width="1.5" fill="none" />
+                    
+                    <!-- Screen 4 -->
+                    <rect x="0" y="50" width="50" height="40" rx="2" fill="#333333" stroke="#222222" />
+                    <rect x="3" y="53" width="44" height="34" rx="1" fill="#444444" />
+                    <!-- Screen content 4 -->
+                    <rect x="5" y="55" width="40" height="30" fill="#666666" />
+                    <line x1="5" y1="55" x2="45" y2="85" stroke="#FFFFFF" stroke-width="0.5" />
+                    <line x1="5" y1="85" x2="45" y2="55" stroke="#FFFFFF" stroke-width="0.5" />
+                    
+                    <!-- Screen 5 -->
+                    <rect x="60" y="50" width="50" height="40" rx="2" fill="#333333" stroke="#222222" />
+                    <rect x="63" y="53" width="44" height="34" rx="1" fill="#444444" />
+                    <!-- Screen content 5 -->
+                    <rect x="65" y="55" width="40" height="30" fill="#666666" />
+                    <polyline points="70,75 75,70 80,73 85,65 90,70 95,65" stroke="#FFFFFF" stroke-width="1" />
+                    
+                    <!-- Screen 6 -->
+                    <rect x="120" y="50" width="50" height="40" rx="2" fill="#333333" stroke="#222222" />
+                    <rect x="123" y="53" width="44" height="34" rx="1" fill="#444444" />
+                    <!-- Screen content 6 -->
+                    <rect x="125" y="55" width="40" height="30" fill="#666666" />
+                    <circle cx="145" cy="70" r="8" fill="none" stroke="#44FF44" stroke-width="1.5" />
+                    <line x1="145" y1="62" x2="145" y2="65" stroke="#44FF44" stroke-width="1.5" />
+                    <line x1="145" y1="75" x2="145" y2="78" stroke="#44FF44" stroke-width="1.5" />
+                    <line x1="137" y1="70" x2="140" y2="70" stroke="#44FF44" stroke-width="1.5" />
+                    <line x1="150" y1="70" x2="153" y2="70" stroke="#44FF44" stroke-width="1.5" />
+                </g>
+                
+                <!-- Control panel -->
+                <rect x="10" y="100" width="160" height="15" rx="3" fill="#555555" />
+                <g transform="translate(15, 105)">
+                    <circle cx="0" cy="0" r="3" fill="#FF4444" />
+                    <circle cx="10" cy="0" r="3" fill="#44FF44" />
+                    <circle cx="20" cy="0" r="3" fill="#4444FF" />
+                    <circle cx="30" cy="0" r="3" fill="#FFFF44" />
+                    <rect x="40" y="-2" width="70" height="4" rx="2" fill="#AAAAAA" />
+                    <rect x="120" y="-2" width="30" height="4" rx="2" fill="#AAAAAA" />
+                </g>
+            </g>
+            
+            <!-- Motion detection & alerts -->
+            <g transform="translate(40, 200)">
+                <!-- Alert frame -->
+                <rect x="0" y="0" width="120" height="70" rx="5" fill="#FFFFFF" stroke="#FF4444" stroke-width="3" />
+                
+                <!-- Alert icon -->
+                <g transform="translate(15, 15)">
+                    <path d="M10,0 L20,20 L0,20 Z" fill="#FF4444" />
+                    <text x="10" y="15" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#FFFFFF">!</text>
+                </g>
+                
+                <!-- Alert text -->
+                <text x="45" y="25" font-family="Arial" font-size="12" font-weight="bold" fill="#FF4444">MOTION DETECTED</text>
+                <text x="45" y="45" font-family="Arial" font-size="10" fill="#333333">Zone: Coal Pile East</text>
+                <text x="45" y="60" font-family="Arial" font-size="10" fill="#333333">Time: 14:32:45</text>
+            </g>
+            
+            <!-- Fence monitoring -->
+            <g transform="translate(300, 200)">
+                <!-- Fence segments -->
+                <g>
+                    <line x1="0" y1="0" x2="150" y2="0" stroke="#888888" stroke-width="3" />
+                    <line x1="0" y1="20" x2="150" y2="20" stroke="#888888" stroke-width="3" />
+                    
+                    <!-- Vertical posts -->
+                    <line x1="0" y1="-10" x2="0" y2="30" stroke="#888888" stroke-width="4" />
+                    <line x1="30" y1="-10" x2="30" y2="30" stroke="#888888" stroke-width="4" />
+                    <line x1="60" y1="-10" x2="60" y2="30" stroke="#888888" stroke-width="4" />
+                    <line x1="90" y1="-10" x2="90" y2="30" stroke="#888888" stroke-width="4" />
+                    <line x1="120" y1="-10" x2="120" y2="30" stroke="#888888" stroke-width="4" />
+                    <line x1="150" y1="-10" x2="150" y2="30" stroke="#888888" stroke-width="4" />
+                    
+                    <!-- Vertical connecting bars -->
+                    <line x1="0" y1="0" x2="0" y2="20" stroke="#888888" stroke-width="1.5" />
+                    <line x1="15" y1="0" x2="15" y2="20" stroke="#888888" stroke-width="1.5" />
+                    <line x1="30" y1="0" x2="30" y2="20" stroke="#888888" stroke-width="1.5" />
+                    <line x1="45" y1="0" x2="45" y2="20" stroke="#888888" stroke-width="1.5" />
+                    <line x1="60" y1="0" x2="60" y2="20" stroke="#888888" stroke-width="1.5" />
+                    <line x1="75" y1="0" x2="75" y2="20" stroke="#888888" stroke-width="1.5" />
+                    <line x1="90" y1="0" x2="90" y2="20" stroke="#888888" stroke-width="1.5" />
+                    <line x1="105" y1="0" x2="105" y2="20" stroke="#888888" stroke-width="1.5" />
+                    <line x1="120" y1="0" x2="120" y2="20" stroke="#888888" stroke-width="1.5" />
+                    <line x1="135" y1="0" x2="135" y2="20" stroke="#888888" stroke-width="1.5" />
+                    <line x1="150" y1="0" x2="150" y2="20" stroke="#888888" stroke-width="1.5" />
+                </g>
+                
+                <!-- Security sensor on fence -->
+                <g transform="translate(60, -15)">
+                    <rect x="-5" y="-5" width="10" height="10" fill="#4444FF" />
+                    <circle cx="0" cy="0" r="6" fill="none" stroke="#4444FF" stroke-width="1" stroke-dasharray="2,2">
+                        <animate attributeName="r" values="6;12;6" dur="2s" repeatCount="indefinite" />
+                    </circle>
+                </g>
+                
+                <!-- Access control gate -->
+                <g transform="translate(120, 10)">
+                    <rect x="-5" y="-15" width="10" height="30" fill="#FFAA44" />
+                    <text x="0" y="-20" text-anchor="middle" font-family="Arial" font-size="8" fill="#666666">ACCESS</text>
+                    <text x="0" y="-25" text-anchor="middle" font-family="Arial" font-size="8" fill="#666666">GATE</text>
+                </g>
+            </g>
+            
+            <!-- Mobile security notifications -->
+            <g transform="translate(180, 220)">
+                <!-- Phone outline -->
+                <rect x="0" y="0" width="60" height="100" rx="8" fill="#EEEEEE" stroke="#CCCCCC" />
+                <rect x="5" y="10" width="50" height="80" rx="2" fill="#FFFFFF" />
+                
+                <!-- Notification content -->
+                <g transform="translate(10, 15)">
+                    <rect x="0" y="0" width="40" height="10" rx="2" fill="#333333" />
+                    <text x="5" y="7" font-family="Arial" font-size="5" fill="#FFFFFF">SECURITY</text>
+                    
+                    <g transform="translate(0, 15)">
+                        <rect x="0" y="0" width="40" height="20" rx="2" fill="#F5F5F5" stroke="#DDDDDD" />
+                        <text x="5" y="10" font-family="Arial" font-size="5" fill="#FF4444" font-weight="bold">ALERT!</text>
+                        <text x="5" y="17" font-family="Arial" font-size="4" fill="#333333">Motion detected - Zone 3</text>
+                    </g>
+                    
+                    <g transform="translate(0, 40)">
+                        <rect x="0" y="0" width="40" height="20" rx="2" fill="#F5F5F5" stroke="#DDDDDD" />
+                        <text x="5" y="10" font-family="Arial" font-size="5" fill="#4444FF" font-weight="bold">INFO</text>
+                        <text x="5" y="17" font-family="Arial" font-size="4" fill="#333333">East gate opened - ID #1543</text>
+                    </g>
+                </g>
+                
+                <!-- Home button -->
+                <circle cx="30" cy="95" r="3" fill="#DDDDDD" />
+            </g>
+        </g>
+    </g>
+</svg>

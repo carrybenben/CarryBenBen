@@ -1,0 +1,114 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" rx="10" fill="#0f172a" />
+  
+  <!-- 3D Interface Grid -->
+  <g opacity="0.2">
+    <path d="M150,100 L650,100" stroke="white" stroke-width="1" />
+    <path d="M150,150 L650,150" stroke="white" stroke-width="1" />
+    <path d="M150,200 L650,200" stroke="white" stroke-width="1" />
+    <path d="M150,250 L650,250" stroke="white" stroke-width="1" />
+    <path d="M150,300 L650,300" stroke="white" stroke-width="1" />
+    <path d="M150,350 L650,350" stroke="white" stroke-width="1" />
+    <path d="M150,400 L650,400" stroke="white" stroke-width="1" />
+    <path d="M200,100 L200,400" stroke="white" stroke-width="1" />
+    <path d="M250,100 L250,400" stroke="white" stroke-width="1" />
+    <path d="M300,100 L300,400" stroke="white" stroke-width="1" />
+    <path d="M350,100 L350,400" stroke="white" stroke-width="1" />
+    <path d="M400,100 L400,400" stroke="white" stroke-width="1" />
+    <path d="M450,100 L450,400" stroke="white" stroke-width="1" />
+    <path d="M500,100 L500,400" stroke="white" stroke-width="1" />
+    <path d="M550,100 L550,400" stroke="white" stroke-width="1" />
+    <path d="M600,100 L600,400" stroke="white" stroke-width="1" />
+  </g>
+  
+  <!-- 3D Coal Pile Representation -->
+  <!-- Base Platform -->
+  <path d="M150,400 L650,400 L650,420 L150,420 Z" fill="#475569" />
+  
+  <!-- 3D Coal Pile -->
+  <path d="M200,400 L300,300 L400,250 L500,300 L600,400 Z" fill="url(#coal_pile_gradient)" />
+  
+  <!-- 3D Wireframe Overlay -->
+  <path d="M200,400 L300,300 L400,250 L500,300 L600,400" stroke="#94A3B8" stroke-width="2" fill="none" />
+  <path d="M300,300 L300,400" stroke="#94A3B8" stroke-width="1" stroke-dasharray="5,5" fill="none" />
+  <path d="M400,250 L400,400" stroke="#94A3B8" stroke-width="1" stroke-dasharray="5,5" fill="none" />
+  <path d="M500,300 L500,400" stroke="#94A3B8" stroke-width="1" stroke-dasharray="5,5" fill="none" />
+  
+  <!-- Height Points & Measurements -->
+  <circle cx="400" cy="250" r="5" fill="#3B82F6" />
+  <path d="M400,250 L440,230" stroke="#3B82F6" stroke-width="1" />
+  <rect x="440" y="220" width="70" height="20" rx="4" fill="#0f172a" opacity="0.8" />
+  <text x="475" y="235" text-anchor="middle" fill="white" font-size="12" font-family="Arial">15.2m</text>
+  
+  <circle cx="300" cy="300" r="5" fill="#3B82F6" />
+  <path d="M300,300 L260,280" stroke="#3B82F6" stroke-width="1" />
+  <rect x="190" y="270" width="70" height="20" rx="4" fill="#0f172a" opacity="0.8" />
+  <text x="225" y="285" text-anchor="middle" fill="white" font-size="12" font-family="Arial">10.0m</text>
+  
+  <circle cx="500" cy="300" r="5" fill="#3B82F6" />
+  <path d="M500,300 L540,280" stroke="#3B82F6" stroke-width="1" />
+  <rect x="540" y="270" width="70" height="20" rx="4" fill="#0f172a" opacity="0.8" />
+  <text x="575" y="285" text-anchor="middle" fill="white" font-size="12" font-family="Arial">10.0m</text>
+  
+  <!-- Volume Calculation Result -->
+  <rect x="310" y="370" width="180" height="40" rx="4" fill="#0f172a" opacity="0.9" />
+  <text x="400" y="395" text-anchor="middle" fill="white" font-size="14" font-family="Arial">容量: 21,450 m³</text>
+  
+  <!-- Controls Interface -->
+  <!-- Top Control Bar -->
+  <rect x="150" y="40" width="500" height="40" rx="4" fill="#1e293b" />
+  <rect x="170" y="50" width="80" height="20" rx="3" fill="#334155" />
+  <rect x="260" y="50" width="80" height="20" rx="3" fill="#334155" />
+  <rect x="350" y="50" width="80" height="20" rx="3" fill="#334155" />
+  <rect x="440" y="50" width="80" height="20" rx="3" fill="#334155" />
+  <rect x="550" y="50" width="80" height="20" rx="3" fill="#3B82F6" />
+  
+  <!-- Right Control Panel -->
+  <rect x="670" y="100" width="110" height="300" rx="4" fill="#1e293b" />
+  <rect x="690" y="120" width="70" height="20" rx="3" fill="#334155" />
+  <rect x="690" y="150" width="70" height="20" rx="3" fill="#334155" />
+  <rect x="690" y="180" width="70" height="20" rx="3" fill="#334155" />
+  <rect x="690" y="220" width="70" height="80" rx="3" fill="#334155" />
+  <rect x="690" y="310" width="70" height="30" rx="3" fill="#3B82F6" />
+  <rect x="690" y="350" width="70" height="30" rx="3" fill="#EF4444" />
+  
+  <!-- Bottom Info Panel -->
+  <rect x="150" y="440" width="630" height="40" rx="4" fill="#1e293b" />
+  <rect x="170" y="450" width="170" height="20" rx="3" fill="#334155" />
+  <rect x="350" y="450" width="170" height="20" rx="3" fill="#334155" />
+  <rect x="590" y="450" width="170" height="20" rx="3" fill="#334155" />
+  
+  <!-- Data Legend -->
+  <rect x="20" y="100" width="110" height="300" rx="4" fill="#1e293b" />
+  <text x="75" y="130" text-anchor="middle" fill="white" font-size="14" font-family="Arial">煤堆数据</text>
+  
+  <rect x="30" y="150" width="90" height="20" rx="3" fill="#0f172a" />
+  <text x="75" y="165" text-anchor="middle" fill="white" font-size="12" font-family="Arial">基本高度: 15.2m</text>
+  
+  <rect x="30" y="180" width="90" height="20" rx="3" fill="#0f172a" />
+  <text x="75" y="195" text-anchor="middle" fill="white" font-size="12" font-family="Arial">宽度: 40.0m</text>
+  
+  <rect x="30" y="210" width="90" height="20" rx="3" fill="#0f172a" />
+  <text x="75" y="225" text-anchor="middle" fill="white" font-size="12" font-family="Arial">长度: 35.2m</text>
+  
+  <rect x="30" y="250" width="90" height="20" rx="3" fill="#0f172a" />
+  <text x="75" y="265" text-anchor="middle" fill="white" font-size="12" font-family="Arial">体积: 21,450m³</text>
+  
+  <rect x="30" y="280" width="90" height="20" rx="3" fill="#0f172a" />
+  <text x="75" y="295" text-anchor="middle" fill="white" font-size="12" font-family="Arial">密度: 0.85t/m³</text>
+  
+  <rect x="30" y="310" width="90" height="20" rx="3" fill="#0f172a" />
+  <text x="75" y="325" text-anchor="middle" fill="white" font-size="12" font-family="Arial">重量: 18,232t</text>
+  
+  <rect x="30" y="350" width="90" height="30" rx="3" fill="#22C55E" />
+  <text x="75" y="370" text-anchor="middle" fill="white" font-size="12" font-family="Arial">扫描完成</text>
+  
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="coal_pile_gradient" x1="0" y1="0" x2="0" y2="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(400 250) rotate(90) scale(150)">
+      <stop offset="0" stop-color="#1E293B" />
+      <stop offset="1" stop-color="#0F172A" />
+    </linearGradient>
+  </defs>
+</svg>

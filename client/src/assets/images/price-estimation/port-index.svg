@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dbeafe" />
+      <stop offset="100%" stop-color="#eff6ff" />
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="60" fill="url(#bg-gradient)" />
+  
+  <!-- Cargo Ship Icon -->
+  <g transform="translate(30, 40) scale(0.06)">
+    <!-- Water -->
+    <path d="M0,400 C50,380 100,420 150,400 C200,380 250,420 300,400 C350,380 400,420 450,400 C500,380 550,420 600,400 C650,380 700,420 750,400 C800,380 850,420 900,400 C950,380 1000,420 1050,400 L1050,650 L0,650 Z" fill="#bfdbfe" stroke="#93c5fd" />
+    
+    <!-- Ship Hull -->
+    <path d="M350,200 L650,200 L750,400 L250,400 Z" fill="#1e3a8a" stroke="#1e3a8a" stroke-width="5" />
+    
+    <!-- Ship Deck -->
+    <rect x="400" y="130" width="200" height="70" rx="5" fill="#2563eb" stroke="#1d4ed8" stroke-width="5" />
+    
+    <!-- Ship Bridge -->
+    <rect x="450" y="70" width="100" height="60" rx="5" fill="#1d4ed8" stroke="#1e3a8a" stroke-width="5" />
+    
+    <!-- Chimney -->
+    <rect x="475" y="20" width="50" height="50" rx="5" fill="#2563eb" stroke="#1e3a8a" stroke-width="5" />
+    <rect x="485" y="10" width="30" height="10" rx="2" fill="#2563eb" stroke="#1e3a8a" stroke-width="3" />
+    
+    <!-- Container Stack 1 -->
+    <rect x="420" y="140" width="40" height="50" rx="2" fill="#ef4444" stroke="#b91c1c" stroke-width="3" />
+    <rect x="420" y="140" width="40" height="15" fill="#fecaca" opacity="0.3" />
+    
+    <!-- Container Stack 2 -->
+    <rect x="480" y="140" width="40" height="50" rx="2" fill="#f59e0b" stroke="#d97706" stroke-width="3" />
+    <rect x="480" y="140" width="40" height="15" fill="#fef3c7" opacity="0.3" />
+    
+    <!-- Container Stack 3 -->
+    <rect x="540" y="140" width="40" height="50" rx="2" fill="#10b981" stroke="#059669" stroke-width="3" />
+    <rect x="540" y="140" width="40" height="15" fill="#d1fae5" opacity="0.3" />
+  </g>
+  
+  <!-- Index Icon -->
+  <g transform="translate(70, 30)">
+    <!-- Index Paper -->
+    <rect x="-10" y="0" width="30" height="40" rx="2" fill="white" stroke="#94a3b8" stroke-width="1" />
+    <line x1="-5" y1="8" x2="15" y2="8" stroke="#cbd5e1" stroke-width="1" />
+    <line x1="-5" y1="16" x2="15" y2="16" stroke="#cbd5e1" stroke-width="1" />
+    <line x1="-5" y1="24" x2="15" y2="24" stroke="#cbd5e1" stroke-width="1" />
+    <line x1="-5" y1="32" x2="15" y2="32" stroke="#cbd5e1" stroke-width="1" />
+    
+    <!-- Chart Arrow -->
+    <path d="M-3,35 L10,20 L23,28" stroke="#1e40af" stroke-width="2" fill="none" />
+    <circle cx="-3" cy="35" r="2" fill="#1e40af" />
+    <circle cx="10" cy="20" r="2" fill="#1e40af" />
+    <circle cx="23" cy="28" r="2" fill="#1e40af" />
+  </g>
+  
+  <!-- Text Label -->
+  <text x="60" y="95" font-family="Arial" font-size="11" fill="#1e3a8a" text-anchor="middle" font-weight="bold">CCI指数</text>
+  <text x="60" y="108" font-family="Arial" font-size="9" fill="#1e3a8a" text-anchor="middle">Port Index</text>
+</svg>

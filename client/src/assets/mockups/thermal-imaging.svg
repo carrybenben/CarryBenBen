@@ -1,0 +1,140 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" rx="10" fill="#0f172a" />
+  
+  <!-- Thermal Image Gradient Background -->
+  <rect x="50" y="50" width="700" height="400" rx="8" fill="url(#thermal_gradient)" />
+  
+  <!-- Thermal Image Simulation -->
+  <!-- Hotspot 1 -->
+  <circle cx="250" cy="200" r="80" fill="url(#hotspot1)" />
+  <circle cx="250" cy="200" r="50" fill="url(#hotspot1_inner)" />
+  
+  <!-- Hotspot 2 -->
+  <circle cx="550" cy="150" r="60" fill="url(#hotspot2)" />
+  <circle cx="550" cy="150" r="30" fill="url(#hotspot2_inner)" />
+  
+  <!-- Hotspot 3 -->
+  <circle cx="450" cy="350" r="70" fill="url(#hotspot3)" />
+  <circle cx="450" cy="350" r="40" fill="url(#hotspot3_inner)" />
+  
+  <!-- Cooler Regions -->
+  <rect x="80" y="70" width="120" height="90" rx="8" fill="url(#cool_spot1)" />
+  <rect x="650" y="250" width="70" height="170" rx="8" fill="url(#cool_spot2)" />
+  <rect x="150" y="320" width="200" height="100" rx="8" fill="url(#cool_spot3)" />
+  
+  <!-- Grid Overlay -->
+  <g opacity="0.3">
+    <path d="M50,150 L750,150" stroke="white" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M50,250 L750,250" stroke="white" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M50,350 L750,350" stroke="white" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M250,50 L250,450" stroke="white" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M450,50 L450,450" stroke="white" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M650,50 L650,450" stroke="white" stroke-width="1" stroke-dasharray="5,5" />
+  </g>
+  
+  <!-- Temperature Scale -->
+  <rect x="780" y="100" width="15" height="300" rx="4" fill="url(#temperature_scale)" />
+  <rect x="777" y="100" width="21" height="2" fill="white" />
+  <rect x="777" y="150" width="21" height="2" fill="white" />
+  <rect x="777" y="200" width="21" height="2" fill="white" />
+  <rect x="777" y="250" width="21" height="2" fill="white" />
+  <rect x="777" y="300" width="21" height="2" fill="white" />
+  <rect x="777" y="350" width="21" height="2" fill="white" />
+  <rect x="777" y="400" width="21" height="2" fill="white" />
+  
+  <!-- Interface Elements -->
+  <!-- Header -->
+  <rect x="50" y="10" width="700" height="30" rx="4" fill="#1e293b" />
+  <circle cx="70" cy="25" r="8" fill="#EF4444" />
+  <rect x="90" y="20" width="100" height="10" rx="2" fill="#334155" />
+  <rect x="630" y="20" width="30" height="10" rx="2" fill="#334155" />
+  <rect x="670" y="20" width="60" height="10" rx="2" fill="#334155" />
+  
+  <!-- Footer Controls -->
+  <rect x="50" y="460" width="700" height="30" rx="4" fill="#1e293b" />
+  <rect x="70" y="470" width="60" height="10" rx="2" fill="#334155" />
+  <rect x="140" y="470" width="60" height="10" rx="2" fill="#334155" />
+  <rect x="210" y="470" width="60" height="10" rx="2" fill="#334155" />
+  <rect x="670" y="470" width="60" height="10" rx="2" fill="#3B82F6" />
+  
+  <!-- Alert Indicators -->
+  <circle cx="640" cy="35" r="12" fill="#EF4444" opacity="0.7" />
+  <text x="640" y="40" text-anchor="middle" fill="white" font-size="12" font-family="Arial">!</text>
+  <rect x="580" y="30" width="50" height="10" rx="2" fill="#334155" />
+  
+  <!-- Temperature Readings -->
+  <rect x="90" y="150" width="50" height="20" rx="4" fill="#0f172a" opacity="0.8" />
+  <text x="115" y="165" text-anchor="middle" fill="white" font-size="12" font-family="Arial">27°C</text>
+  
+  <rect x="250" y="180" width="50" height="20" rx="4" fill="#0f172a" opacity="0.8" />
+  <text x="275" y="195" text-anchor="middle" fill="white" font-size="12" font-family="Arial">82°C</text>
+  
+  <rect x="550" y="130" width="50" height="20" rx="4" fill="#0f172a" opacity="0.8" />
+  <text x="575" y="145" text-anchor="middle" fill="white" font-size="12" font-family="Arial">65°C</text>
+  
+  <rect x="450" y="330" width="50" height="20" rx="4" fill="#0f172a" opacity="0.8" />
+  <text x="475" y="345" text-anchor="middle" fill="white" font-size="12" font-family="Arial">73°C</text>
+  
+  <rect x="660" y="320" width="50" height="20" rx="4" fill="#0f172a" opacity="0.8" />
+  <text x="685" y="335" text-anchor="middle" fill="white" font-size="12" font-family="Arial">28°C</text>
+  
+  <!-- Definitions -->
+  <defs>
+    <radialGradient id="hotspot1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(250 200) rotate(90) scale(80)">
+      <stop offset="0" stop-color="#EF4444" />
+      <stop offset="1" stop-color="#EF4444" stop-opacity="0" />
+    </radialGradient>
+    
+    <radialGradient id="hotspot1_inner" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(250 200) rotate(90) scale(50)">
+      <stop offset="0" stop-color="#B91C1C" />
+      <stop offset="1" stop-color="#EF4444" />
+    </radialGradient>
+    
+    <radialGradient id="hotspot2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(550 150) rotate(90) scale(60)">
+      <stop offset="0" stop-color="#F59E0B" />
+      <stop offset="1" stop-color="#F59E0B" stop-opacity="0" />
+    </radialGradient>
+    
+    <radialGradient id="hotspot2_inner" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(550 150) rotate(90) scale(30)">
+      <stop offset="0" stop-color="#D97706" />
+      <stop offset="1" stop-color="#F59E0B" />
+    </radialGradient>
+    
+    <radialGradient id="hotspot3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(450 350) rotate(90) scale(70)">
+      <stop offset="0" stop-color="#F59E0B" />
+      <stop offset="1" stop-color="#F59E0B" stop-opacity="0" />
+    </radialGradient>
+    
+    <radialGradient id="hotspot3_inner" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(450 350) rotate(90) scale(40)">
+      <stop offset="0" stop-color="#D97706" />
+      <stop offset="1" stop-color="#FBBF24" />
+    </radialGradient>
+    
+    <linearGradient id="cool_spot1" x1="0" y1="0" x2="1" y2="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(80 70) scale(120 90)">
+      <stop offset="0" stop-color="#3B82F6" />
+      <stop offset="1" stop-color="#1E40AF" />
+    </linearGradient>
+    
+    <linearGradient id="cool_spot2" x1="0" y1="0" x2="1" y2="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(650 250) scale(70 170)">
+      <stop offset="0" stop-color="#3B82F6" />
+      <stop offset="1" stop-color="#1E40AF" />
+    </linearGradient>
+    
+    <linearGradient id="cool_spot3" x1="0" y1="0" x2="1" y2="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(150 320) scale(200 100)">
+      <stop offset="0" stop-color="#3B82F6" />
+      <stop offset="1" stop-color="#1E40AF" />
+    </linearGradient>
+    
+    <linearGradient id="thermal_gradient" x1="0" y1="0" x2="1" y2="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(50 50) scale(700 400)">
+      <stop offset="0" stop-color="#1E40AF" />
+      <stop offset="1" stop-color="#0F172A" />
+    </linearGradient>
+    
+    <linearGradient id="temperature_scale" x1="0" y1="0" x2="0" y2="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(780 100) scale(15 300)">
+      <stop offset="0" stop-color="#EF4444" />
+      <stop offset="0.5" stop-color="#F59E0B" />
+      <stop offset="1" stop-color="#3B82F6" />
+    </linearGradient>
+  </defs>
+</svg>

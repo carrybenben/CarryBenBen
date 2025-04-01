@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a365d" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg-gradient)" />
+  
+  <!-- Drone and survey visualization -->
+  
+  <!-- Coal Terrain Base -->
+  <path d="M50,450 C100,440 150,460 200,450 C250,440 300,430 350,440 C400,450 450,440 500,430 C550,425 600,435 650,430 C700,425 750,440 780,450 L780,550 L50,550 Z" fill="#2d3748" stroke="#1a202c" stroke-width="1" />
+  
+  <!-- Coal Pile -->
+  <path d="M150,450 C200,430 250,410 300,400 C350,390 400,385 450,400 C500,415 550,420 600,430 C625,440 650,445 680,450 L680,550 L150,550 Z" fill="#1a202c" stroke="#0f172a" stroke-width="1" />
+  
+  <!-- Grid Pattern for Mapping -->
+  <g opacity="0.3">
+    <path d="M100,450 L700,450" stroke="#4299e1" stroke-width="0.5" stroke-dasharray="5,5" />
+    <path d="M100,425 L700,425" stroke="#4299e1" stroke-width="0.5" stroke-dasharray="5,5" />
+    <path d="M100,400 L700,400" stroke="#4299e1" stroke-width="0.5" stroke-dasharray="5,5" />
+    <path d="M100,375 L700,375" stroke="#4299e1" stroke-width="0.5" stroke-dasharray="5,5" />
+    <path d="M100,350 L700,350" stroke="#4299e1" stroke-width="0.5" stroke-dasharray="5,5" />
+    <path d="M100,325 L700,325" stroke="#4299e1" stroke-width="0.5" stroke-dasharray="5,5" />
+    <path d="M100,300 L700,300" stroke="#4299e1" stroke-width="0.5" stroke-dasharray="5,5" />
+    
+    <path d="M100,300 L100,450" stroke="#4299e1" stroke-width="0.5" stroke-dasharray="5,5" />
+    <path d="M150,300 L150,450" stroke="#4299e1" stroke-width="0.5" stroke-dasharray="5,5" />
+    <path d="M200,300 L200,450" stroke="#4299e1" stroke-width="0.5" stroke-dasharray="5,5" />
+    <path d="M250,300 L250,450" stroke="#4299e1" stroke-width="0.5" stroke-dasharray="5,5" />
+    <path d="M300,300 L300,450" stroke="#4299e1" stroke-width="0.5" stroke-dasharray="5,5" />
+    <path d="M350,300 L350,450" stroke="#4299e1" stroke-width="0.5" stroke-dasharray="5,5" />
+    <path d="M400,300 L400,450" stroke="#4299e1" stroke-width="0.5" stroke-dasharray="5,5" />
+    <path d="M450,300 L450,450" stroke="#4299e1" stroke-width="0.5" stroke-dasharray="5,5" />
+    <path d="M500,300 L500,450" stroke="#4299e1" stroke-width="0.5" stroke-dasharray="5,5" />
+    <path d="M550,300 L550,450" stroke="#4299e1" stroke-width="0.5" stroke-dasharray="5,5" />
+    <path d="M600,300 L600,450" stroke="#4299e1" stroke-width="0.5" stroke-dasharray="5,5" />
+    <path d="M650,300 L650,450" stroke="#4299e1" stroke-width="0.5" stroke-dasharray="5,5" />
+    <path d="M700,300 L700,450" stroke="#4299e1" stroke-width="0.5" stroke-dasharray="5,5" />
+  </g>
+  
+  <!-- Survey Points -->
+  <g>
+    <circle cx="150" cy="430" r="2" fill="#f56565" />
+    <circle cx="200" cy="410" r="2" fill="#f56565" />
+    <circle cx="250" cy="395" r="2" fill="#f56565" />
+    <circle cx="300" cy="385" r="2" fill="#f56565" />
+    <circle cx="350" cy="380" r="2" fill="#f56565" />
+    <circle cx="400" cy="390" r="2" fill="#f56565" />
+    <circle cx="450" cy="400" r="2" fill="#f56565" />
+    <circle cx="500" cy="410" r="2" fill="#f56565" />
+    <circle cx="550" cy="415" r="2" fill="#f56565" />
+    <circle cx="600" cy="425" r="2" fill="#f56565" />
+    <circle cx="650" cy="435" r="2" fill="#f56565" />
+    
+    <!-- Measurement Data Visualizations -->
+    <line x1="150" y1="430" x2="150" y2="550" stroke="#f56565" stroke-width="0.5" stroke-dasharray="2,2" />
+    <line x1="300" y1="385" x2="300" y2="550" stroke="#f56565" stroke-width="0.5" stroke-dasharray="2,2" />
+    <line x1="450" y1="400" x2="450" y2="550" stroke="#f56565" stroke-width="0.5" stroke-dasharray="2,2" />
+    <line x1="600" y1="425" x2="600" y2="550" stroke="#f56565" stroke-width="0.5" stroke-dasharray="2,2" />
+    
+    <text x="143" y="490" font-family="Arial" font-size="8" fill="#f56565">12m</text>
+    <text x="293" y="468" font-family="Arial" font-size="8" fill="#f56565">16.5m</text>
+    <text x="443" y="475" font-family="Arial" font-size="8" fill="#f56565">15m</text>
+    <text x="593" y="488" font-family="Arial" font-size="8" fill="#f56565">12.5m</text>
+  </g>
+  
+  <!-- Laser Scan Lines -->
+  <g opacity="0.6">
+    <line x1="400" y1="150" x2="150" y2="430" stroke="#48bb78" stroke-width="0.5" />
+    <line x1="400" y1="150" x2="200" y2="410" stroke="#48bb78" stroke-width="0.5" />
+    <line x1="400" y1="150" x2="250" y2="395" stroke="#48bb78" stroke-width="0.5" />
+    <line x1="400" y1="150" x2="300" y2="385" stroke="#48bb78" stroke-width="0.5" />
+    <line x1="400" y1="150" x2="350" y2="380" stroke="#48bb78" stroke-width="0.5" />
+    <line x1="400" y1="150" x2="400" y2="390" stroke="#48bb78" stroke-width="0.5" />
+    <line x1="400" y1="150" x2="450" y2="400" stroke="#48bb78" stroke-width="0.5" />
+    <line x1="400" y1="150" x2="500" y2="410" stroke="#48bb78" stroke-width="0.5" />
+    <line x1="400" y1="150" x2="550" y2="415" stroke="#48bb78" stroke-width="0.5" />
+    <line x1="400" y1="150" x2="600" y2="425" stroke="#48bb78" stroke-width="0.5" />
+    <line x1="400" y1="150" x2="650" y2="435" stroke="#48bb78" stroke-width="0.5" />
+  </g>
+  
+  <!-- Quadcopter Drone -->
+  <g>
+    <!-- Drone Body -->
+    <rect x="375" y="125" width="50" height="50" rx="5" fill="#2d3748" stroke="#1a202c" stroke-width="1.5" />
+    <circle cx="400" cy="150" r="15" fill="#4a5568" stroke="#2d3748" stroke-width="1" />
+    <circle cx="400" cy="150" r="8" fill="#1a202c" />
+    <circle cx="400" cy="150" r="3" fill="#4299e1" />
+    
+    <!-- Camera/Sensor -->
+    <rect x="392" y="160" width="16" height="10" rx="2" fill="#1a202c" stroke="#2d3748" stroke-width="0.5" />
+    <circle cx="400" cy="165" r="3" fill="#4299e1" stroke="#2d3748" stroke-width="0.5" />
+    
+    <!-- Arms and Propellers -->
+    <!-- Front Left -->
+    <line x1="375" y1="125" x2="350" y2="100" stroke="#4a5568" stroke-width="3" />
+    <circle cx="350" cy="100" r="10" fill="#4a5568" />
+    <circle cx="350" cy="100" r="15" fill="transparent" stroke="#90cdf4" stroke-width="1" opacity="0.5">
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="rotate"
+        from="0 350 100"
+        to="360 350 100"
+        dur="0.5s"
+        repeatCount="indefinite"
+      />
+    </circle>
+    
+    <!-- Front Right -->
+    <line x1="425" y1="125" x2="450" y2="100" stroke="#4a5568" stroke-width="3" />
+    <circle cx="450" cy="100" r="10" fill="#4a5568" />
+    <circle cx="450" cy="100" r="15" fill="transparent" stroke="#90cdf4" stroke-width="1" opacity="0.5">
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="rotate"
+        from="0 450 100"
+        to="-360 450 100"
+        dur="0.5s"
+        repeatCount="indefinite"
+      />
+    </circle>
+    
+    <!-- Rear Left -->
+    <line x1="375" y1="175" x2="350" y2="200" stroke="#4a5568" stroke-width="3" />
+    <circle cx="350" cy="200" r="10" fill="#4a5568" />
+    <circle cx="350" cy="200" r="15" fill="transparent" stroke="#90cdf4" stroke-width="1" opacity="0.5">
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="rotate"
+        from="0 350 200"
+        to="-360 350 200"
+        dur="0.5s"
+        repeatCount="indefinite"
+      />
+    </circle>
+    
+    <!-- Rear Right -->
+    <line x1="425" y1="175" x2="450" y2="200" stroke="#4a5568" stroke-width="3" />
+    <circle cx="450" cy="200" r="10" fill="#4a5568" />
+    <circle cx="450" cy="200" r="15" fill="transparent" stroke="#90cdf4" stroke-width="1" opacity="0.5">
+      <animateTransform
+        attributeName="transform"
+        attributeType="XML"
+        type="rotate"
+        from="0 450 200"
+        to="360 450 200"
+        dur="0.5s"
+        repeatCount="indefinite"
+      />
+    </circle>
+  </g>
+  
+  <!-- Flight Path -->
+  <g>
+    <path d="M150,100 C200,120 250,90 300,110 C350,130 400,100 450,120 C500,140 550,90 600,110 C650,130 700,100 750,120" fill="none" stroke="#90cdf4" stroke-width="1" stroke-dasharray="5,5" />
+    
+    <!-- Waypoints -->
+    <circle cx="150" cy="100" r="3" fill="#90cdf4" />
+    <circle cx="250" cy="90" r="3" fill="#90cdf4" />
+    <circle cx="350" cy="130" r="3" fill="#90cdf4" />
+    <circle cx="450" cy="120" r="3" fill="#90cdf4" />
+    <circle cx="550" cy="90" r="3" fill="#90cdf4" />
+    <circle cx="650" cy="130" r="3" fill="#90cdf4" />
+    <circle cx="750" cy="120" r="3" fill="#90cdf4" />
+  </g>
+  
+  <!-- Data Collection Indicators -->
+  <g>
+    <!-- Animated Survey Point Collection -->
+    <circle cx="400" cy="150" r="50" fill="none" stroke="#4299e1" stroke-width="0.5" opacity="0.3">
+      <animate
+        attributeName="r"
+        values="0;50;100;150"
+        dur="2s"
+        repeatCount="indefinite"
+      />
+      <animate
+        attributeName="opacity"
+        values="0.5;0.3;0.1;0"
+        dur="2s"
+        repeatCount="indefinite"
+      />
+    </circle>
+    <circle cx="400" cy="150" r="100" fill="none" stroke="#4299e1" stroke-width="0.5" opacity="0.15">
+      <animate
+        attributeName="r"
+        values="50;100;150;200"
+        dur="2s"
+        repeatCount="indefinite"
+      />
+      <animate
+        attributeName="opacity"
+        values="0.3;0.2;0.1;0"
+        dur="2s"
+        repeatCount="indefinite"
+      />
+    </circle>
+  </g>
+  
+  <!-- UI Elements -->
+  <g>
+    <!-- Control Panel -->
+    <rect x="50" y="50" width="180" height="180" rx="5" fill="#1a202c" opacity="0.8" />
+    <text x="140" y="70" font-family="Arial" font-size="10" fill="white" text-anchor="middle">DRONE FLIGHT CONTROL</text>
+    
+    <!-- Status Indicators -->
+    <rect x="60" y="80" width="160" height="25" rx="3" fill="#2d3748" />
+    <text x="75" y="95" font-family="Arial" font-size="8" fill="#a0aec0">STATUS:</text>
+    <text x="120" y="95" font-family="Arial" font-size="8" fill="#68d391">ACTIVE - SURVEYING</text>
+    <circle cx="200" cy="92" r="5" fill="#48bb78" />
+    
+    <!-- Battery -->
+    <rect x="60" y="110" width="160" height="20" rx="3" fill="#2d3748" />
+    <text x="75" y="123" font-family="Arial" font-size="8" fill="#a0aec0">BATTERY:</text>
+    <rect x="120" y="115" width="90" height="10" rx="5" fill="#2a4365" />
+    <rect x="120" y="115" width="70" height="10" rx="5" fill="#4299e1" />
+    <text x="195" y="123" font-family="Arial" font-size="8" fill="white">78%</text>
+    
+    <!-- Flight Parameters -->
+    <rect x="60" y="135" width="75" height="40" rx="3" fill="#2d3748" />
+    <text x="75" y="148" font-family="Arial" font-size="8" fill="#a0aec0">ALTITUDE</text>
+    <text x="75" y="165" font-family="Arial" font-size="12" fill="white">90 m</text>
+    
+    <rect x="145" y="135" width="75" height="40" rx="3" fill="#2d3748" />
+    <text x="160" y="148" font-family="Arial" font-size="8" fill="#a0aec0">SPEED</text>
+    <text x="160" y="165" font-family="Arial" font-size="12" fill="white">5.2 m/s</text>
+    
+    <!-- Coverage Statistics -->
+    <rect x="60" y="180" width="160" height="40" rx="3" fill="#2d3748" />
+    <text x="75" y="195" font-family="Arial" font-size="8" fill="#a0aec0">SURVEY COVERAGE:</text>
+    <rect x="75" y="200" width="130" height="8" rx="4" fill="#2a4365" />
+    <rect x="75" y="200" width="95" height="8" rx="4" fill="#4299e1" />
+    <text x="75" y="215" font-family="Arial" font-size="8" fill="#a0aec0">POINTS:</text>
+    <text x="110" y="215" font-family="Arial" font-size="8" fill="white">24,387 collected</text>
+  </g>
+  
+  <!-- Data Visualization -->
+  <g>
+    <!-- Map Panel -->
+    <rect x="570" y="50" width="180" height="180" rx="5" fill="#1a202c" opacity="0.8" />
+    <text x="660" y="70" font-family="Arial" font-size="10" fill="white" text-anchor="middle">REAL-TIME MAPPING</text>
+    
+    <!-- Map Container -->
+    <rect x="580" y="80" width="160" height="140" rx="3" fill="#2d3748" />
+    
+    <!-- Topographic Contours -->
+    <path d="M590,170 C600,165 610,170 620,165 C630,160 640,170 650,175 C660,180 670,165 680,160 C690,155 700,165 710,170 C720,175 730,160 740,170" fill="none" stroke="#48bb78" stroke-width="1" />
+    <path d="M590,160 C600,155 610,160 620,155 C630,150 640,160 650,165 C660,170 670,155 680,150 C690,145 700,155 710,160 C720,165 730,150 740,160" fill="none" stroke="#48bb78" stroke-width="1" />
+    <path d="M590,150 C600,145 610,150 620,145 C630,140 640,150 650,155 C660,160 670,145 680,140 C690,135 700,145 710,150 C720,155 730,140 740,150" fill="none" stroke="#48bb78" stroke-width="1" />
+    <path d="M590,140 C600,135 610,140 620,135 C630,130 640,140 650,145 C660,150 670,135 680,130 C690,125 700,135 710,140 C720,145 730,130 740,140" fill="none" stroke="#48bb78" stroke-width="1" />
+    <path d="M590,130 C600,125 610,130 620,125 C630,120 640,130 650,135 C660,140 670,125 680,120 C690,115 700,125 710,130 C720,135 730,120 740,130" fill="none" stroke="#48bb78" stroke-width="1" />
+    <path d="M590,120 C600,115 610,120 620,115 C630,110 640,120 650,125 C660,130 670,115 680,110 C690,105 700,115 710,120 C720,125 730,110 740,120" fill="none" stroke="#48bb78" stroke-width="1" />
+    
+    <!-- Heat Map Overlay -->
+    <g opacity="0.4">
+      <rect x="620" y="110" width="20" height="15" fill="#ff5e5e" />
+      <rect x="640" y="110" width="20" height="15" fill="#ff8700" />
+      <rect x="660" y="110" width="20" height="15" fill="#ffb700" />
+      <rect x="680" y="110" width="20" height="15" fill="#ffe066" />
+    </g>
+    
+    <!-- Legend -->
+    <rect x="590" y="190" width="8" height="8" fill="#ff5e5e" opacity="0.5" />
+    <text x="605" y="197" font-family="Arial" font-size="7" fill="white">HIGH</text>
+    
+    <rect x="620" y="190" width="8" height="8" fill="#ff8700" opacity="0.5" />
+    <text x="635" y="197" font-family="Arial" font-size="7" fill="white">MED-HIGH</text>
+    
+    <rect x="670" y="190" width="8" height="8" fill="#ffb700" opacity="0.5" />
+    <text x="685" y="197" font-family="Arial" font-size="7" fill="white">MED-LOW</text>
+    
+    <rect x="720" y="190" width="8" height="8" fill="#ffe066" opacity="0.5" />
+    <text x="735" y="197" font-family="Arial" font-size="7" fill="white">LOW</text>
+  </g>
+  
+  <!-- Coordinates and Scale -->
+  <g>
+    <rect x="50" y="500" width="700" height="30" rx="5" fill="#1a202c" opacity="0.8" />
+    <text x="70" y="520" font-family="Arial" font-size="10" fill="white">COORDINATES: 39°54'32.5"N 116°23'18.9"E</text>
+    <text x="330" y="520" font-family="Arial" font-size="10" fill="white">SCALE: 1:500</text>
+    <text x="500" y="520" font-family="Arial" font-size="10" fill="white">RESOLUTION: 2cm/pixel</text>
+    <text x="700" y="520" font-family="Arial" font-size="10" fill="white">RTK: FIXED</text>
+  </g>
+</svg>

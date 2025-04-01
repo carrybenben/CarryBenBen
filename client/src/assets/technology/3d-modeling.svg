@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c3e50" />
+      <stop offset="100%" stop-color="#1a2a3a" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg-gradient)" />
+  
+  <!-- 3D Grid -->
+  <g opacity="0.1">
+    <path d="M50,50 L750,50" stroke="white" stroke-width="1" />
+    <path d="M50,100 L750,100" stroke="white" stroke-width="1" />
+    <path d="M50,150 L750,150" stroke="white" stroke-width="1" />
+    <path d="M50,200 L750,200" stroke="white" stroke-width="1" />
+    <path d="M50,250 L750,250" stroke="white" stroke-width="1" />
+    <path d="M50,300 L750,300" stroke="white" stroke-width="1" />
+    <path d="M50,350 L750,350" stroke="white" stroke-width="1" />
+    <path d="M50,400 L750,400" stroke="white" stroke-width="1" />
+    <path d="M50,450 L750,450" stroke="white" stroke-width="1" />
+    <path d="M50,500 L750,500" stroke="white" stroke-width="1" />
+    <path d="M50,550 L750,550" stroke="white" stroke-width="1" />
+    
+    <path d="M50,50 L50,550" stroke="white" stroke-width="1" />
+    <path d="M100,50 L100,550" stroke="white" stroke-width="1" />
+    <path d="M150,50 L150,550" stroke="white" stroke-width="1" />
+    <path d="M200,50 L200,550" stroke="white" stroke-width="1" />
+    <path d="M250,50 L250,550" stroke="white" stroke-width="1" />
+    <path d="M300,50 L300,550" stroke="white" stroke-width="1" />
+    <path d="M350,50 L350,550" stroke="white" stroke-width="1" />
+    <path d="M400,50 L400,550" stroke="white" stroke-width="1" />
+    <path d="M450,50 L450,550" stroke="white" stroke-width="1" />
+    <path d="M500,50 L500,550" stroke="white" stroke-width="1" />
+    <path d="M550,50 L550,550" stroke="white" stroke-width="1" />
+    <path d="M600,50 L600,550" stroke="white" stroke-width="1" />
+    <path d="M650,50 L650,550" stroke="white" stroke-width="1" />
+    <path d="M700,50 L700,550" stroke="white" stroke-width="1" />
+    <path d="M750,50 L750,550" stroke="white" stroke-width="1" />
+  </g>
+  
+  <!-- 3D Terrain Mesh Base -->
+  <g>
+    <!-- Base Terrain -->
+    <path d="M100,450 L200,420 L300,440 L400,410 L500,430 L600,400 L700,440 L700,550 L100,550 Z" fill="#36454F" stroke="#2c3e50" stroke-width="2" />
+    
+    <!-- Coal Pile -->
+    <path d="M200,420 L300,440 L400,410 L500,430 L600,400 L550,350 L500,320 L450,300 L400,290 L350,310 L300,330 L250,360 L200,420" fill="#1E1E1E" stroke="#0D0D0D" stroke-width="2" />
+    
+    <!-- Coal Pile Top Face Contours -->
+    <path d="M350,310 L400,290 L450,300" fill="none" stroke="#2a2a2a" stroke-width="1.5" />
+    <path d="M300,330 L350,310 L400,290 L450,300 L500,320" fill="none" stroke="#2a2a2a" stroke-width="1.5" />
+    <path d="M250,360 L300,330 L350,310 L400,290 L450,300 L500,320 L550,350" fill="none" stroke="#2a2a2a" stroke-width="1.5" />
+  </g>
+  
+  <!-- 3D Wireframe Overlay -->
+  <g>
+    <!-- Grid lines on terrain -->
+    <path d="M150,520 L650,520" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M150,490 L650,490" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M150,460 L650,460" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M150,430 L650,430" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M150,400 L650,400" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M150,370 L650,370" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M150,340 L650,340" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M150,310 L650,310" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    
+    <path d="M150,310 L150,520" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M200,310 L200,520" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M250,310 L250,520" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M300,310 L300,520" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M350,310 L350,520" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M400,310 L400,520" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M450,310 L450,520" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M500,310 L500,520" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M550,310 L550,520" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M600,310 L600,520" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+    <path d="M650,310 L650,520" stroke="#3498db" stroke-width="1" stroke-dasharray="5,5" />
+  </g>
+  
+  <!-- 3D Measurement Points -->
+  <g>
+    <!-- Points on Coal Pile Surface -->
+    <circle cx="250" cy="360" r="3" fill="#e74c3c" />
+    <circle cx="300" cy="330" r="3" fill="#e74c3c" />
+    <circle cx="350" cy="310" r="3" fill="#e74c3c" />
+    <circle cx="400" cy="290" r="3" fill="#e74c3c" />
+    <circle cx="450" cy="300" r="3" fill="#e74c3c" />
+    <circle cx="500" cy="320" r="3" fill="#e74c3c" />
+    <circle cx="550" cy="350" r="3" fill="#e74c3c" />
+    
+    <!-- Points on Base Surface -->
+    <circle cx="200" cy="420" r="3" fill="#e74c3c" />
+    <circle cx="300" cy="440" r="3" fill="#e74c3c" />
+    <circle cx="400" cy="410" r="3" fill="#e74c3c" />
+    <circle cx="500" cy="430" r="3" fill="#e74c3c" />
+    <circle cx="600" cy="400" r="3" fill="#e74c3c" />
+  </g>
+  
+  <!-- Volume Calculation Visualization -->
+  <g opacity="0.4">
+    <!-- Prismatic Volume Elements -->
+    <rect x="200" y="420" width="50" height="130" fill="#3498db" opacity="0.2" />
+    <rect x="250" y="390" width="50" height="160" fill="#3498db" opacity="0.2" />
+    <rect x="300" y="360" width="50" height="190" fill="#3498db" opacity="0.2" />
+    <rect x="350" y="330" width="50" height="220" fill="#3498db" opacity="0.2" />
+    <rect x="400" y="310" width="50" height="240" fill="#3498db" opacity="0.2" />
+    <rect x="450" y="320" width="50" height="230" fill="#3498db" opacity="0.2" />
+    <rect x="500" y="350" width="50" height="200" fill="#3498db" opacity="0.2" />
+    <rect x="550" y="380" width="50" height="170" fill="#3498db" opacity="0.2" />
+  </g>
+  
+  <!-- Software Interface Elements -->
+  <g>
+    <!-- Volume Calculation Panel -->
+    <rect x="50" y="50" width="200" height="200" rx="10" fill="#34495e" opacity="0.9" />
+    <rect x="50" y="50" width="200" height="40" rx="10" fill="#2c3e50" />
+    <text x="150" y="75" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Volume Calculation</text>
+    
+    <text x="65" y="110" font-family="Arial" font-size="12" fill="white">Total Volume: 142,567 m³</text>
+    <rect x="65" y="120" width="170" height="10" rx="5" fill="#ecf0f1" />
+    <rect x="65" y="120" width="142" height="10" rx="5" fill="#3498db" />
+    
+    <text x="65" y="150" font-family="Arial" font-size="12" fill="white">Base Area: 23,780 m²</text>
+    <rect x="65" y="160" width="170" height="10" rx="5" fill="#ecf0f1" />
+    <rect x="65" y="160" width="130" height="10" rx="5" fill="#2ecc71" />
+    
+    <text x="65" y="190" font-family="Arial" font-size="12" fill="white">Average Height: 5.99 m</text>
+    <rect x="65" y="200" width="170" height="10" rx="5" fill="#ecf0f1" />
+    <rect x="65" y="200" width="115" height="10" rx="5" fill="#f1c40f" />
+    
+    <text x="65" y="230" font-family="Arial" font-size="10" fill="#3498db">Calculation Method: Prismatic</text>
+  </g>
+  
+  <!-- Data Layer Tools -->
+  <g>
+    <!-- Layer Panel -->
+    <rect x="70" y="270" width="160" height="160" rx="5" fill="#34495e" opacity="0.8" />
+    <text x="150" y="290" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Data Layers</text>
+    
+    <!-- Layer Controls -->
+    <rect x="85" y="305" width="130" height="25" rx="3" fill="#2c3e50" />
+    <text x="110" y="322" font-family="Arial" font-size="10" fill="white">Surface Model</text>
+    <rect x="180" y="310" width="15" height="15" rx="2" fill="#3498db" />
+    
+    <rect x="85" y="335" width="130" height="25" rx="3" fill="#2c3e50" />
+    <text x="110" y="352" font-family="Arial" font-size="10" fill="white">Base Terrain</text>
+    <rect x="180" y="340" width="15" height="15" rx="2" fill="#2ecc71" />
+    
+    <rect x="85" y="365" width="130" height="25" rx="3" fill="#2c3e50" />
+    <text x="110" y="382" font-family="Arial" font-size="10" fill="white">Contours</text>
+    <rect x="180" y="370" width="15" height="15" rx="2" fill="#9b59b6" />
+    
+    <rect x="85" y="395" width="130" height="25" rx="3" fill="#2c3e50" />
+    <text x="110" y="412" font-family="Arial" font-size="10" fill="white">Measurement Points</text>
+    <rect x="180" y="400" width="15" height="15" rx="2" fill="#e74c3c" />
+  </g>
+  
+  <!-- Analysis Tools -->
+  <g>
+    <!-- Analysis Panel -->
+    <rect x="550" y="50" width="200" height="220" rx="10" fill="#34495e" opacity="0.9" />
+    <rect x="550" y="50" width="200" height="40" rx="10" fill="#2c3e50" />
+    <text x="650" y="75" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Analysis Tools</text>
+    
+    <!-- Tool Buttons -->
+    <rect x="570" y="100" width="160" height="30" rx="5" fill="#3498db" opacity="0.8" />
+    <text x="650" y="120" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Volume Calculation</text>
+    
+    <rect x="570" y="140" width="160" height="30" rx="5" fill="#2c3e50" />
+    <text x="650" y="160" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Cross-Section View</text>
+    
+    <rect x="570" y="180" width="160" height="30" rx="5" fill="#2c3e50" />
+    <text x="650" y="200" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Differential Analysis</text>
+    
+    <rect x="570" y="220" width="160" height="30" rx="5" fill="#2c3e50" />
+    <text x="650" y="240" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Export Results</text>
+  </g>
+  
+  <!-- Cross-section View -->
+  <g>
+    <!-- Cross-section Line -->
+    <path d="M250,360 L550,350" stroke="#e74c3c" stroke-width="2" stroke-dasharray="10,5" />
+    
+    <!-- Cross-section Panel -->
+    <rect x="550" y="280" width="200" height="160" rx="5" fill="#34495e" opacity="0.8" />
+    <text x="650" y="300" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Cross-Section Profile</text>
+    
+    <!-- Cross-section Graph -->
+    <rect x="560" y="310" width="180" height="120" fill="#2c3e50" />
+    
+    <!-- Profile line -->
+    <path d="M560,390 C580,350 600,320 620,370 C640,410 660,330 680,340 C700,350 720,380 740,390" stroke="#3498db" stroke-width="2" fill="none" />
+    
+    <!-- Base line -->
+    <path d="M560,390 L740,390" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,3" />
+    
+    <!-- Axis labels -->
+    <text x="650" y="420" font-family="Arial" font-size="8" fill="#bdc3c7" text-anchor="middle">Distance (m)</text>
+    <text x="570" y="360" font-family="Arial" font-size="8" fill="#bdc3c7" text-anchor="middle" transform="rotate(-90, 570, 360)">Height (m)</text>
+  </g>
+</svg>

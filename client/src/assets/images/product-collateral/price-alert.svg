@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fee2e2" />
+      <stop offset="100%" stop-color="#fef2f2" />
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="60" fill="url(#bg-gradient)" />
+  
+  <!-- Chart with Downward Trend -->
+  <g transform="translate(30, 30)">
+    <!-- Chart Background -->
+    <rect x="0" y="0" width="50" height="40" rx="2" fill="white" stroke="#ef4444" stroke-width="1" />
+    
+    <!-- Chart Axes -->
+    <line x1="5" y1="5" x2="5" y2="35" stroke="#475569" stroke-width="1" />
+    <line x1="5" y1="35" x2="45" y2="35" stroke="#475569" stroke-width="1" />
+    
+    <!-- Price Line (Downward Trend) -->
+    <path d="M10,10 L20,20 L30,15 L40,30" fill="none" stroke="#ef4444" stroke-width="2" />
+    
+    <!-- Alert Line -->
+    <line x1="5" y1="25" x2="45" y2="25" stroke="#ef4444" stroke-width="1" stroke-dasharray="3,2" />
+    
+    <!-- Alert Point -->
+    <circle cx="40" cy="30" r="3" fill="#ef4444" />
+  </g>
+  
+  <!-- Alert Icon -->
+  <g transform="translate(75, 30)">
+    <!-- Alert Triangle -->
+    <path d="M0,20 L15,0 L30,20 Z" fill="#fecaca" stroke="#ef4444" stroke-width="2" />
+    
+    <!-- Exclamation Mark -->
+    <line x1="15" y1="5" x2="15" y2="12" stroke="#ef4444" stroke-width="2" />
+    <circle cx="15" cy="16" r="1.5" fill="#ef4444" />
+  </g>
+  
+  <!-- Coal Product with Price Tag -->
+  <g transform="translate(35, 75)">
+    <!-- Coal Box -->
+    <rect x="0" y="0" width="20" height="15" fill="#7c2d12" stroke="#9a3412" stroke-width="1" />
+    <path d="M2,2 C4,0 6,1 8,2 C10,3 12,0 14,2 C16,4 18,1 20,2 L20,8 L2,8 Z" fill="#1e293b" />
+    
+    <!-- Price Tag -->
+    <rect x="15" y="-5" width="15" height="10" rx="1" fill="white" stroke="#ef4444" stroke-width="1" />
+    <text x="22.5" y="2" font-family="Arial" font-size="7" fill="#ef4444" text-anchor="middle" font-weight="bold">¥↓</text>
+  </g>
+  
+  <!-- Bell Notification -->
+  <g transform="translate(75, 70)">
+    <path d="M0,15 C0,10 5,0 15,0 C25,0 30,10 30,15 Z" fill="#fecaca" stroke="#ef4444" stroke-width="1" />
+    <path d="M10,15 C10,20 20,20 20,15" fill="none" stroke="#ef4444" stroke-width="1" />
+    <circle cx="15" cy="0" r="2" fill="#ef4444" />
+    <line x1="15" y1="15" x2="15" y2="20" stroke="#ef4444" stroke-width="1" />
+  </g>
+  
+  <!-- Text Label -->
+  <text x="60" y="95" font-family="Arial" font-size="11" fill="#b91c1c" text-anchor="middle" font-weight="bold">价格预警</text>
+  <text x="60" y="108" font-family="Arial" font-size="9" fill="#b91c1c" text-anchor="middle">Price Alert</text>
+</svg>

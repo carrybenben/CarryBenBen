@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c3e50" />
+      <stop offset="100%" stop-color="#1a293a" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg-gradient)" />
+  
+  <!-- Horizon & Ground -->
+  <rect x="0" y="420" width="800" height="180" fill="#34495e" />
+  <line x1="0" y1="420" x2="800" y2="420" stroke="#3498db" stroke-width="2" />
+  
+  <!-- Railroad Tracks -->
+  <g>
+    <!-- Track Base -->
+    <rect x="0" y="450" width="800" height="10" fill="#7f8c8d" />
+    
+    <!-- Railroad Ties -->
+    <rect x="30" y="440" width="30" height="30" fill="#34495e" />
+    <rect x="100" y="440" width="30" height="30" fill="#34495e" />
+    <rect x="170" y="440" width="30" height="30" fill="#34495e" />
+    <rect x="240" y="440" width="30" height="30" fill="#34495e" />
+    <rect x="310" y="440" width="30" height="30" fill="#34495e" />
+    <rect x="380" y="440" width="30" height="30" fill="#34495e" />
+    <rect x="450" y="440" width="30" height="30" fill="#34495e" />
+    <rect x="520" y="440" width="30" height="30" fill="#34495e" />
+    <rect x="590" y="440" width="30" height="30" fill="#34495e" />
+    <rect x="660" y="440" width="30" height="30" fill="#34495e" />
+    <rect x="730" y="440" width="30" height="30" fill="#34495e" />
+    
+    <!-- Rails -->
+    <rect x="0" y="435" width="800" height="5" fill="#95a5a6" />
+    <rect x="0" y="470" width="800" height="5" fill="#95a5a6" />
+  </g>
+  
+  <!-- Railway Bridge Elements -->
+  <g>
+    <rect x="200" y="350" width="400" height="5" fill="#95a5a6" />
+    <rect x="200" y="390" width="400" height="5" fill="#95a5a6" />
+    
+    <!-- Bridge Supports -->
+    <rect x="250" y="390" width="10" height="50" fill="#95a5a6" />
+    <rect x="400" y="390" width="10" height="50" fill="#95a5a6" />
+    <rect x="550" y="390" width="10" height="50" fill="#95a5a6" />
+    
+    <!-- Bridge Girders -->
+    <path d="M200,350 L200,390 L250,390 L250,350 Z" fill="#34495e" />
+    <path d="M550,350 L550,390 L600,390 L600,350 Z" fill="#34495e" />
+  </g>
+  
+  <!-- Coal Train -->
+  <g id="train">
+    <!-- Locomotive -->
+    <rect x="50" y="380" width="100" height="60" rx="5" fill="#e74c3c" />
+    <rect x="140" y="390" width="20" height="50" fill="#c0392b" />
+    <rect x="60" y="360" width="70" height="20" rx="5" fill="#c0392b" />
+    <rect x="120" y="340" width="30" height="20" fill="#c0392b" />
+    <rect x="125" y="330" width="20" height="20" fill="#34495e" />
+    <circle cx="140" cy="330" r="5" fill="#ecf0f1" />
+    
+    <!-- Locomotive Windows -->
+    <rect x="70" y="370" width="15" height="15" rx="2" fill="#f1c40f" opacity="0.7" />
+    <rect x="95" y="370" width="15" height="15" rx="2" fill="#f1c40f" opacity="0.7" />
+    
+    <!-- Locomotive Wheels -->
+    <circle cx="70" cy="445" r="15" fill="#34495e" />
+    <circle cx="70" cy="445" r="10" fill="#7f8c8d" />
+    <circle cx="70" cy="445" r="5" fill="#95a5a6" />
+    
+    <circle cx="110" cy="445" r="15" fill="#34495e" />
+    <circle cx="110" cy="445" r="10" fill="#7f8c8d" />
+    <circle cx="110" cy="445" r="5" fill="#95a5a6" />
+    
+    <circle cx="150" cy="445" r="15" fill="#34495e" />
+    <circle cx="150" cy="445" r="10" fill="#7f8c8d" />
+    <circle cx="150" cy="445" r="5" fill="#95a5a6" />
+    
+    <!-- Coal Cars -->
+    <!-- Car 1 -->
+    <rect x="170" y="400" width="80" height="40" fill="#34495e" />
+    <path d="M170,400 L170,380 L250,380 L250,400" fill="none" stroke="#7f8c8d" stroke-width="2" />
+    <ellipse cx="210" cy="380" rx="40" ry="10" fill="#333" />
+    
+    <circle cx="180" cy="445" r="12" fill="#34495e" />
+    <circle cx="180" cy="445" r="8" fill="#7f8c8d" />
+    <circle cx="180" cy="445" r="4" fill="#95a5a6" />
+    
+    <circle cx="240" cy="445" r="12" fill="#34495e" />
+    <circle cx="240" cy="445" r="8" fill="#7f8c8d" />
+    <circle cx="240" cy="445" r="4" fill="#95a5a6" />
+    
+    <!-- Car 2 -->
+    <rect x="260" y="400" width="80" height="40" fill="#34495e" />
+    <path d="M260,400 L260,380 L340,380 L340,400" fill="none" stroke="#7f8c8d" stroke-width="2" />
+    <ellipse cx="300" cy="380" rx="40" ry="10" fill="#333" />
+    
+    <circle cx="270" cy="445" r="12" fill="#34495e" />
+    <circle cx="270" cy="445" r="8" fill="#7f8c8d" />
+    <circle cx="270" cy="445" r="4" fill="#95a5a6" />
+    
+    <circle cx="330" cy="445" r="12" fill="#34495e" />
+    <circle cx="330" cy="445" r="8" fill="#7f8c8d" />
+    <circle cx="330" cy="445" r="4" fill="#95a5a6" />
+    
+    <!-- Car 3 -->
+    <rect x="350" y="400" width="80" height="40" fill="#34495e" />
+    <path d="M350,400 L350,380 L430,380 L430,400" fill="none" stroke="#7f8c8d" stroke-width="2" />
+    <ellipse cx="390" cy="380" rx="40" ry="10" fill="#333" />
+    
+    <circle cx="360" cy="445" r="12" fill="#34495e" />
+    <circle cx="360" cy="445" r="8" fill="#7f8c8d" />
+    <circle cx="360" cy="445" r="4" fill="#95a5a6" />
+    
+    <circle cx="420" cy="445" r="12" fill="#34495e" />
+    <circle cx="420" cy="445" r="8" fill="#7f8c8d" />
+    <circle cx="420" cy="445" r="4" fill="#95a5a6" />
+    
+    <!-- Car 4 -->
+    <rect x="440" y="400" width="80" height="40" fill="#34495e" />
+    <path d="M440,400 L440,380 L520,380 L520,400" fill="none" stroke="#7f8c8d" stroke-width="2" />
+    <ellipse cx="480" cy="380" rx="40" ry="10" fill="#333" />
+    
+    <circle cx="450" cy="445" r="12" fill="#34495e" />
+    <circle cx="450" cy="445" r="8" fill="#7f8c8d" />
+    <circle cx="450" cy="445" r="4" fill="#95a5a6" />
+    
+    <circle cx="510" cy="445" r="12" fill="#34495e" />
+    <circle cx="510" cy="445" r="8" fill="#7f8c8d" />
+    <circle cx="510" cy="445" r="4" fill="#95a5a6" />
+    
+    <!-- Animation for the train -->
+    <animateTransform attributeName="transform" attributeType="XML" type="translate" from="0 0" to="200 0" dur="10s" repeatCount="indefinite" />
+  </g>
+  
+  <!-- Port/Shipping Terminal -->
+  <g>
+    <!-- Water -->
+    <rect x="600" y="490" width="200" height="110" fill="#3498db" />
+    
+    <!-- Pier -->
+    <rect x="650" y="490" width="120" height="20" fill="#7f8c8d" />
+    
+    <!-- Cargo Ship -->
+    <rect x="620" y="510" width="150" height="40" fill="#34495e" />
+    <rect x="720" y="480" width="40" height="30" fill="#7f8c8d" />
+    <path d="M620,510 L590,530 L590,550 L770,550 L770,530 L740,510" fill="#2c3e50" />
+    
+    <!-- Ship Cargo Hold with Coal -->
+    <rect x="640" y="515" width="80" height="30" fill="#2c3e50" />
+    <ellipse cx="680" cy="515" rx="40" ry="10" fill="#333" />
+    
+    <!-- Ship Windows -->
+    <rect x="725" y="490" width="10" height="8" rx="1" fill="#f1c40f" opacity="0.7" />
+    <rect x="740" y="490" width="10" height="8" rx="1" fill="#f1c40f" opacity="0.7" />
+    
+    <!-- Ship Smokestack -->
+    <rect x="710" y="470" width="10" height="10" fill="#e74c3c" />
+    <path d="M712,465 C712,460 718,460 718,465 L718,470 L712,470 Z" fill="#c0392b" />
+  </g>
+  
+  <!-- Truck Transport -->
+  <g>
+    <!-- Road -->
+    <rect x="0" y="520" width="500" height="30" fill="#7f8c8d" />
+    <line x1="20" y1="535" x2="60" y2="535" stroke="white" stroke-width="2" stroke-dasharray="10,10" />
+    <line x1="80" y1="535" x2="120" y2="535" stroke="white" stroke-width="2" stroke-dasharray="10,10" />
+    <line x1="140" y1="535" x2="180" y2="535" stroke="white" stroke-width="2" stroke-dasharray="10,10" />
+    <line x1="200" y1="535" x2="240" y2="535" stroke="white" stroke-width="2" stroke-dasharray="10,10" />
+    <line x1="260" y1="535" x2="300" y2="535" stroke="white" stroke-width="2" stroke-dasharray="10,10" />
+    <line x1="320" y1="535" x2="360" y2="535" stroke="white" stroke-width="2" stroke-dasharray="10,10" />
+    <line x1="380" y1="535" x2="420" y2="535" stroke="white" stroke-width="2" stroke-dasharray="10,10" />
+    <line x1="440" y1="535" x2="480" y2="535" stroke="white" stroke-width="2" stroke-dasharray="10,10" />
+    
+    <!-- Coal Truck -->
+    <g id="truck">
+      <!-- Truck Cab -->
+      <rect x="380" y="500" width="40" height="30" rx="5" fill="#3498db" />
+      <rect x="350" y="510" width="30" height="20" fill="#2980b9" />
+      
+      <!-- Truck Windshield -->
+      <rect x="385" y="505" width="30" height="15" rx="2" fill="#ecf0f1" opacity="0.5" />
+      
+      <!-- Truck Trailer with Coal -->
+      <rect x="280" y="510" width="70" height="20" fill="#34495e" />
+      <ellipse cx="315" cy="510" rx="35" ry="5" fill="#333" />
+      
+      <!-- Truck Wheels -->
+      <circle cx="360" cy="530" r="10" fill="#2c3e50" />
+      <circle cx="360" cy="530" r="5" fill="#7f8c8d" />
+      
+      <circle cx="390" cy="530" r="10" fill="#2c3e50" />
+      <circle cx="390" cy="530" r="5" fill="#7f8c8d" />
+      
+      <circle cx="420" cy="530" r="10" fill="#2c3e50" />
+      <circle cx="420" cy="530" r="5" fill="#7f8c8d" />
+      
+      <circle cx="290" cy="530" r="10" fill="#2c3e50" />
+      <circle cx="290" cy="530" r="5" fill="#7f8c8d" />
+      
+      <circle cx="320" cy="530" r="10" fill="#2c3e50" />
+      <circle cx="320" cy="530" r="5" fill="#7f8c8d" />
+      
+      <!-- Animation for the truck -->
+      <animateTransform attributeName="transform" attributeType="XML" type="translate" from="-500 0" to="400 0" dur="15s" repeatCount="indefinite" />
+    </g>
+  </g>
+  
+  <!-- Loading/Unloading Infrastructure -->
+  <g>
+    <!-- Gantry Crane -->
+    <rect x="500" y="380" width="10" height="110" fill="#f39c12" />
+    <rect x="600" y="380" width="10" height="110" fill="#f39c12" />
+    <rect x="500" y="370" width="110" height="10" fill="#f39c12" />
+    
+    <!-- Crane Arm -->
+    <rect x="550" y="370" width="10" height="50" fill="#e67e22" />
+    <rect x="530" y="420" width="50" height="5" fill="#e67e22" />
+    <rect x="530" y="420" width="5" height="20" fill="#e67e22" />
+    <rect x="575" y="420" width="5" height="20" fill="#e67e22" />
+    
+    <!-- Coal Hopper/Loader -->
+    <path d="M530,440 L535,470 L575,470 L580,440" fill="#7f8c8d" />
+    <rect x="535" y="470" width="40" height="10" fill="#7f8c8d" />
+    <rect x="550" y="480" width="10" height="10" fill="#7f8c8d" />
+  </g>
+  
+  <!-- Digital/Smart Elements -->
+  <g>
+    <!-- Control Center -->
+    <rect x="50" y="100" width="150" height="100" rx="10" fill="#34495e" />
+    <rect x="60" y="110" width="130" height="80" rx="5" fill="#2c3e50" />
+    
+    <!-- Screens/Monitors -->
+    <rect x="70" y="120" width="50" height="30" rx="2" fill="#ecf0f1" />
+    <rect x="130" y="120" width="50" height="30" rx="2" fill="#ecf0f1" />
+    <rect x="70" y="160" width="110" height="20" rx="2" fill="#ecf0f1" />
+    
+    <!-- Screen Content -->
+    <line x1="75" y1="130" x2="115" y2="130" stroke="#3498db" stroke-width="1" />
+    <line x1="75" y1="135" x2="100" y2="135" stroke="#3498db" stroke-width="1" />
+    <line x1="75" y1="140" x2="110" y2="140" stroke="#3498db" stroke-width="1" />
+    <line x1="75" y1="145" x2="95" y2="145" stroke="#3498db" stroke-width="1" />
+    
+    <rect x="135" y="125" width="40" height="20" rx="2" fill="#2c3e50" />
+    <polyline points="135,145 145,135 155,140 165,130 175,135" fill="none" stroke="#e74c3c" stroke-width="1" />
+    
+    <text x="125" y="175" font-family="Arial" font-size="10" fill="#2c3e50" text-anchor="middle">COAL LOGISTICS</text>
+  </g>
+  
+  <!-- GPS/Tracking Visualization -->
+  <g>
+    <!-- Map Section -->
+    <rect x="600" y="100" width="150" height="100" rx="10" fill="#34495e" />
+    <rect x="610" y="110" width="130" height="80" rx="5" fill="#2c3e50" />
+    
+    <!-- Map Elements -->
+    <path d="M620,120 L650,130 L680,125 L710,140 L730,135" fill="none" stroke="#3498db" stroke-width="2" />
+    <path d="M620,160 L650,150 L690,165 L730,155" fill="none" stroke="#3498db" stroke-width="2" />
+    <path d="M620,120 L620,160" fill="none" stroke="#3498db" stroke-width="2" />
+    <path d="M650,130 L650,150" fill="none" stroke="#3498db" stroke-width="2" />
+    <path d="M680,125 L690,165" fill="none" stroke="#3498db" stroke-width="2" />
+    <path d="M730,135 L730,155" fill="none" stroke="#3498db" stroke-width="2" />
+    
+    <!-- GPS Truck Location -->
+    <circle cx="670" cy="140" r="5" fill="#e74c3c">
+      <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- GPS Ship Location -->
+    <circle cx="700" cy="150" r="5" fill="#f1c40f">
+      <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- GPS Rail Location -->
+    <circle cx="640" cy="135" r="5" fill="#2ecc71">
+      <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Title and Descriptive Labels -->
+  <g>
+    <!-- Main Title -->
+    <text x="400" y="50" font-family="Arial" font-size="24" font-weight="bold" fill="white" text-anchor="middle">煤炭运输服务 | Coal Transport Services</text>
+    
+    <!-- Transport Mode Labels -->
+    <text x="100" y="320" font-family="Arial" font-size="16" fill="#e74c3c" text-anchor="middle">铁路运输 | Rail Transport</text>
+    <text x="300" y="490" font-family="Arial" font-size="16" fill="#3498db" text-anchor="middle">公路运输 | Road Transport</text>
+    <text x="700" y="470" font-family="Arial" font-size="16" fill="#f1c40f" text-anchor="middle">水路运输 | Water Transport</text>
+    
+    <!-- Integrated Solutions Label -->
+    <text x="400" y="250" font-family="Arial" font-size="18" fill="#ecf0f1" text-anchor="middle">一体化多式联运解决方案</text>
+    <text x="400" y="275" font-family="Arial" font-size="14" fill="#bdc3c7" text-anchor="middle">Integrated Multimodal Transport Solutions</text>
+  </g>
+</svg>

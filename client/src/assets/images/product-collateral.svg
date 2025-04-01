@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c3e50" />
+      <stop offset="100%" stop-color="#1a2a3a" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg-gradient)" />
+  
+  <!-- Warehouse/Storage Building -->
+  <g>
+    <!-- Main Building Structure -->
+    <rect x="150" y="200" width="500" height="250" fill="#34495e" />
+    <polygon points="150,200 400,100 650,200" fill="#2c3e50" />
+    <rect x="180" y="250" width="150" height="200" fill="#2980b9" opacity="0.8" />
+    <rect x="470" y="250" width="150" height="200" fill="#2980b9" opacity="0.8" />
+    
+    <!-- Building Details -->
+    <rect x="350" y="350" width="100" height="100" fill="#2c3e50" />
+    <rect x="370" y="370" width="60" height="80" fill="#3498db" opacity="0.5" />
+    
+    <!-- Windows -->
+    <rect x="210" y="280" width="40" height="40" fill="#3498db" opacity="0.7" />
+    <rect x="260" y="280" width="40" height="40" fill="#3498db" opacity="0.7" />
+    <rect x="210" y="350" width="40" height="40" fill="#3498db" opacity="0.7" />
+    <rect x="260" y="350" width="40" height="40" fill="#3498db" opacity="0.7" />
+    
+    <rect x="500" y="280" width="40" height="40" fill="#3498db" opacity="0.7" />
+    <rect x="550" y="280" width="40" height="40" fill="#3498db" opacity="0.7" />
+    <rect x="500" y="350" width="40" height="40" fill="#3498db" opacity="0.7" />
+    <rect x="550" y="350" width="40" height="40" fill="#3498db" opacity="0.7" />
+  </g>
+  
+  <!-- Coal Piles Inside Building (Visible Through Windows) -->
+  <g>
+    <ellipse cx="230" cy="390" rx="30" ry="15" fill="#333" />
+    <ellipse cx="520" cy="390" rx="30" ry="15" fill="#333" />
+  </g>
+  
+  <!-- Coal Pile Outside -->
+  <g>
+    <ellipse cx="400" cy="500" rx="250" ry="50" fill="#333" />
+    <ellipse cx="400" cy="480" rx="200" ry="40" fill="#444" />
+    <ellipse cx="400" cy="460" rx="150" ry="30" fill="#555" />
+  </g>
+  
+  <!-- Financial Elements -->
+  <g>
+    <!-- Document with Seal -->
+    <rect x="50" y="150" width="100" height="140" rx="5" fill="#ecf0f1" />
+    <rect x="60" y="160" width="80" height="10" fill="#bdc3c7" />
+    <rect x="60" y="180" width="80" height="5" fill="#bdc3c7" />
+    <rect x="60" y="190" width="80" height="5" fill="#bdc3c7" />
+    <rect x="60" y="200" width="80" height="5" fill="#bdc3c7" />
+    <rect x="60" y="210" width="60" height="5" fill="#bdc3c7" />
+    <rect x="60" y="250" width="40" height="20" fill="#bdc3c7" />
+    <circle cx="120" cy="260" r="15" fill="#e74c3c" />
+    <circle cx="120" cy="260" r="10" fill="#c0392b" />
+    <path d="M115,260 L125,260 M120,255 L120,265" stroke="white" stroke-width="1" />
+    
+    <!-- Money/Loan Visualization -->
+    <rect x="650" y="150" width="100" height="50" rx="5" fill="#27ae60" />
+    <circle cx="675" cy="175" r="15" fill="#ecf0f1" />
+    <text x="675" y="180" font-family="Arial" font-size="14" font-weight="bold" fill="#27ae60" text-anchor="middle">¥</text>
+    <text x="710" y="180" font-family="Arial" font-size="16" font-weight="bold" fill="white" text-anchor="middle">LOAN</text>
+    
+    <!-- Contract Symbol -->
+    <g transform="translate(675, 240)">
+      <!-- Document Base -->
+      <rect x="-25" y="-35" width="50" height="70" fill="#ecf0f1" />
+      
+      <!-- Document Lines -->
+      <line x1="-15" y1="-25" x2="15" y2="-25" stroke="#7f8c8d" stroke-width="2" />
+      <line x1="-15" y1="-15" x2="15" y2="-15" stroke="#7f8c8d" stroke-width="2" />
+      <line x1="-15" y1="-5" x2="15" y2="-5" stroke="#7f8c8d" stroke-width="2" />
+      <line x1="-15" y1="5" x2="5" y2="5" stroke="#7f8c8d" stroke-width="2" />
+      
+      <!-- Signature Line -->
+      <line x1="-15" y1="20" x2="15" y2="20" stroke="#2c3e50" stroke-width="2" />
+      
+      <!-- Pen -->
+      <line x1="5" y1="15" x2="25" y2="-5" stroke="#3498db" stroke-width="2" />
+      <polygon points="25,-5 30,-10 20,-10" fill="#3498db" />
+    </g>
+    
+    <!-- Connecting Lines (Collateral Relationship) -->
+    <path d="M150,220 Q300,150 400,220" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,5" fill="none" />
+    <path d="M650,175 Q500,130 400,220" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,5" fill="none" />
+    <circle cx="400" cy="220" r="10" fill="#e74c3c" />
+    <text x="400" y="220" font-family="Arial" font-size="10" fill="white" text-anchor="middle">$</text>
+  </g>
+  
+  <!-- Digital/High-Tech Elements -->
+  <g>
+    <!-- Digital Screen/Monitor -->
+    <rect x="350" y="50" width="100" height="70" rx="5" fill="#2c3e50" />
+    <rect x="355" y="55" width="90" height="55" rx="2" fill="#ecf0f1" />
+    
+    <!-- Screen Content - Coal Price Graph -->
+    <line x1="365" y1="100" x2="435" y2="100" stroke="#7f8c8d" stroke-width="1" />
+    <line x1="365" y1="65" x2="365" y2="100" stroke="#7f8c8d" stroke-width="1" />
+    
+    <polyline points="365,90 375,85 385,88 395,75 405,80 415,65 425,70 435,60" stroke="#e74c3c" stroke-width="1" fill="none" />
+    
+    <text x="365" y="110" font-family="Arial" font-size="5" fill="#7f8c8d">0</text>
+    <text x="435" y="110" font-family="Arial" font-size="5" fill="#7f8c8d">100t</text>
+    <text x="355" y="65" font-family="Arial" font-size="5" fill="#7f8c8d">¥850</text>
+    <text x="355" y="100" font-family="Arial" font-size="5" fill="#7f8c8d">¥650</text>
+    
+    <!-- Stand -->
+    <path d="M390,120 L410,120 L420,130 L380,130 Z" fill="#34495e" />
+    
+    <!-- QR Code-like Element -->
+    <rect x="460" y="55" width="50" height="50" fill="white" />
+    <rect x="465" y="60" width="40" height="40" fill="none" stroke="#2c3e50" />
+    <rect x="470" y="65" width="10" height="10" fill="#2c3e50" />
+    <rect x="490" y="65" width="10" height="10" fill="#2c3e50" />
+    <rect x="470" y="85" width="10" height="10" fill="#2c3e50" />
+    <rect x="485" y="80" width="5" height="5" fill="#2c3e50" />
+    <rect x="475" y="90" width="5" height="5" fill="#2c3e50" />
+    <rect x="485" y="90" width="10" height="5" fill="#2c3e50" />
+  </g>
+  
+  <!-- Banking/Financial Elements -->
+  <g>
+    <!-- Bank Building Icon -->
+    <rect x="100" y="70" width="70" height="50" fill="#ecf0f1" />
+    <rect x="95" y="60" width="80" height="10" fill="#bdc3c7" />
+    <rect x="90" y="50" width="90" height="10" fill="#95a5a6" />
+    <rect x="110" y="70" width="10" height="50" fill="#bdc3c7" />
+    <rect x="130" y="70" width="10" height="50" fill="#bdc3c7" />
+    <rect x="150" y="70" width="10" height="50" fill="#bdc3c7" />
+    
+    <!-- Yuan Symbol -->
+    <circle cx="135" cy="25" r="15" fill="#f1c40f" />
+    <text x="135" y="30" font-family="Arial" font-size="18" font-weight="bold" fill="#2c3e50" text-anchor="middle">¥</text>
+  </g>
+  
+  <!-- Title and Description -->
+  <g>
+    <text x="400" y="550" font-family="Arial" font-size="24" font-weight="bold" fill="white" text-anchor="middle">煤品货押服务 | Coal Product Collateral</text>
+    <text x="400" y="580" font-family="Arial" font-size="14" fill="#bdc3c7" text-anchor="middle">安全、便捷的煤炭抵押融资解决方案 | Secure Coal-Based Financing Solutions</text>
+  </g>
+  
+  <!-- Coal Quality Labels -->
+  <g>
+    <rect x="300" y="520" width="200" height="20" rx="10" fill="#3498db" opacity="0.7" />
+    <text x="400" y="535" font-family="Arial" font-size="12" fill="white" text-anchor="middle">优质煤炭 · 评估认证 · 价值保障</text>
+  </g>
+</svg>

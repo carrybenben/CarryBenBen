@@ -1,0 +1,157 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" rx="10" fill="#1e293b" />
+  
+  <!-- Map Background -->
+  <rect x="20" y="60" width="520" height="420" rx="8" fill="#0f172a" />
+  
+  <!-- Map Grid Lines -->
+  <g opacity="0.2">
+    <path d="M50,80 L510,80" stroke="white" stroke-width="1" />
+    <path d="M50,130 L510,130" stroke="white" stroke-width="1" />
+    <path d="M50,180 L510,180" stroke="white" stroke-width="1" />
+    <path d="M50,230 L510,230" stroke="white" stroke-width="1" />
+    <path d="M50,280 L510,280" stroke="white" stroke-width="1" />
+    <path d="M50,330 L510,330" stroke="white" stroke-width="1" />
+    <path d="M50,380 L510,380" stroke="white" stroke-width="1" />
+    <path d="M50,430 L510,430" stroke="white" stroke-width="1" />
+    
+    <path d="M50,80 L50,430" stroke="white" stroke-width="1" />
+    <path d="M120,80 L120,430" stroke="white" stroke-width="1" />
+    <path d="M190,80 L190,430" stroke="white" stroke-width="1" />
+    <path d="M260,80 L260,430" stroke="white" stroke-width="1" />
+    <path d="M330,80 L330,430" stroke="white" stroke-width="1" />
+    <path d="M400,80 L400,430" stroke="white" stroke-width="1" />
+    <path d="M470,80 L470,430" stroke="white" stroke-width="1" />
+  </g>
+  
+  <!-- Map Routes -->
+  <path d="M120,380 C150,350 190,320 250,320 C310,320 340,280 390,250 C440,220 470,200 470,160" 
+        stroke="#3B82F6" stroke-width="3" stroke-dasharray="5,5" fill="none" />
+  
+  <path d="M120,380 L120,300 L220,300 L220,260 L260,260 L260,180 L330,180 L330,100" 
+        stroke="#F59E0B" stroke-width="3" fill="none" />
+  
+  <path d="M470,160 L380,160 L380,230 L300,230 L300,350 L200,350 L200,400 L260,400" 
+        stroke="#22C55E" stroke-width="3" fill="none" />
+  
+  <!-- Map Location Points -->
+  <!-- Origin -->
+  <circle cx="120" cy="380" r="12" fill="#3B82F6" />
+  <text x="120" y="380" text-anchor="middle" fill="white" font-size="12" font-weight="bold" font-family="Arial">A</text>
+  <rect x="90" y="400" width="60" height="20" rx="4" fill="#0f172a" opacity="0.8" />
+  <text x="120" y="415" text-anchor="middle" fill="white" font-size="10" font-family="Arial">华北煤矿</text>
+  
+  <!-- Destination 1 -->
+  <circle cx="470" cy="160" r="12" fill="#3B82F6" />
+  <text x="470" y="160" text-anchor="middle" fill="white" font-size="12" font-weight="bold" font-family="Arial">B</text>
+  <rect x="440" y="130" width="60" height="20" rx="4" fill="#0f172a" opacity="0.8" />
+  <text x="470" y="145" text-anchor="middle" fill="white" font-size="10" font-family="Arial">石家庄站</text>
+  
+  <!-- Destination 2 -->
+  <circle cx="330" cy="100" r="12" fill="#F59E0B" />
+  <text x="330" y="100" text-anchor="middle" fill="white" font-size="12" font-weight="bold" font-family="Arial">C</text>
+  <rect x="300" y="70" width="60" height="20" rx="4" fill="#0f172a" opacity="0.8" />
+  <text x="330" y="85" text-anchor="middle" fill="white" font-size="10" font-family="Arial">北京西站</text>
+  
+  <!-- Destination 3 -->
+  <circle cx="260" cy="400" r="12" fill="#22C55E" />
+  <text x="260" y="400" text-anchor="middle" fill="white" font-size="12" font-weight="bold" font-family="Arial">D</text>
+  <rect x="230" y="430" width="60" height="20" rx="4" fill="#0f172a" opacity="0.8" />
+  <text x="260" y="445" text-anchor="middle" fill="white" font-size="10" font-family="Arial">唐山港</text>
+  
+  <!-- Moving Vehicles -->
+  <!-- Vehicle 1 -->
+  <g transform="translate(250, 320)">
+    <rect x="-8" y="-8" width="16" height="16" rx="2" fill="#3B82F6" />
+    <text x="0" y="4" text-anchor="middle" fill="white" font-size="10" font-weight="bold" font-family="Arial">1</text>
+  </g>
+  <rect x="260" y="290" width="70" height="20" rx="4" fill="#0f172a" opacity="0.8" />
+  <text x="295" y="305" text-anchor="middle" fill="white" font-size="10" font-family="Arial">运输中</text>
+  
+  <!-- Vehicle 2 -->
+  <g transform="translate(260, 230)">
+    <rect x="-8" y="-8" width="16" height="16" rx="2" fill="#F59E0B" />
+    <text x="0" y="4" text-anchor="middle" fill="white" font-size="10" font-weight="bold" font-family="Arial">2</text>
+  </g>
+  <rect x="270" y="200" width="70" height="20" rx="4" fill="#0f172a" opacity="0.8" />
+  <text x="305" y="215" text-anchor="middle" fill="white" font-size="10" font-family="Arial">运输中</text>
+  
+  <!-- Vehicle 3 -->
+  <g transform="translate(300, 350)">
+    <rect x="-8" y="-8" width="16" height="16" rx="2" fill="#22C55E" />
+    <text x="0" y="4" text-anchor="middle" fill="white" font-size="10" font-weight="bold" font-family="Arial">3</text>
+  </g>
+  <rect x="310" y="320" width="70" height="20" rx="4" fill="#0f172a" opacity="0.8" />
+  <text x="345" y="335" text-anchor="middle" fill="white" font-size="10" font-family="Arial">运输中</text>
+  
+  <!-- Legend -->
+  <rect x="40" y="90" width="120" height="90" rx="4" fill="#0f172a" opacity="0.8" />
+  <text x="100" y="110" text-anchor="middle" fill="white" font-size="12" font-weight="bold" font-family="Arial">图例</text>
+  
+  <circle cx="60" cy="130" r="5" fill="#3B82F6" />
+  <text x="100" y="134" text-anchor="start" fill="white" font-size="10" font-family="Arial">列车运输</text>
+  
+  <circle cx="60" cy="150" r="5" fill="#F59E0B" />
+  <text x="100" y="154" text-anchor="start" fill="white" font-size="10" font-family="Arial">卡车运输</text>
+  
+  <circle cx="60" cy="170" r="5" fill="#22C55E" />
+  <text x="100" y="174" text-anchor="start" fill="white" font-size="10" font-family="Arial">船舶运输</text>
+  
+  <!-- Map Controls -->
+  <rect x="470" y="90" width="50" height="30" rx="4" fill="#334155" />
+  <text x="495" y="110" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">+</text>
+  
+  <rect x="470" y="130" width="50" height="30" rx="4" fill="#334155" />
+  <text x="495" y="150" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="Arial">−</text>
+  
+  <!-- Header -->
+  <rect width="800" height="40" rx="10" fill="#0f172a" />
+  <circle cx="25" cy="20" r="10" fill="#3B82F6" />
+  <rect x="45" y="15" width="100" height="10" rx="2" fill="#334155" />
+  <rect x="650" y="15" width="30" height="10" rx="2" fill="#334155" />
+  <rect x="690" y="15" width="50" height="10" rx="2" fill="#334155" />
+  <rect x="750" y="15" width="30" height="10" rx="2" fill="#334155" />
+  
+  <!-- Right Information Panel -->
+  <rect x="560" y="60" width="220" height="420" rx="8" fill="#0f172a" />
+  
+  <!-- Transport List Header -->
+  <rect x="560" y="60" width="220" height="40" rx="8" fill="#1e293b" />
+  <text x="580" y="85" fill="white" font-size="14" font-weight="bold" font-family="Arial">运输车辆状态</text>
+  
+  <!-- Transport List Items -->
+  <rect x="570" y="110" width="200" height="80" rx="4" fill="#1e293b" />
+  <rect x="580" y="120" width="20" height="20" fill="#3B82F6" rx="2" />
+  <text x="590" y="135" text-anchor="middle" fill="white" font-size="12" font-weight="bold" font-family="Arial">1</text>
+  <text x="610" y="125" fill="white" font-size="12" font-family="Arial">货运列车 HX-5678</text>
+  <text x="610" y="145" fill="#94A3B8" font-size="10" font-family="Arial">装载: 5,200吨 动力煤</text>
+  <text x="610" y="165" fill="#94A3B8" font-size="10" font-family="Arial">状态: 运行中 (75%)</text>
+  <rect x="580" y="175" width="180" height="5" rx="2" fill="#334155" />
+  <rect x="580" y="175" width="135" height="5" rx="2" fill="#3B82F6" />
+  
+  <rect x="570" y="200" width="200" height="80" rx="4" fill="#1e293b" />
+  <rect x="580" y="210" width="20" height="20" fill="#F59E0B" rx="2" />
+  <text x="590" y="225" text-anchor="middle" fill="white" font-size="12" font-weight="bold" font-family="Arial">2</text>
+  <text x="610" y="215" fill="white" font-size="12" font-family="Arial">卡车车队 TK-2023</text>
+  <text x="610" y="235" fill="#94A3B8" font-size="10" font-family="Arial">装载: 850吨 焦煤</text>
+  <text x="610" y="255" fill="#94A3B8" font-size="10" font-family="Arial">状态: 运行中 (42%)</text>
+  <rect x="580" y="265" width="180" height="5" rx="2" fill="#334155" />
+  <rect x="580" y="265" width="75" height="5" rx="2" fill="#F59E0B" />
+  
+  <rect x="570" y="290" width="200" height="80" rx="4" fill="#1e293b" />
+  <rect x="580" y="300" width="20" height="20" fill="#22C55E" rx="2" />
+  <text x="590" y="315" text-anchor="middle" fill="white" font-size="12" font-weight="bold" font-family="Arial">3</text>
+  <text x="610" y="305" fill="white" font-size="12" font-family="Arial">货船 TS-8899</text>
+  <text x="610" y="325" fill="#94A3B8" font-size="10" font-family="Arial">装载: 12,000吨 动力煤</text>
+  <text x="610" y="345" fill="#94A3B8" font-size="10" font-family="Arial">状态: 运行中 (58%)</text>
+  <rect x="580" y="355" width="180" height="5" rx="2" fill="#334155" />
+  <rect x="580" y="355" width="105" height="5" rx="2" fill="#22C55E" />
+  
+  <!-- Summary Card -->
+  <rect x="570" y="380" width="200" height="90" rx="4" fill="#1e293b" />
+  <text x="590" y="400" fill="white" font-size="12" font-weight="bold" font-family="Arial">运输总览</text>
+  <text x="590" y="425" fill="#94A3B8" font-size="10" font-family="Arial">在途运输: 12</text>
+  <text x="590" y="445" fill="#94A3B8" font-size="10" font-family="Arial">总载重量: 58,250吨</text>
+  <text x="590" y="465" fill="#94A3B8" font-size="10" font-family="Arial">预计到达: 3小时22分</text>
+</svg>

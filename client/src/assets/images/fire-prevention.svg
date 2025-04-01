@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="600px" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Fire Prevention</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#FFFFFF" x="0" y="0" width="800" height="600"></rect>
+        <g transform="translate(175, 100)">
+            <!-- Coal pile -->
+            <path d="M225,300 C350,250 400,320 450,300 C500,280 450,330 400,350 C350,370 300,360 250,350 C200,340 100,350 225,300 Z" fill="#333333" />
+            
+            <!-- Thermal imaging camera -->
+            <g transform="translate(50, 150)">
+                <rect x="0" y="0" width="80" height="50" rx="5" fill="#444444" />
+                <circle cx="40" cy="25" r="15" fill="#FF5555" />
+                <rect x="35" y="50" width="10" height="30" fill="#444444" />
+                <rect x="25" y="80" width="30" height="10" fill="#444444" />
+            </g>
+            
+            <!-- Fire warning sign -->
+            <g transform="translate(350, 50)">
+                <path d="M50,0 L100,86.6 L0,86.6 Z" fill="#FFDD00" stroke="#FF5500" stroke-width="3" />
+                <path d="M50,20 C45,20 45,25 50,30 C55,35 55,45 50,50 C45,55 45,65 50,70 L50,75 L50,75" stroke="#FF5500" stroke-width="6" stroke-linecap="round" />
+                <circle cx="50" cy="65" r="4" fill="#FF5500" />
+            </g>
+            
+            <!-- Temperature readings -->
+            <g transform="translate(150, 50)">
+                <rect x="0" y="0" width="120" height="60" rx="5" fill="#EEEEEE" stroke="#AAAAAA" />
+                <text x="10" y="20" font-family="Arial" font-size="12" fill="#333333">Temperature</text>
+                <text x="10" y="45" font-family="Arial" font-size="16" fill="#FF5500" font-weight="bold">37.5°C</text>
+                <line x1="0" y1="25" x2="120" y2="25" stroke="#DDDDDD" stroke-width="1" />
+            </g>
+            
+            <!-- Heat detection waves/rays -->
+            <g stroke="#FF9900" stroke-width="2" stroke-dasharray="5,5">
+                <path d="M90,150 L200,270" />
+                <path d="M90,165 L220,280" />
+                <path d="M90,180 L240,290" />
+                <path d="M90,135 L180,260" />
+            </g>
+            
+            <!-- Cooling/sprinkler system -->
+            <g transform="translate(300, 120)">
+                <path d="M0,0 L100,0" stroke="#666666" stroke-width="4" />
+                <path d="M20,0 L20,30" stroke="#666666" stroke-width="3" />
+                <path d="M50,0 L50,30" stroke="#666666" stroke-width="3" />
+                <path d="M80,0 L80,30" stroke="#666666" stroke-width="3" />
+                <circle cx="20" cy="35" r="5" fill="#6699FF" />
+                <circle cx="50" cy="35" r="5" fill="#6699FF" />
+                <circle cx="80" cy="35" r="5" fill="#6699FF" />
+                <!-- Water drops -->
+                <g fill="#6699FF">
+                    <path d="M20,45 C18,45 17,50 20,55 C23,50 22,45 20,45 Z" />
+                    <path d="M50,45 C48,45 47,50 50,55 C53,50 52,45 50,45 Z" />
+                    <path d="M80,45 C78,45 77,50 80,55 C83,50 82,45 80,45 Z" />
+                    <path d="M20,60 C18,60 17,65 20,70 C23,65 22,60 20,60 Z" />
+                    <path d="M50,60 C48,60 47,65 50,70 C53,65 52,60 50,60 Z" />
+                    <path d="M80,60 C78,60 77,65 80,70 C83,65 82,60 80,60 Z" />
+                </g>
+            </g>
+            
+            <!-- Data visualization screen -->
+            <g transform="translate(20, 20)">
+                <rect x="0" y="0" width="80" height="60" rx="3" fill="#EEEEEE" stroke="#333333" />
+                <rect x="5" y="5" width="70" height="40" fill="#333333" />
+                <polyline points="10,35 20,25 30,30 40,15 50,20 60,10 70,15" stroke="#FF5500" stroke-width="2" fill="none" />
+                <rect x="35" y="50" width="10" height="5" rx="2" fill="#333333" />
+            </g>
+        </g>
+    </g>
+</svg>

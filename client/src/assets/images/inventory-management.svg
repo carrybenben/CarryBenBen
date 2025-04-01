@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="600px" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Inventory Management</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#FFFFFF" x="0" y="0" width="800" height="600"></rect>
+        <g transform="translate(150, 100)">
+            <!-- 3D Coal Pile Visualization -->
+            <g transform="translate(170, 250)">
+                <!-- Base pile -->
+                <path d="M0,80 C100,30 200,50 300,80 L300,120 C220,90 100,90 0,120 Z" fill="#444444" />
+                <!-- Highlight -->
+                <path d="M0,80 C100,30 200,50 300,80 C220,60 100,60 0,80 Z" fill="#666666" />
+                
+                <!-- Grid lines for measurement -->
+                <g stroke="#AAAAAA" stroke-width="1" stroke-dasharray="3,3">
+                    <line x1="0" y1="80" x2="300" y2="80" />
+                    <line x1="60" y1="65" x2="60" y2="110" />
+                    <line x1="120" y1="50" x2="120" y2="100" />
+                    <line x1="180" y1="50" x2="180" y2="100" />
+                    <line x1="240" y1="60" x2="240" y2="110" />
+                </g>
+                
+                <!-- Elevation marks -->
+                <g fill="#DDDDDD" font-family="Arial" font-size="8">
+                    <text x="55" y="115">20m</text>
+                    <text x="115" y="105">30m</text>
+                    <text x="175" y="105">30m</text>
+                    <text x="235" y="115">20m</text>
+                </g>
+                
+                <!-- Volume calculation animation -->
+                <g transform="translate(150, 20)">
+                    <rect x="-30" y="-15" width="60" height="30" rx="5" fill="#EEEEEE" stroke="#AAAAAA" />
+                    <text x="-25" y="0" font-family="Arial" font-size="10" fill="#333333">28,500 m³</text>
+                    
+                    <!-- Arrow pointing to pile -->
+                    <path d="M0,15 L0,40" stroke="#888888" stroke-width="1" stroke-dasharray="2,2" />
+                    <path d="M0,40 L-3,35 L0,38 L3,35 Z" fill="#888888" />
+                </g>
+            </g>
+            
+            <!-- Inventory Dashboard -->
+            <g transform="translate(50, 80)">
+                <rect x="0" y="0" width="160" height="140" rx="6" fill="#F5F5F5" stroke="#CCCCCC" />
+                
+                <!-- Dashboard header -->
+                <rect x="0" y="0" width="160" height="30" rx="6 6 0 0" fill="#4A72B0" />
+                <text x="10" y="20" font-family="Arial" font-size="12" fill="#FFFFFF" font-weight="bold">Coal Inventory Dashboard</text>
+                
+                <!-- Inventory stats -->
+                <g transform="translate(10, 40)">
+                    <!-- Current volume -->
+                    <text x="0" y="0" font-family="Arial" font-size="10" fill="#555555">Current Volume:</text>
+                    <text x="140" y="0" text-anchor="end" font-family="Arial" font-size="10" fill="#333333" font-weight="bold">28,500 m³</text>
+                    
+                    <!-- Daily change -->
+                    <text x="0" y="20" font-family="Arial" font-size="10" fill="#555555">Daily Change:</text>
+                    <text x="140" y="20" text-anchor="end" font-family="Arial" font-size="10" fill="#2A9D8F" font-weight="bold">+450 m³</text>
+                    
+                    <!-- Weekly average -->
+                    <text x="0" y="40" font-family="Arial" font-size="10" fill="#555555">Weekly Avg:</text>
+                    <text x="140" y="40" text-anchor="end" font-family="Arial" font-size="10" fill="#333333" font-weight="bold">27,200 m³</text>
+                    
+                    <!-- Capacity -->
+                    <text x="0" y="60" font-family="Arial" font-size="10" fill="#555555">Capacity:</text>
+                    <text x="140" y="60" text-anchor="end" font-family="Arial" font-size="10" fill="#333333" font-weight="bold">40,000 m³</text>
+                    
+                    <!-- Utilization -->
+                    <text x="0" y="80" font-family="Arial" font-size="10" fill="#555555">Utilization:</text>
+                    <text x="140" y="80" text-anchor="end" font-family="Arial" font-size="10" fill="#E76F51" font-weight="bold">71.25%</text>
+                </g>
+                
+                <!-- Mini chart -->
+                <g transform="translate(10, 130)">
+                    <line x1="0" y1="0" x2="140" y2="0" stroke="#DDDDDD" />
+                    <polyline points="0,-20 20,-15 40,-25 60,-22 80,-30 100,-25 120,-15 140,-20" stroke="#4A72B0" stroke-width="2" fill="none" />
+                    <circle cx="80" cy="-30" r="3" fill="#E76F51" />
+                </g>
+            </g>
+            
+            <!-- Data connections -->
+            <g transform="translate(220, 150)" stroke="#AAAAAA" stroke-width="1" stroke-dasharray="5,5">
+                <line x1="0" y1="0" x2="100" y2="100" />
+                <line x1="40" y1="-20" x2="120" y2="80" />
+                <line x1="80" y1="-10" x2="140" y2="90" />
+            </g>
+            
+            <!-- Scanner/Drone -->
+            <g transform="translate(300, 50)">
+                <!-- Drone body -->
+                <rect x="-30" y="-10" width="60" height="20" rx="5" fill="#666666" />
+                <circle cx="0" cy="0" r="15" fill="#888888" stroke="#666666" stroke-width="2" />
+                
+                <!-- Camera lens -->
+                <circle cx="0" cy="0" r="8" fill="#444444" />
+                <circle cx="0" cy="0" r="6" fill="#222222" />
+                <circle cx="-2" cy="-2" r="1" fill="#FFFFFF" />
+                
+                <!-- Propellers -->
+                <g>
+                    <line x1="-40" y1="-15" x2="-20" y2="-15" stroke="#444444" stroke-width="2" />
+                    <line x1="-30" y1="-25" x2="-30" y2="-5" stroke="#444444" stroke-width="2" />
+                </g>
+                <g>
+                    <line x1="20" y1="-15" x2="40" y2="-15" stroke="#444444" stroke-width="2" />
+                    <line x1="30" y1="-25" x2="30" y2="-5" stroke="#444444" stroke-width="2" />
+                </g>
+                <g>
+                    <line x1="-40" y1="15" x2="-20" y2="15" stroke="#444444" stroke-width="2" />
+                    <line x1="-30" y1="5" x2="-30" y2="25" stroke="#444444" stroke-width="2" />
+                </g>
+                <g>
+                    <line x1="20" y1="15" x2="40" y2="15" stroke="#444444" stroke-width="2" />
+                    <line x1="30" y1="5" x2="30" y2="25" stroke="#444444" stroke-width="2" />
+                </g>
+                
+                <!-- Scanning rays -->
+                <g stroke="#4A72B0" stroke-width="1" stroke-dasharray="2,2">
+                    <path d="M0,10 L80,200" />
+                    <path d="M10,10 L120,180" />
+                    <path d="M-10,10 L40,200" />
+                </g>
+            </g>
+            
+            <!-- Mobile device -->
+            <g transform="translate(430, 150)">
+                <rect x="0" y="0" width="70" height="120" rx="8" fill="#EEEEEE" stroke="#CCCCCC" />
+                <rect x="5" y="10" width="60" height="90" fill="#FFFFFF" />
+                
+                <!-- Screen content -->
+                <g transform="translate(10, 20)">
+                    <rect x="0" y="0" width="50" height="10" rx="2" fill="#4A72B0" />
+                    <rect x="0" y="15" width="50" height="5" rx="1" fill="#DDDDDD" />
+                    <rect x="0" y="25" width="40" height="5" rx="1" fill="#DDDDDD" />
+                    <rect x="0" y="35" width="35" height="5" rx="1" fill="#DDDDDD" />
+                    <rect x="0" y="45" width="45" height="5" rx="1" fill="#DDDDDD" />
+                    
+                    <!-- Mini chart -->
+                    <polyline points="0,70 10,65 20,68 30,60 40,65 50,58" stroke="#4A72B0" stroke-width="1" fill="none" />
+                    <line x1="0" y1="75" x2="50" y2="75" stroke="#DDDDDD" />
+                </g>
+                
+                <!-- Home button -->
+                <circle cx="35" cy="110" r="5" stroke="#CCCCCC" fill="#F5F5F5" />
+            </g>
+        </g>
+    </g>
+</svg>

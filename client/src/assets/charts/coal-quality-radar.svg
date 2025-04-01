@@ -1,0 +1,87 @@
+<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="400" rx="8" fill="white" />
+  
+  <!-- Chart Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#111827" font-size="18" font-weight="bold" font-family="Arial">煤炭质量参数分析</text>
+  
+  <!-- Radar Chart Background -->
+  <g transform="translate(400, 220)">
+    <!-- Background Circles -->
+    <circle cx="0" cy="0" r="150" fill="none" stroke="#E5E7EB" stroke-width="1" />
+    <circle cx="0" cy="0" r="120" fill="none" stroke="#E5E7EB" stroke-width="1" />
+    <circle cx="0" cy="0" r="90" fill="none" stroke="#E5E7EB" stroke-width="1" />
+    <circle cx="0" cy="0" r="60" fill="none" stroke="#E5E7EB" stroke-width="1" />
+    <circle cx="0" cy="0" r="30" fill="none" stroke="#E5E7EB" stroke-width="1" />
+    
+    <!-- Spokes -->
+    <line x1="0" y1="0" x2="0" y2="-150" stroke="#E5E7EB" stroke-width="1" />
+    <line x1="0" y1="0" x2="130" y2="-75" stroke="#E5E7EB" stroke-width="1" />
+    <line x1="0" y1="0" x2="130" y2="75" stroke="#E5E7EB" stroke-width="1" />
+    <line x1="0" y1="0" x2="0" y2="150" stroke="#E5E7EB" stroke-width="1" />
+    <line x1="0" y1="0" x2="-130" y2="75" stroke="#E5E7EB" stroke-width="1" />
+    <line x1="0" y1="0" x2="-130" y2="-75" stroke="#E5E7EB" stroke-width="1" />
+    
+    <!-- Axis Labels -->
+    <text x="0" y="-160" text-anchor="middle" fill="#6B7280" font-size="12" font-family="Arial">发热量</text>
+    <text x="140" y="-75" text-anchor="start" fill="#6B7280" font-size="12" font-family="Arial">灰分</text>
+    <text x="140" y="75" text-anchor="start" fill="#6B7280" font-size="12" font-family="Arial">硫份</text>
+    <text x="0" y="165" text-anchor="middle" fill="#6B7280" font-size="12" font-family="Arial">水分</text>
+    <text x="-140" y="75" text-anchor="end" fill="#6B7280" font-size="12" font-family="Arial">挥发分</text>
+    <text x="-140" y="-75" text-anchor="end" fill="#6B7280" font-size="12" font-family="Arial">粘结指数</text>
+    
+    <!-- Value Scale Labels -->
+    <text x="30" y="0" text-anchor="start" fill="#9CA3AF" font-size="10" font-family="Arial">20%</text>
+    <text x="60" y="0" text-anchor="start" fill="#9CA3AF" font-size="10" font-family="Arial">40%</text>
+    <text x="90" y="0" text-anchor="start" fill="#9CA3AF" font-size="10" font-family="Arial">60%</text>
+    <text x="120" y="0" text-anchor="start" fill="#9CA3AF" font-size="10" font-family="Arial">80%</text>
+    <text x="150" y="0" text-anchor="start" fill="#9CA3AF" font-size="10" font-family="Arial">100%</text>
+    
+    <!-- Current Coal Data -->
+    <path d="M0,-120 L110,-63 L96,55 L0,100 L-90,52 L-94,-54 Z" fill="url(#radar_gradient)" fill-opacity="0.5" stroke="#3B82F6" stroke-width="2" />
+    
+    <!-- Standard Coal Data -->
+    <path d="M0,-90 L78,-45 L78,45 L0,90 L-78,45 L-78,-45 Z" fill="none" stroke="#9CA3AF" stroke-width="1" stroke-dasharray="5,5" />
+    
+    <!-- Data Points (Current Coal) -->
+    <circle cx="0" cy="-120" r="4" fill="#3B82F6" />
+    <circle cx="110" cy="-63" r="4" fill="#3B82F6" />
+    <circle cx="96" cy="55" r="4" fill="#3B82F6" />
+    <circle cx="0" cy="100" r="4" fill="#3B82F6" />
+    <circle cx="-90" cy="52" r="4" fill="#3B82F6" />
+    <circle cx="-94" cy="-54" r="4" fill="#3B82F6" />
+  </g>
+  
+  <!-- Legend -->
+  <rect x="590" y="60" width="160" height="60" rx="4" fill="white" stroke="#E5E7EB" />
+  
+  <path d="M610,80 L630,80" stroke="#3B82F6" stroke-width="2" />
+  <circle cx="620" cy="80" r="3" fill="#3B82F6" />
+  <text x="640" y="84" fill="#111827" font-size="12" font-family="Arial">测试样本</text>
+  
+  <path d="M610,100 L630,100" stroke="#9CA3AF" stroke-width="1" stroke-dasharray="3,3" />
+  <text x="640" y="104" fill="#111827" font-size="12" font-family="Arial">行业标准</text>
+  
+  <!-- Quality Parameter Values -->
+  <g transform="translate(160, 80)">
+    <text x="0" y="0" fill="#111827" font-size="14" font-weight="bold" font-family="Arial">参数详情:</text>
+    <text x="0" y="25" fill="#374151" font-size="12" font-family="Arial">发热量: 6350 kcal/kg (标准: 5500)</text>
+    <text x="0" y="45" fill="#374151" font-size="12" font-family="Arial">灰分: 12.4% (标准: &lt;15%)</text>
+    <text x="0" y="65" fill="#374151" font-size="12" font-family="Arial">硫份: 0.8% (标准: &lt;1.0%)</text>
+    <text x="0" y="85" fill="#374151" font-size="12" font-family="Arial">水分: 7.8% (标准: &lt;8.0%)</text>
+    <text x="0" y="105" fill="#374151" font-size="12" font-family="Arial">挥发分: 29.5% (标准: 28-32%)</text>
+    <text x="0" y="125" fill="#374151" font-size="12" font-family="Arial">粘结指数: 75 (标准: &gt;65)</text>
+  </g>
+  
+  <!-- Quality Assessment -->
+  <rect x="160" y="230" width="180" height="30" rx="15" fill="#DCFCE7" />
+  <text x="250" y="250" text-anchor="middle" fill="#166534" font-size="14" font-family="Arial">● 优质煤 (A级)</text>
+  
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="radar_gradient" x1="0" y1="0" x2="1" y2="1" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3B82F6" />
+      <stop offset="1" stop-color="#60A5FA" />
+    </linearGradient>
+  </defs>
+</svg>
