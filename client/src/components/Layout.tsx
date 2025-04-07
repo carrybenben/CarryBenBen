@@ -183,13 +183,7 @@ export function Footer() {
                   </div>
                 </Link>
               </li>
-              <li>
-                <Link href="/">
-                  <div className="text-gray-600 hover:text-primary transition-colors cursor-pointer">
-                    {language === 'cn' ? '全部服务' : 'All Services'}
-                  </div>
-                </Link>
-              </li>
+
             </ul>
           </div>
           

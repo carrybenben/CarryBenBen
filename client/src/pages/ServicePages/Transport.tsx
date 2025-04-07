@@ -341,9 +341,11 @@ export default function Transport() {
                 : "访问我们的运输平台，今天就开始与合格的司机建立联系。"}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-                {isEnglish ? "Access Transport Platform" : "访问运输平台"}
-              </Button>
+              <Link href="/transport-platform">
+                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+                  {isEnglish ? "Access Transport Platform" : "访问运输平台"}
+                </Button>
+              </Link>
               <Link href="/consultation">
                 <Button size="lg" variant="outline" className="border-blue-600 text-blue-600">
                   {isEnglish ? "Request Consultation" : "请求咨询"}
@@ -411,6 +413,37 @@ export default function Transport() {
                     ? "Basic insurance is included in all transports. Additional coverage options are available based on the value and risk profile of your shipment."
                     : "所有运输都包含基本保险。根据您的货物的价值和风险状况，可提供额外的保险选项。"}
                 </p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl p-8 text-white">
+            <div className="text-center mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">
+                {isEnglish ? "Ready to Transport Your Coal?" : "准备好运输您的煤炭了吗？"}
+              </h2>
+              <p className="text-blue-100 mb-6">
+                {isEnglish 
+                  ? "Access our transport management system to create orders, track shipments, and manage your coal logistics."
+                  : "访问我们的运输管理系统，创建订单，跟踪货物，并管理您的煤炭物流。"}
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <Link href="/transport/orders">
+                  <Button className="bg-white text-blue-700 hover:bg-blue-50">
+                    {isEnglish ? "Manage Transport Orders" : "管理运输订单"}
+                  </Button>
+                </Link>
+                <Link href="/transport/tracking">
+                  <Button className="bg-blue-500 text-white hover:bg-blue-600 border border-blue-200">
+                    {isEnglish ? "Track Shipments" : "跟踪货物"}
+                  </Button>
+                </Link>
+                <Link href="/transport/drivers">
+                  <Button className="bg-transparent text-white hover:bg-blue-700 border border-blue-200">
+                    {isEnglish ? "View Drivers & Vehicles" : "查看司机和车辆"}
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

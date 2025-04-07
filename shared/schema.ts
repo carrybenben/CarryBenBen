@@ -296,8 +296,9 @@ export const coalOrders = pgTable("coal_orders", {
   totalAmount: decimal("total_amount").notNull(),
   paymentStatus: text("payment_status").default("pending").notNull(), // pending, paid, refunded
   deliveryStatus: text("delivery_status").default("pending").notNull(), // pending, processing, shipped, delivered
-  transactionType: text("transaction_type").notNull(), // auction, direct
+  transactionType: text("transaction_type").notNull(), // auction, direct, financing
   bidId: integer("bid_id").references(() => coalBids.id), // 如果是通过竞拍购买
+  applicationId: integer("application_id").references(() => collateralFinancingApplications.id), // 如果是融资服务费
   deliveryAddress: text("delivery_address"),
   deliveryContact: text("delivery_contact"),
   deliveryPhone: text("delivery_phone"),
@@ -359,6 +360,7 @@ export const insertCoalOrderSchema = createInsertSchema(coalOrders).pick({
   deliveryStatus: true,
   transactionType: true,
   bidId: true,
+  applicationId: true,
   deliveryAddress: true,
   deliveryContact: true,
   deliveryPhone: true,
@@ -406,3 +408,233 @@ export type CoalOrder = typeof coalOrders.$inferSelect;
 
 export type InsertCoalFavorite = z.infer<typeof insertCoalFavoriteSchema>;
 export type CoalFavorite = typeof coalFavorites.$inferSelect;
+
+// 煤品货押融资申请
+export const collateralFinancingApplications = pgTable("collateral_financing_applications", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  company: text("company").notNull(),
+  position: text("position"),
+  email: text("email").notNull(),
+  phone: text("phone").notNull(),
+  
+  // 煤炭基本信息
+  coalType: text("coal_type").notNull(), // 煤种类型
+  quantity: decimal("quantity").notNull(), // 煤炭数量(吨)
+  calorificValue: decimal("calorific_value"), // 热值
+  sulfurContent: decimal("sulfur_content"), // 硫含量
+  
+  // 融资需求
+  estimatedValue: decimal("estimated_value").notNull(), // 估计煤炭总价值
+  financingAmount: decimal("financing_amount").notNull(), // 申请融资金额
+  financingPeriod: integer("financing_period").notNull(), // 融资期限(天)
+  
+  // 仓储信息
+  storageLocation: text("storage_location"), // 现有仓储地点
+  needStorage: boolean("need_storage").default(false), // 是否需要提供仓储
+  
+  // 其他信息
+  hasPreviousCollateral: boolean("has_previous_collateral").default(false), // 是否有过货押融资经验
+  additionalInfo: text("additional_info"), // 补充信息
+  
+  status: text("status").default("pending").notNull(), // pending, approved, rejected, completed
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+export const insertCollateralFinancingApplicationSchema = createInsertSchema(collateralFinancingApplications, {
+  quantity: z.string().transform((val) => parseFloat(val)),
+  calorificValue: z.string().optional().transform((val) => val ? parseFloat(val) : undefined),
+  sulfurContent: z.string().optional().transform((val) => val ? parseFloat(val) : undefined),
+  estimatedValue: z.string().transform((val) => parseFloat(val)),
+  financingAmount: z.string().transform((val) => parseFloat(val)),
+  financingPeriod: z.string().transform((val) => parseInt(val, 10)),
+});
+
+export type InsertCollateralFinancingApplication = z.infer<typeof insertCollateralFinancingApplicationSchema>;
+export type CollateralFinancingApplication = typeof collateralFinancingApplications.$inferSelect;
+
+// 煤炭运输订单表
+export const transportOrders = pgTable("transport_orders", {
+  id: serial("id").primaryKey(),
+  orderNumber: text("order_number").notNull().unique(),
+  userId: integer("user_id").references(() => users.id),
+  
+  // 客户信息
+  customerName: text("customer_name").notNull(),
+  customerCompany: text("customer_company"),
+  customerPhone: text("customer_phone").notNull(),
+  customerEmail: text("customer_email").notNull(),
+  
+  // 运输详情
+  originAddress: text("origin_address").notNull(), // 起始地址
+  destinationAddress: text("destination_address").notNull(), // 目的地址
+  coalType: text("coal_type").notNull(), // 煤炭类型
+  quantity: decimal("quantity").notNull(), // 运输量（吨）
+  
+  // 时间安排
+  expectedPickupDate: date("expected_pickup_date").notNull(), // 预期提货日期
+  expectedDeliveryDate: date("expected_delivery_date").notNull(), // 预期交付日期
+  actualPickupDate: date("actual_pickup_date"), // 实际提货日期
+  actualDeliveryDate: date("actual_delivery_date"), // 实际交付日期
+  
+  // 订单管理
+  status: text("status").default("pending").notNull(), // pending(待处理), assigned(已分配), in_transit(运输中), delivered(已交付), completed(已完成), cancelled(已取消)
+  priority: text("priority").default("normal").notNull(), // low, normal, high, urgent
+  notes: text("notes"), // 备注信息
+  requirements: jsonb("requirements"), // 特殊要求，如装卸要求、安全要求等
+  
+  // 费用信息
+  estimatedPrice: decimal("estimated_price").notNull(), // 预估价格
+  finalPrice: decimal("final_price"), // 最终价格
+  paymentStatus: text("payment_status").default("unpaid").notNull(), // unpaid(未支付), partial(部分支付), paid(已支付)
+  
+  // 关联的运输车辆和司机
+  driverId: integer("driver_id").references(() => transportDrivers.id),
+  vehicleId: integer("vehicle_id").references(() => transportVehicles.id),
+  
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+// 运输司机表
+export const transportDrivers = pgTable("transport_drivers", {
+  id: serial("id").primaryKey(),
+  driverCode: text("driver_code").notNull().unique(), // 司机编码
+  name: text("name").notNull(), // 司机姓名
+  phone: text("phone").notNull(), // 联系电话
+  email: text("email"), // 电子邮件
+  licenseNumber: text("license_number").notNull(), // 驾驶证号
+  licenseType: text("license_type").notNull(), // 驾驶证类型
+  experience: integer("experience").notNull(), // 驾龄（年）
+  
+  // 司机状态和评级
+  status: text("status").default("available").notNull(), // available(可用), busy(忙碌), on_leave(休假), inactive(不活跃)
+  rating: decimal("rating"), // 评分（1-5）
+  
+  // 司机偏好
+  preferredRoutes: jsonb("preferred_routes"), // 偏好的路线
+  transportTypes: jsonb("transport_types"), // 可运输类型
+  
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+// 运输车辆表
+export const transportVehicles = pgTable("transport_vehicles", {
+  id: serial("id").primaryKey(),
+  vehicleCode: text("vehicle_code").notNull().unique(), // 车辆编码
+  plateNumber: text("plate_number").notNull(), // 车牌号
+  vehicleType: text("vehicle_type").notNull(), // 车辆类型
+  capacity: decimal("capacity").notNull(), // 载重量（吨）
+  
+  // 车辆信息
+  make: text("make").notNull(), // 制造商
+  model: text("model").notNull(), // 型号
+  year: integer("year").notNull(), // 年份
+  
+  // 车辆状态
+  status: text("status").default("available").notNull(), // available(可用), in_use(使用中), maintenance(维护中), retired(已报废)
+  location: text("current_location"), // 当前位置
+  
+  // 维护信息
+  lastMaintenanceDate: date("last_maintenance_date"), // 上次维护日期
+  nextMaintenanceDate: date("next_maintenance_date"), // 下次维护日期
+  
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+// 运输跟踪记录表
+export const transportTracking = pgTable("transport_tracking", {
+  id: serial("id").primaryKey(),
+  orderId: integer("order_id").notNull().references(() => transportOrders.id),
+  
+  // 跟踪信息
+  timestamp: timestamp("timestamp").defaultNow().notNull(), // 记录时间戳
+  location: text("location").notNull(), // 当前位置
+  status: text("status").notNull(), // 状态：loading(装货), in_transit(运输中), unloading(卸货), idle(空闲), delay(延迟)
+  coordinates: jsonb("coordinates"), // 坐标 {lat, lng}
+  
+  // 其他信息
+  notes: text("notes"), // 备注
+  reportedByDriver: boolean("reported_by_driver").default(true), // 是否由司机报告
+});
+
+// 对应的插入模式定义
+export const insertTransportOrderSchema = createInsertSchema(transportOrders, {
+  quantity: z.string().transform((val) => parseFloat(val)),
+  estimatedPrice: z.string().transform((val) => parseFloat(val)),
+  finalPrice: z.string().optional().transform((val) => val ? parseFloat(val) : undefined),
+}).pick({
+  orderNumber: true,
+  userId: true,
+  customerName: true,
+  customerCompany: true,
+  customerPhone: true,
+  customerEmail: true,
+  originAddress: true,
+  destinationAddress: true,
+  coalType: true,
+  quantity: true,
+  expectedPickupDate: true,
+  expectedDeliveryDate: true,
+  status: true,
+  priority: true,
+  notes: true,
+  requirements: true,
+  estimatedPrice: true,
+  finalPrice: true,
+  paymentStatus: true,
+  driverId: true,
+  vehicleId: true,
+});
+
+export const insertTransportDriverSchema = createInsertSchema(transportDrivers).pick({
+  driverCode: true,
+  name: true,
+  phone: true,
+  email: true,
+  licenseNumber: true,
+  licenseType: true,
+  experience: true,
+  status: true,
+  rating: true,
+  preferredRoutes: true,
+  transportTypes: true,
+});
+
+export const insertTransportVehicleSchema = createInsertSchema(transportVehicles).pick({
+  vehicleCode: true,
+  plateNumber: true,
+  vehicleType: true,
+  capacity: true,
+  make: true,
+  model: true,
+  year: true,
+  status: true,
+  location: true,
+  lastMaintenanceDate: true,
+  nextMaintenanceDate: true,
+});
+
+export const insertTransportTrackingSchema = createInsertSchema(transportTracking).pick({
+  orderId: true,
+  location: true,
+  status: true,
+  coordinates: true,
+  notes: true,
+  reportedByDriver: true,
+});
+
+export type InsertTransportOrder = z.infer<typeof insertTransportOrderSchema>;
+export type TransportOrder = typeof transportOrders.$inferSelect;
+
+export type InsertTransportDriver = z.infer<typeof insertTransportDriverSchema>;
+export type TransportDriver = typeof transportDrivers.$inferSelect;
+
+export type InsertTransportVehicle = z.infer<typeof insertTransportVehicleSchema>;
+export type TransportVehicle = typeof transportVehicles.$inferSelect;
+
+export type InsertTransportTracking = z.infer<typeof insertTransportTrackingSchema>;
+export type TransportTracking = typeof transportTracking.$inferSelect;

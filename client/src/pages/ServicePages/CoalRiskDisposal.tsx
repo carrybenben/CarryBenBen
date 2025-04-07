@@ -444,11 +444,67 @@ const CoalRiskDisposal: React.FC = () => {
       </div>
 
       <Tabs defaultValue="all" className="mb-8">
-        <TabsList>
-          <TabsTrigger value="all">{language === 'cn' ? '全部产品' : 'All Products'}</TabsTrigger>
-          <TabsTrigger value="auction">{language === 'cn' ? '竞拍产品' : 'Auction Products'}</TabsTrigger>
-          <TabsTrigger value="discount">{language === 'cn' ? '折扣产品' : 'Discount Products'}</TabsTrigger>
-        </TabsList>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-2">
+          <TabsList>
+            <TabsTrigger value="all">{language === 'cn' ? '全部产品' : 'All Products'}</TabsTrigger>
+            <TabsTrigger value="auction">{language === 'cn' ? '竞拍产品' : 'Auction Products'}</TabsTrigger>
+            <TabsTrigger value="discount">{language === 'cn' ? '折扣产品' : 'Discount Products'}</TabsTrigger>
+          </TabsList>
+          <div className="flex space-x-2 mt-4 md:mt-0">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              onClick={() => setLocation('/sub-pages/all-coal-products')}
+              className="hidden md:flex items-center text-sm"
+            >
+              {language === 'cn' ? '查看全部产品' : 'View All Products'}
+            </Button>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              onClick={() => setLocation('/sub-pages/auction-coal-products')}
+              className="hidden md:flex items-center text-sm"
+            >
+              {language === 'cn' ? '查看竞拍产品' : 'View Auction Products'}
+            </Button>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              onClick={() => setLocation('/sub-pages/discount-coal-products')}
+              className="hidden md:flex items-center text-sm"
+            >
+              {language === 'cn' ? '查看折扣产品' : 'View Discount Products'}
+            </Button>
+          </div>
+        </div>
+        
+        {/* 移动端查看更多按钮 */}
+        <div className="grid grid-cols-3 gap-2 md:hidden mt-4 mb-2">
+          <Button 
+            variant="outline" 
+            size="sm" 
+            onClick={() => setLocation('/sub-pages/all-coal-products')}
+            className="text-xs"
+          >
+            {language === 'cn' ? '更多全部产品' : 'More All'}
+          </Button>
+          <Button 
+            variant="outline" 
+            size="sm" 
+            onClick={() => setLocation('/sub-pages/auction-coal-products')}
+            className="text-xs"
+          >
+            {language === 'cn' ? '更多竞拍产品' : 'More Auction'}
+          </Button>
+          <Button 
+            variant="outline" 
+            size="sm" 
+            onClick={() => setLocation('/sub-pages/discount-coal-products')}
+            className="text-xs"
+          >
+            {language === 'cn' ? '更多折扣产品' : 'More Discount'}
+          </Button>
+        </div>
         
         <TabsContent value="all" className="mt-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -49,3 +49,39 @@ export async function sendAiConsultationMessage(message: string): Promise<string
     throw error;
   }
 }
+
+// 设置AI模型优先级
+export async function setModelPriority(priority: 'auto' | 'api' | 'local' | 'fallback'): Promise<boolean> {
+  try {
+    const response = await apiRequest('POST', '/api/set-model-priority', { priority });
+    const data = await response.json();
+    
+    if (data.success) {
+      return true;
+    } else {
+      console.error('Error setting model priority:', data.message);
+      return false;
+    }
+  } catch (error) {
+    console.error('Error setting model priority:', error);
+    return false;
+  }
+}
+
+// 获取当前AI模型优先级
+export async function getModelPriority(): Promise<string> {
+  try {
+    const response = await apiRequest('GET', '/api/get-model-priority');
+    const data = await response.json();
+    
+    if (data.success) {
+      return data.data;
+    } else {
+      console.error('Error getting model priority:', data.message);
+      return 'auto'; // 默认返回自动模式
+    }
+  } catch (error) {
+    console.error('Error getting model priority:', error);
+    return 'auto'; // 默认返回自动模式
+  }
+}

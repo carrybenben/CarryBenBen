@@ -10,7 +10,12 @@ import {
   coalProducts, type CoalProduct, type InsertCoalProduct,
   coalBids, type CoalBid, type InsertCoalBid,
   coalOrders, type CoalOrder, type InsertCoalOrder,
-  coalFavorites, type CoalFavorite, type InsertCoalFavorite
+  coalFavorites, type CoalFavorite, type InsertCoalFavorite,
+  collateralFinancingApplications, type CollateralFinancingApplication, type InsertCollateralFinancingApplication,
+  transportOrders, type TransportOrder, type InsertTransportOrder,
+  transportDrivers, type TransportDriver, type InsertTransportDriver,
+  transportVehicles, type TransportVehicle, type InsertTransportVehicle,
+  transportTracking, type TransportTracking, type InsertTransportTracking
 } from "@shared/schema";
 
 export interface IStorage {
@@ -44,6 +49,13 @@ export interface IStorage {
   getConsultationRequestById(id: number): Promise<ConsultationRequest | undefined>;
   getAllConsultationRequests(): Promise<ConsultationRequest[]>;
   updateConsultationRequestStatus(id: number, status: string): Promise<ConsultationRequest | undefined>;
+  
+  // Collateral Financing Application methods (煤品货押融资申请)
+  createCollateralFinancingApplication(application: InsertCollateralFinancingApplication): Promise<CollateralFinancingApplication>;
+  getCollateralFinancingApplicationById(id: number): Promise<CollateralFinancingApplication | undefined>;
+  getCollateralFinancingApplicationsByEmail(email: string): Promise<CollateralFinancingApplication[]>;
+  getAllCollateralFinancingApplications(): Promise<CollateralFinancingApplication[]>;
+  updateCollateralFinancingApplicationStatus(id: number, status: string): Promise<CollateralFinancingApplication | undefined>;
   
   // Testing Agency methods
   createTestingAgency(agency: InsertTestingAgency): Promise<TestingAgency>;
@@ -105,6 +117,42 @@ export interface IStorage {
   getCoalFavoritesByUserId(userId: number): Promise<CoalFavorite[]>;
   removeCoalFavorite(id: number): Promise<boolean>;
   isProductFavoritedByUser(productId: number, userId: number | null | undefined): Promise<boolean>;
+  
+  // Transport Order methods (煤炭运输 - 运输订单)
+  createTransportOrder(order: InsertTransportOrder): Promise<TransportOrder>;
+  getTransportOrderById(id: number): Promise<TransportOrder | undefined>;
+  getTransportOrderByOrderNumber(orderNumber: string): Promise<TransportOrder | undefined>;
+  getTransportOrdersByUserId(userId: number): Promise<TransportOrder[]>;
+  getAllTransportOrders(): Promise<TransportOrder[]>;
+  getTransportOrdersByStatus(status: string): Promise<TransportOrder[]>;
+  getTransportOrdersByDriverId(driverId: number): Promise<TransportOrder[]>;
+  updateTransportOrderStatus(id: number, status: string): Promise<TransportOrder | undefined>;
+  updateTransportOrder(id: number, order: Partial<InsertTransportOrder>): Promise<TransportOrder | undefined>;
+  assignDriver(orderId: number, driverId: number, vehicleId: number): Promise<TransportOrder | undefined>;
+  
+  // Transport Driver methods (煤炭运输 - 司机管理)
+  createTransportDriver(driver: InsertTransportDriver): Promise<TransportDriver>;
+  getTransportDriverById(id: number): Promise<TransportDriver | undefined>;
+  getTransportDriverByCode(driverCode: string): Promise<TransportDriver | undefined>;
+  getAllTransportDrivers(): Promise<TransportDriver[]>;
+  getAvailableTransportDrivers(): Promise<TransportDriver[]>;
+  updateTransportDriverStatus(id: number, status: string): Promise<TransportDriver | undefined>;
+  updateTransportDriver(id: number, driver: Partial<InsertTransportDriver>): Promise<TransportDriver | undefined>;
+  
+  // Transport Vehicle methods (煤炭运输 - 车辆管理)
+  createTransportVehicle(vehicle: InsertTransportVehicle): Promise<TransportVehicle>;
+  getTransportVehicleById(id: number): Promise<TransportVehicle | undefined>;
+  getTransportVehicleByCode(vehicleCode: string): Promise<TransportVehicle | undefined>;
+  getAllTransportVehicles(): Promise<TransportVehicle[]>;
+  getAvailableTransportVehicles(): Promise<TransportVehicle[]>;
+  updateTransportVehicleStatus(id: number, status: string): Promise<TransportVehicle | undefined>;
+  updateTransportVehicle(id: number, vehicle: Partial<InsertTransportVehicle>): Promise<TransportVehicle | undefined>;
+  
+  // Transport Tracking methods (煤炭运输 - 运输跟踪)
+  createTransportTracking(tracking: InsertTransportTracking): Promise<TransportTracking>;
+  getTransportTrackingById(id: number): Promise<TransportTracking | undefined>;
+  getTransportTrackingsByOrderId(orderId: number): Promise<TransportTracking[]>;
+  getLatestTransportTrackingByOrderId(orderId: number): Promise<TransportTracking | undefined>;
 }
 
 export class MemStorage implements IStorage {
@@ -116,6 +164,10 @@ export class MemStorage implements IStorage {
   private testingAgencies: Map<number, TestingAgency>;
   private testingItems: Map<number, TestingItem>;
   private testingRecords: Map<number, TestingRecord>;
+  private transportOrders: Map<number, TransportOrder>;
+  private transportDrivers: Map<number, TransportDriver>;
+  private transportVehicles: Map<number, TransportVehicle>;
+  private transportTracking: Map<number, TransportTracking>;
   
   currentUserId: number;
   currentWaitlistId: number;
@@ -125,6 +177,10 @@ export class MemStorage implements IStorage {
   currentTestingAgencyId: number;
   currentTestingItemId: number;
   currentTestingRecordId: number;
+  currentTransportOrderId: number;
+  currentTransportDriverId: number;
+  currentTransportVehicleId: number;
+  currentTransportTrackingId: number;
 
   constructor() {
     this.users = new Map();
@@ -135,6 +191,11 @@ export class MemStorage implements IStorage {
     this.testingAgencies = new Map();
     this.testingItems = new Map();
     this.testingRecords = new Map();
+    this.collateralFinancingApplications = new Map();
+    this.transportOrders = new Map();
+    this.transportDrivers = new Map();
+    this.transportVehicles = new Map();
+    this.transportTracking = new Map();
     
     this.currentUserId = 1;
     this.currentWaitlistId = 1;
@@ -144,10 +205,17 @@ export class MemStorage implements IStorage {
     this.currentTestingAgencyId = 1;
     this.currentTestingItemId = 1;
     this.currentTestingRecordId = 1;
+    this.currentCollateralFinancingApplicationId = 1;
+    this.currentTransportOrderId = 1;
+    this.currentTransportDriverId = 1;
+    this.currentTransportVehicleId = 1;
+    this.currentTransportTrackingId = 1;
     
     // Initialize with coal services and testing data
     this.initializeCoalServices();
     this.initializeTestingItems();
+    // 初始化一些示例司机和车辆数据
+    this.initializeTransportDriversAndVehicles();
   }
 
   // Initialize common testing items for coal
@@ -843,12 +911,14 @@ export class MemStorage implements IStorage {
   private coalBids = new Map<number, CoalBid>();
   private coalOrders = new Map<number, CoalOrder>();
   private coalFavorites = new Map<number, CoalFavorite>();
+  private collateralFinancingApplications = new Map<number, CollateralFinancingApplication>();
   
   // 添加计数器
   currentCoalProductId = 1;
   currentCoalBidId = 1;
   currentCoalOrderId = 1;
   currentCoalFavoriteId = 1;
+  currentCollateralFinancingApplicationId = 1;
   
   // Coal Product methods (煤险处置 - 煤炭产品)
   async createCoalProduct(product: InsertCoalProduct): Promise<CoalProduct> {
@@ -1029,6 +1099,7 @@ export class MemStorage implements IStorage {
       deliveryStatus: order.deliveryStatus || 'pending',
       transactionType: order.transactionType,
       bidId: order.bidId || null,
+      applicationId: order.applicationId || null,
       deliveryAddress: order.deliveryAddress || null,
       deliveryContact: order.deliveryContact || null,
       deliveryPhone: order.deliveryPhone || null,
@@ -1147,6 +1218,505 @@ export class MemStorage implements IStorage {
     if (userId === null || userId === undefined) return false;
     const favorites = await this.getCoalFavoritesByUserId(userId);
     return favorites.some(fav => fav.productId === productId);
+  }
+  
+  // Collateral Financing Application methods
+  async createCollateralFinancingApplication(application: InsertCollateralFinancingApplication): Promise<CollateralFinancingApplication> {
+    const id = this.currentCollateralFinancingApplicationId++;
+    const now = new Date();
+    
+    const financingApplication: CollateralFinancingApplication = {
+      id,
+      name: application.name,
+      company: application.company,
+      position: application.position || null,
+      email: application.email,
+      phone: application.phone,
+      
+      coalType: application.coalType,
+      quantity: application.quantity.toString(),
+      calorificValue: application.calorificValue ? application.calorificValue.toString() : null,
+      sulfurContent: application.sulfurContent ? application.sulfurContent.toString() : null,
+      
+      estimatedValue: application.estimatedValue.toString(),
+      financingAmount: application.financingAmount.toString(),
+      financingPeriod: application.financingPeriod,
+      
+      storageLocation: application.storageLocation || null,
+      needStorage: application.needStorage || false,
+      
+      hasPreviousCollateral: application.hasPreviousCollateral || false,
+      additionalInfo: application.additionalInfo || null,
+      
+      status: "pending",
+      createdAt: now,
+      updatedAt: now
+    };
+    
+    this.collateralFinancingApplications.set(id, financingApplication);
+    return financingApplication;
+  }
+  
+  async getCollateralFinancingApplicationById(id: number): Promise<CollateralFinancingApplication | undefined> {
+    return this.collateralFinancingApplications.get(id);
+  }
+  
+  async getCollateralFinancingApplicationsByEmail(email: string): Promise<CollateralFinancingApplication[]> {
+    return Array.from(this.collateralFinancingApplications.values()).filter(
+      (application) => application.email === email
+    );
+  }
+  
+  async getAllCollateralFinancingApplications(): Promise<CollateralFinancingApplication[]> {
+    return Array.from(this.collateralFinancingApplications.values());
+  }
+  
+  async updateCollateralFinancingApplicationStatus(id: number, status: string): Promise<CollateralFinancingApplication | undefined> {
+    const application = await this.getCollateralFinancingApplicationById(id);
+    if (!application) {
+      return undefined;
+    }
+    
+    const updatedApplication: CollateralFinancingApplication = {
+      ...application,
+      status,
+      updatedAt: new Date()
+    };
+    
+    this.collateralFinancingApplications.set(id, updatedApplication);
+    return updatedApplication;
+  }
+
+  // 初始化示例司机和车辆数据
+  private async initializeTransportDriversAndVehicles() {
+    // 示例司机数据
+    const drivers = [
+      {
+        driverCode: "DRV001",
+        nameEn: "Liu Wei",
+        nameCn: "刘伟",
+        phone: "13800138001",
+        licenseNumber: "B123456789",
+        licenseType: "A",
+        experienceYears: "8",
+        status: "available",
+        currentLocation: JSON.stringify({ lat: 40.7128, lng: -74.006 }),
+        rating: "4.8"
+      },
+      {
+        driverCode: "DRV002",
+        nameEn: "Wang Kun",
+        nameCn: "王坤",
+        phone: "13800138002",
+        licenseNumber: "B223456789",
+        licenseType: "A",
+        experienceYears: "5",
+        status: "available",
+        currentLocation: JSON.stringify({ lat: 40.7128, lng: -74.006 }),
+        rating: "4.6"
+      },
+      {
+        driverCode: "DRV003",
+        nameEn: "Zhang Min",
+        nameCn: "张敏",
+        phone: "13800138003",
+        licenseNumber: "B323456789",
+        licenseType: "B",
+        experienceYears: "3",
+        status: "available",
+        currentLocation: JSON.stringify({ lat: 40.7128, lng: -74.006 }),
+        rating: "4.5"
+      }
+    ];
+
+    // 示例车辆数据
+    const vehicles = [
+      {
+        vehicleCode: "VEH001",
+        plateNumber: "京A12345",
+        vehicleType: "heavy",
+        capacityTons: "30",
+        manufacturerEn: "Volvo",
+        manufacturerCn: "沃尔沃",
+        modelYear: "2020",
+        status: "available",
+        maintenanceStatus: "good",
+        currentLocation: JSON.stringify({ lat: 40.7128, lng: -74.006 })
+      },
+      {
+        vehicleCode: "VEH002",
+        plateNumber: "京B12345",
+        vehicleType: "medium",
+        capacityTons: "20",
+        manufacturerEn: "Mercedes",
+        manufacturerCn: "奔驰",
+        modelYear: "2021",
+        status: "available",
+        maintenanceStatus: "good",
+        currentLocation: JSON.stringify({ lat: 40.7128, lng: -74.006 })
+      },
+      {
+        vehicleCode: "VEH003",
+        plateNumber: "京C12345",
+        vehicleType: "light",
+        capacityTons: "10",
+        manufacturerEn: "Dongfeng",
+        manufacturerCn: "东风",
+        modelYear: "2022",
+        status: "available",
+        maintenanceStatus: "good",
+        currentLocation: JSON.stringify({ lat: 40.7128, lng: -74.006 })
+      }
+    ];
+
+    // 创建司机和车辆
+    for (const driver of drivers) {
+      await this.createTransportDriver(driver as InsertTransportDriver);
+    }
+
+    for (const vehicle of vehicles) {
+      await this.createTransportVehicle(vehicle as InsertTransportVehicle);
+    }
+  }
+  
+  // Transport Order methods (煤炭运输 - 运输订单)
+  async createTransportOrder(order: InsertTransportOrder): Promise<TransportOrder> {
+    const id = this.currentTransportOrderId++;
+    const now = new Date();
+    
+    // 生成订单号
+    const orderNumber = `TO${now.getFullYear()}${(now.getMonth() + 1).toString().padStart(2, '0')}${now.getDate().toString().padStart(2, '0')}${id.toString().padStart(4, '0')}`;
+    
+    const transportOrder: TransportOrder = {
+      id,
+      orderNumber,
+      userId: order.userId,
+      pickupAddress: order.pickupAddress,
+      deliveryAddress: order.deliveryAddress,
+      pickupTime: order.pickupTime ? new Date(order.pickupTime) : null,
+      deliveryTime: order.deliveryTime ? new Date(order.deliveryTime) : null,
+      cargoTypeEn: order.cargoTypeEn,
+      cargoTypeCn: order.cargoTypeCn,
+      weightTons: order.weightTons,
+      volume: order.volume ?? null,
+      specialRequirements: order.specialRequirements ?? null,
+      driverId: order.driverId ?? null,
+      vehicleId: order.vehicleId ?? null,
+      status: order.status || "pending",
+      estimatedPrice: order.estimatedPrice,
+      actualPrice: order.actualPrice ?? null,
+      createdAt: now,
+      updatedAt: now
+    };
+    
+    this.transportOrders.set(id, transportOrder);
+    return transportOrder;
+  }
+  
+  async getTransportOrderById(id: number): Promise<TransportOrder | undefined> {
+    return this.transportOrders.get(id);
+  }
+  
+  async getTransportOrderByOrderNumber(orderNumber: string): Promise<TransportOrder | undefined> {
+    return Array.from(this.transportOrders.values()).find(
+      (order) => order.orderNumber === orderNumber
+    );
+  }
+  
+  async getTransportOrdersByUserId(userId: number): Promise<TransportOrder[]> {
+    return Array.from(this.transportOrders.values()).filter(
+      (order) => order.userId === userId
+    );
+  }
+  
+  async getAllTransportOrders(): Promise<TransportOrder[]> {
+    return Array.from(this.transportOrders.values());
+  }
+  
+  async getTransportOrdersByStatus(status: string): Promise<TransportOrder[]> {
+    return Array.from(this.transportOrders.values()).filter(
+      (order) => order.status === status
+    );
+  }
+  
+  async getTransportOrdersByDriverId(driverId: number): Promise<TransportOrder[]> {
+    return Array.from(this.transportOrders.values()).filter(
+      (order) => order.driverId === driverId
+    );
+  }
+  
+  async updateTransportOrderStatus(id: number, status: string): Promise<TransportOrder | undefined> {
+    const existingOrder = await this.getTransportOrderById(id);
+    if (!existingOrder) return undefined;
+    
+    const updatedOrder: TransportOrder = {
+      ...existingOrder,
+      status,
+      updatedAt: new Date()
+    };
+    
+    this.transportOrders.set(id, updatedOrder);
+    return updatedOrder;
+  }
+  
+  async updateTransportOrder(id: number, order: Partial<InsertTransportOrder>): Promise<TransportOrder | undefined> {
+    const existingOrder = await this.getTransportOrderById(id);
+    if (!existingOrder) return undefined;
+    
+    const updatedOrder: TransportOrder = {
+      ...existingOrder,
+      pickupAddress: order.pickupAddress ?? existingOrder.pickupAddress,
+      deliveryAddress: order.deliveryAddress ?? existingOrder.deliveryAddress,
+      pickupTime: order.pickupTime ? new Date(order.pickupTime) : existingOrder.pickupTime,
+      deliveryTime: order.deliveryTime ? new Date(order.deliveryTime) : existingOrder.deliveryTime,
+      cargoTypeEn: order.cargoTypeEn ?? existingOrder.cargoTypeEn,
+      cargoTypeCn: order.cargoTypeCn ?? existingOrder.cargoTypeCn,
+      weightTons: order.weightTons ?? existingOrder.weightTons,
+      volume: order.volume !== undefined ? order.volume : existingOrder.volume,
+      specialRequirements: order.specialRequirements !== undefined ? order.specialRequirements : existingOrder.specialRequirements,
+      estimatedPrice: order.estimatedPrice ?? existingOrder.estimatedPrice,
+      actualPrice: order.actualPrice !== undefined ? order.actualPrice : existingOrder.actualPrice,
+      updatedAt: new Date()
+    };
+    
+    this.transportOrders.set(id, updatedOrder);
+    return updatedOrder;
+  }
+  
+  async assignDriver(orderId: number, driverId: number, vehicleId: number): Promise<TransportOrder | undefined> {
+    const existingOrder = await this.getTransportOrderById(orderId);
+    if (!existingOrder) return undefined;
+    
+    const driver = await this.getTransportDriverById(driverId);
+    if (!driver) throw new Error("Driver not found");
+    
+    const vehicle = await this.getTransportVehicleById(vehicleId);
+    if (!vehicle) throw new Error("Vehicle not found");
+    
+    // 更新司机状态为忙碌
+    await this.updateTransportDriverStatus(driverId, "busy");
+    
+    // 更新车辆状态为使用中
+    await this.updateTransportVehicleStatus(vehicleId, "in_use");
+    
+    const updatedOrder: TransportOrder = {
+      ...existingOrder,
+      driverId,
+      vehicleId,
+      status: "assigned",
+      updatedAt: new Date()
+    };
+    
+    this.transportOrders.set(orderId, updatedOrder);
+    return updatedOrder;
+  }
+  
+  // Transport Driver methods (煤炭运输 - 司机管理)
+  async createTransportDriver(driver: InsertTransportDriver): Promise<TransportDriver> {
+    // 检查司机代码是否已存在
+    const existingDriver = await this.getTransportDriverByCode(driver.driverCode);
+    if (existingDriver) {
+      throw new Error(`Driver with code ${driver.driverCode} already exists`);
+    }
+    
+    const id = this.currentTransportDriverId++;
+    const now = new Date();
+    
+    const transportDriver: TransportDriver = {
+      id,
+      driverCode: driver.driverCode,
+      nameEn: driver.nameEn,
+      nameCn: driver.nameCn,
+      phone: driver.phone,
+      licenseNumber: driver.licenseNumber,
+      licenseType: driver.licenseType,
+      experienceYears: driver.experienceYears,
+      status: driver.status || "available",
+      currentLocation: driver.currentLocation,
+      rating: driver.rating ?? null,
+      createdAt: now,
+      updatedAt: now
+    };
+    
+    this.transportDrivers.set(id, transportDriver);
+    return transportDriver;
+  }
+  
+  async getTransportDriverById(id: number): Promise<TransportDriver | undefined> {
+    return this.transportDrivers.get(id);
+  }
+  
+  async getTransportDriverByCode(driverCode: string): Promise<TransportDriver | undefined> {
+    return Array.from(this.transportDrivers.values()).find(
+      (driver) => driver.driverCode === driverCode
+    );
+  }
+  
+  async getAllTransportDrivers(): Promise<TransportDriver[]> {
+    return Array.from(this.transportDrivers.values());
+  }
+  
+  async getAvailableTransportDrivers(): Promise<TransportDriver[]> {
+    return Array.from(this.transportDrivers.values()).filter(
+      (driver) => driver.status === "available"
+    );
+  }
+  
+  async updateTransportDriverStatus(id: number, status: string): Promise<TransportDriver | undefined> {
+    const existingDriver = await this.getTransportDriverById(id);
+    if (!existingDriver) return undefined;
+    
+    const updatedDriver: TransportDriver = {
+      ...existingDriver,
+      status,
+      updatedAt: new Date()
+    };
+    
+    this.transportDrivers.set(id, updatedDriver);
+    return updatedDriver;
+  }
+  
+  async updateTransportDriver(id: number, driver: Partial<InsertTransportDriver>): Promise<TransportDriver | undefined> {
+    const existingDriver = await this.getTransportDriverById(id);
+    if (!existingDriver) return undefined;
+    
+    const updatedDriver: TransportDriver = {
+      ...existingDriver,
+      nameEn: driver.nameEn ?? existingDriver.nameEn,
+      nameCn: driver.nameCn ?? existingDriver.nameCn,
+      phone: driver.phone ?? existingDriver.phone,
+      licenseNumber: driver.licenseNumber ?? existingDriver.licenseNumber,
+      licenseType: driver.licenseType ?? existingDriver.licenseType,
+      experienceYears: driver.experienceYears ?? existingDriver.experienceYears,
+      currentLocation: driver.currentLocation ?? existingDriver.currentLocation,
+      rating: driver.rating !== undefined ? driver.rating : existingDriver.rating,
+      updatedAt: new Date()
+    };
+    
+    this.transportDrivers.set(id, updatedDriver);
+    return updatedDriver;
+  }
+  
+  // Transport Vehicle methods (煤炭运输 - 车辆管理)
+  async createTransportVehicle(vehicle: InsertTransportVehicle): Promise<TransportVehicle> {
+    // 检查车辆代码是否已存在
+    const existingVehicle = await this.getTransportVehicleByCode(vehicle.vehicleCode);
+    if (existingVehicle) {
+      throw new Error(`Vehicle with code ${vehicle.vehicleCode} already exists`);
+    }
+    
+    const id = this.currentTransportVehicleId++;
+    const now = new Date();
+    
+    const transportVehicle: TransportVehicle = {
+      id,
+      vehicleCode: vehicle.vehicleCode,
+      plateNumber: vehicle.plateNumber,
+      vehicleType: vehicle.vehicleType,
+      capacityTons: vehicle.capacityTons,
+      manufacturerEn: vehicle.manufacturerEn,
+      manufacturerCn: vehicle.manufacturerCn,
+      modelYear: vehicle.modelYear,
+      status: vehicle.status || "available",
+      maintenanceStatus: vehicle.maintenanceStatus || "good",
+      currentLocation: vehicle.currentLocation,
+      createdAt: now,
+      updatedAt: now
+    };
+    
+    this.transportVehicles.set(id, transportVehicle);
+    return transportVehicle;
+  }
+  
+  async getTransportVehicleById(id: number): Promise<TransportVehicle | undefined> {
+    return this.transportVehicles.get(id);
+  }
+  
+  async getTransportVehicleByCode(vehicleCode: string): Promise<TransportVehicle | undefined> {
+    return Array.from(this.transportVehicles.values()).find(
+      (vehicle) => vehicle.vehicleCode === vehicleCode
+    );
+  }
+  
+  async getAllTransportVehicles(): Promise<TransportVehicle[]> {
+    return Array.from(this.transportVehicles.values());
+  }
+  
+  async getAvailableTransportVehicles(): Promise<TransportVehicle[]> {
+    return Array.from(this.transportVehicles.values()).filter(
+      (vehicle) => vehicle.status === "available"
+    );
+  }
+  
+  async updateTransportVehicleStatus(id: number, status: string): Promise<TransportVehicle | undefined> {
+    const existingVehicle = await this.getTransportVehicleById(id);
+    if (!existingVehicle) return undefined;
+    
+    const updatedVehicle: TransportVehicle = {
+      ...existingVehicle,
+      status,
+      updatedAt: new Date()
+    };
+    
+    this.transportVehicles.set(id, updatedVehicle);
+    return updatedVehicle;
+  }
+  
+  async updateTransportVehicle(id: number, vehicle: Partial<InsertTransportVehicle>): Promise<TransportVehicle | undefined> {
+    const existingVehicle = await this.getTransportVehicleById(id);
+    if (!existingVehicle) return undefined;
+    
+    const updatedVehicle: TransportVehicle = {
+      ...existingVehicle,
+      plateNumber: vehicle.plateNumber ?? existingVehicle.plateNumber,
+      vehicleType: vehicle.vehicleType ?? existingVehicle.vehicleType,
+      capacityTons: vehicle.capacityTons ?? existingVehicle.capacityTons,
+      manufacturerEn: vehicle.manufacturerEn ?? existingVehicle.manufacturerEn,
+      manufacturerCn: vehicle.manufacturerCn ?? existingVehicle.manufacturerCn,
+      modelYear: vehicle.modelYear ?? existingVehicle.modelYear,
+      maintenanceStatus: vehicle.maintenanceStatus ?? existingVehicle.maintenanceStatus,
+      currentLocation: vehicle.currentLocation ?? existingVehicle.currentLocation,
+      updatedAt: new Date()
+    };
+    
+    this.transportVehicles.set(id, updatedVehicle);
+    return updatedVehicle;
+  }
+  
+  // Transport Tracking methods (煤炭运输 - 运输跟踪)
+  async createTransportTracking(tracking: InsertTransportTracking): Promise<TransportTracking> {
+    const id = this.currentTransportTrackingId++;
+    const now = new Date();
+    
+    const transportTracking: TransportTracking = {
+      id,
+      orderId: tracking.orderId,
+      statusEn: tracking.statusEn,
+      statusCn: tracking.statusCn,
+      locationName: tracking.locationName,
+      coordinates: tracking.coordinates,
+      timestamp: now,
+      notes: tracking.notes ?? null,
+      createdAt: now
+    };
+    
+    this.transportTracking.set(id, transportTracking);
+    return transportTracking;
+  }
+  
+  async getTransportTrackingById(id: number): Promise<TransportTracking | undefined> {
+    return this.transportTracking.get(id);
+  }
+  
+  async getTransportTrackingsByOrderId(orderId: number): Promise<TransportTracking[]> {
+    return Array.from(this.transportTracking.values())
+      .filter(tracking => tracking.orderId === orderId)
+      .sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime()); // 按时间倒序排列
+  }
+  
+  async getLatestTransportTrackingByOrderId(orderId: number): Promise<TransportTracking | undefined> {
+    const trackings = await this.getTransportTrackingsByOrderId(orderId);
+    return trackings.length > 0 ? trackings[0] : undefined;
   }
 }
 

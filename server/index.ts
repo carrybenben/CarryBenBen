@@ -2,6 +2,31 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
+// 设置环境变量，使用本地LLM或DeepSeek API
+// 检测到Replit环境，默认使用DeepSeek API而不是本地Ollama
+// 因为Replit无法直接连接到用户本地的Ollama服务
+
+// 检查是否存在DeepSeek API密钥
+if (process.env.DEEPSEEK_API_KEY) {
+  // 如果有DeepSeek API密钥，默认使用DeepSeek API
+  process.env.USE_LOCAL_LLM = process.env.USE_LOCAL_LLM || 'false';
+  console.log('检测到DeepSeek API密钥，默认使用DeepSeek API');
+} else {
+  // 如果没有DeepSeek API密钥，仍然设置为使用本地模型（最终会使用回退响应）
+  process.env.USE_LOCAL_LLM = process.env.USE_LOCAL_LLM || 'true';
+  console.log('未检测到DeepSeek API密钥，将使用回退响应');
+}
+
+// 这些变量仍然保留，以便在用户本地环境运行代码时可以正常连接到Ollama
+process.env.OLLAMA_HOST = process.env.OLLAMA_HOST || 'localhost';
+process.env.OLLAMA_PORT = process.env.OLLAMA_PORT || '11434';
+process.env.OLLAMA_MODEL = process.env.OLLAMA_MODEL || 'deepseek-r1';
+
+console.log(`LLM Mode: ${process.env.USE_LOCAL_LLM === 'true' ? 'Local Ollama' : 'DeepSeek API'}`);
+if (process.env.USE_LOCAL_LLM === 'true') {
+  console.log(`Ollama Config: ${process.env.OLLAMA_HOST}:${process.env.OLLAMA_PORT} model:${process.env.OLLAMA_MODEL}`);
+}
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

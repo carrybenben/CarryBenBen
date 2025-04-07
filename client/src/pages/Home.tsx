@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'wouter';
-import { useQuery } from '@tanstack/react-query';
 import { Button } from '@/components/ui/button';
 
 // Import hero background
@@ -18,25 +17,8 @@ import qualityTesting from '@/assets/mockups/quality-testing.svg';
 import transportTracking from '@/assets/mockups/transport-tracking.svg';
 import collateralManagement from '@/assets/mockups/collateral-management.svg';
 
-// Define the CoalService type here (simplified)
-interface CoalService {
-  id: number;
-  slug: string;
-  icon: string;
-  nameEn: string;
-  nameCn: string;
-  descriptionEn: string;
-  descriptionCn: string;
-}
-
 export default function Home() {
   const { t, i18n } = useTranslation();
-  
-  // Fetch services from the API
-  const { data: services = [], isLoading } = useQuery<CoalService[]>({
-    queryKey: ['/api/coal-services'],
-    retry: false
-  });
 
   return (
     <div className="min-h-screen">
@@ -97,61 +79,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-900/90"></div>
       </section>
       
-      {/* Services Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">{t('services.title')}</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              {t('services.description')}
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {isLoading ? (
-              // Loading skeleton
-              Array(6).fill(0).map((_, i) => (
-                <div key={i} className="bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg feature-card border border-gray-100">
-                  <div className="w-12 h-12 mb-4 rounded-full bg-gray-200 animate-pulse"></div>
-                  <div className="h-6 w-3/4 bg-gray-200 rounded animate-pulse mb-4"></div>
-                  <div className="h-4 bg-gray-200 rounded animate-pulse mb-2"></div>
-                  <div className="h-4 bg-gray-200 rounded animate-pulse mb-2"></div>
-                  <div className="h-4 w-2/3 bg-gray-200 rounded animate-pulse"></div>
-                </div>
-              ))
-            ) : services?.length ? (
-              // Render actual services
-              services.map((service: CoalService) => (
-                <div key={service.id} className="bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px] feature-card border border-gray-100">
-                  <div className="w-20 h-20 mb-4 bg-primary/5 rounded-lg p-1 overflow-hidden">
-                    <img 
-                      src={`${service.icon}`} 
-                      alt={i18n.language === 'cn' ? service.nameCn : service.nameEn}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3">
-                    {i18n.language === 'cn' ? service.nameCn : service.nameEn}
-                  </h3>
-                  <p className="text-gray-600 mb-4 line-clamp-3">
-                    {i18n.language === 'cn' ? service.descriptionCn : service.descriptionEn}
-                  </p>
-                  <Link href={`/services/${service.slug}`}>
-                    <Button variant="link" className="p-0 text-primary hover:text-primary/80">
-                      {t('services.viewDetails')} →
-                    </Button>
-                  </Link>
-                </div>
-              ))
-            ) : (
-              // Fallback for empty services
-              <div className="col-span-3 text-center py-20">
-                <p className="text-gray-500">Loading services...</p>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
+      {/* Services Section has been removed as requested */}
       
       {/* Consultation Section */}
       <section className="py-20 bg-gray-100">

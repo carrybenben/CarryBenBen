@@ -240,7 +240,19 @@ export default function TechnologyDetails() {
       <section className="bg-gradient-to-r from-slate-900 to-slate-800 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <Link href={techType?.includes('drone') ? '/services/weight-estimation' : techType?.includes('3d') ? '/services/weight-estimation' : '/services/weight-estimation'}>
+            <Link href={
+              techType?.includes('drone') 
+                ? '/services/weight-estimation' 
+                : techType?.includes('3d') 
+                  ? '/services/weight-estimation' 
+                  : techType?.includes('density') 
+                    ? '/services/weight-estimation'
+                    : techType?.includes('thermal') 
+                      ? '/services/storage-monitoring'
+                      : techType?.includes('video') 
+                        ? '/services/storage-monitoring'
+                        : '/services'
+            }>
               <Button variant="link" className="text-white mb-4">
                 <span className="mr-2">←</span>
                 {i18n.language === 'cn' ? '返回服务页面' : 'Back to Service Page'}

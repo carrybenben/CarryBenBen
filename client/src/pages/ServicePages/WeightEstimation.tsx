@@ -37,11 +37,18 @@ export default function WeightEstimation() {
                 : 'Precision 3D modeling for accurate coal stockpile weight estimation'}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="#technology">
-                <Button size="lg" className="bg-white text-slate-900 hover:bg-gray-100">
-                  {i18n.language === 'cn' ? '了解技术' : 'Explore Technology'}
-                </Button>
-              </Link>
+              <Button 
+                size="lg" 
+                className="bg-white text-slate-900 hover:bg-gray-100"
+                onClick={() => {
+                  const technologySection = document.getElementById('technology');
+                  if (technologySection) {
+                    technologySection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                {i18n.language === 'cn' ? '了解技术' : 'Explore Technology'}
+              </Button>
               <Link href="/consultation">
                 <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                   {i18n.language === 'cn' ? '申请演示' : 'Request Demo'}
@@ -174,11 +181,15 @@ export default function WeightEstimation() {
                   </p>
                 </CardContent>
                 <CardFooter>
-                  <Link href="/technology/drone-survey">
-                    <Button variant="link" className="px-0 text-primary">
-                      {i18n.language === 'cn' ? '了解更多' : 'Learn more'} →
-                    </Button>
-                  </Link>
+                  <Button 
+                    variant="link" 
+                    className="px-0 text-primary"
+                    onClick={() => {
+                      window.open('https://en.wikipedia.org/wiki/Unmanned_aerial_vehicle', '_blank');
+                    }}
+                  >
+                    {i18n.language === 'cn' ? '了解更多' : 'Learn more'} →
+                  </Button>
                 </CardFooter>
               </Card>
 

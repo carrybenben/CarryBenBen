@@ -41,11 +41,18 @@ export default function PriceEstimation() {
                 : 'Multi-dimensional data-driven coal price precision estimation system'}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="#methods">
-                <Button size="lg" className="bg-white text-slate-900 hover:bg-gray-100">
-                  {i18n.language === 'cn' ? '了解估价方法' : 'Explore Methods'}
-                </Button>
-              </Link>
+              <Button 
+                size="lg" 
+                className="bg-white text-slate-900 hover:bg-gray-100"
+                onClick={() => {
+                  const methodsSection = document.getElementById('methods');
+                  if (methodsSection) {
+                    methodsSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                {i18n.language === 'cn' ? '了解估价方法' : 'Explore Methods'}
+              </Button>
               <Link href="/consultation">
                 <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                   {i18n.language === 'cn' ? '获取价格报告' : 'Get Price Report'}
@@ -177,12 +184,17 @@ export default function PriceEstimation() {
                       : 'We track real-time data from the China Coastal Coal Price Index (CCI) and China Electricity Coal Trading Center (CECT), and calculate the reasonable local coal price range by adjusting for freight, taxes, and other costs based on the historical price correlation between local and port prices. This method is particularly suitable for large enterprises that need to reference a nationally unified standard.'}
                   </p>
                 </CardContent>
-                <CardFooter className="flex justify-center">
+                <CardFooter className="flex flex-col items-center gap-4">
                   <div className="bg-blue-50 px-4 py-2 rounded-full">
                     <span className="text-sm text-blue-800">
                       {i18n.language === 'cn' ? '精度: ±3%' : 'Accuracy: ±3%'}
                     </span>
                   </div>
+                  <Link href="/sub-pages/reference-pricing">
+                    <Button variant="outline" size="sm" className="text-blue-800 border-blue-300 hover:bg-blue-50">
+                      {i18n.language === 'cn' ? '了解更多' : 'Learn More'}
+                    </Button>
+                  </Link>
                 </CardFooter>
               </Card>
 
@@ -207,12 +219,17 @@ export default function PriceEstimation() {
                       : 'We collect and analyze a large amount of real coal transaction data, including transaction prices, volumes, coal types, calorific values, and other key information. Through big data analysis and machine learning algorithms, we identify price trends and patterns, providing price estimates based on actual market behavior. The advantage of this method lies in its reliable data that reflects actual market transactions.'}
                   </p>
                 </CardContent>
-                <CardFooter className="flex justify-center">
+                <CardFooter className="flex flex-col items-center gap-4">
                   <div className="bg-green-50 px-4 py-2 rounded-full">
                     <span className="text-sm text-green-800">
                       {i18n.language === 'cn' ? '精度: ±2%' : 'Accuracy: ±2%'}
                     </span>
                   </div>
+                  <Link href="/sub-pages/transaction-data-pricing">
+                    <Button variant="outline" size="sm" className="text-green-800 border-green-300 hover:bg-green-50">
+                      {i18n.language === 'cn' ? '了解更多' : 'Learn More'}
+                    </Button>
+                  </Link>
                 </CardFooter>
               </Card>
 
@@ -237,12 +254,17 @@ export default function PriceEstimation() {
                       : 'Our team of professional analysts collects first-hand data from local coal mines, storage facilities, and trading markets through field research. By comprehensively considering local-specific factors such as coal quality, supply-demand relationships, seasonal factors, and transportation conditions, we form precise price assessments for specific regions. This method is particularly suitable for buyers and sellers who need to understand regional market characteristics.'}
                   </p>
                 </CardContent>
-                <CardFooter className="flex justify-center">
+                <CardFooter className="flex flex-col items-center gap-4">
                   <div className="bg-red-50 px-4 py-2 rounded-full">
                     <span className="text-sm text-red-800">
                       {i18n.language === 'cn' ? '精度: ±1.5%' : 'Accuracy: ±1.5%'}
                     </span>
                   </div>
+                  <Link href="/sub-pages/local-market-pricing">
+                    <Button variant="outline" size="sm" className="text-red-800 border-red-300 hover:bg-red-50">
+                      {i18n.language === 'cn' ? '了解更多' : 'Learn More'}
+                    </Button>
+                  </Link>
                 </CardFooter>
               </Card>
             </div>

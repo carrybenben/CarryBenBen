@@ -42,12 +42,19 @@ export default function ProductCollateral() {
                 : 'Secure and efficient coal product collateral financing solutions'}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="#process">
-                <Button size="lg" className="bg-white text-indigo-900 hover:bg-gray-100">
-                  {i18n.language === 'cn' ? '了解业务流程' : 'Explore Process'}
-                </Button>
-              </Link>
-              <Link href="/consultation">
+              <Button 
+                size="lg" 
+                className="bg-white text-indigo-900 hover:bg-gray-100"
+                onClick={() => {
+                  const processSection = document.getElementById('process');
+                  if (processSection) {
+                    processSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                {i18n.language === 'cn' ? '了解业务流程' : 'Explore Process'}
+              </Button>
+              <Link href="/financing-application">
                 <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                   {i18n.language === 'cn' ? '申请融资方案' : 'Apply for Financing'}
                 </Button>
@@ -309,6 +316,13 @@ export default function ProductCollateral() {
                       </div>
                     </div>
                   </div>
+                  <div className="mt-8 text-center">
+                    <Link href="/sub-pages/price-alert-system">
+                      <Button variant="outline" size="sm" className="border-red-300 text-red-700 hover:bg-red-50">
+                        {i18n.language === 'cn' ? '了解价格预警系统' : 'Learn About Price Alert System'}
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
 
@@ -372,6 +386,13 @@ export default function ProductCollateral() {
                         </p>
                       </div>
                     </div>
+                  </div>
+                  <div className="mt-8 text-center">
+                    <Link href="/sub-pages/timeperiod-alert-system">
+                      <Button variant="outline" size="sm" className="border-amber-300 text-amber-700 hover:bg-amber-50">
+                        {i18n.language === 'cn' ? '了解时间预警系统' : 'Learn About Time Period Alert System'}
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -787,7 +808,7 @@ export default function ProductCollateral() {
                 : 'Contact us for detailed business solutions or apply to join our coal product collateral platform'}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="/consultation">
+              <Link href="/financing-application">
                 <Button size="lg" className="bg-white text-indigo-900 hover:bg-indigo-50">
                   {i18n.language === 'cn' ? '申请融资方案' : 'Apply for Financing'}
                 </Button>

@@ -7,6 +7,9 @@ import CoalStorageMonitoring from './ServicePages/CoalStorageMonitoring';
 import WeightEstimation from './ServicePages/WeightEstimation';
 import PriceEstimation from './ServicePages/PriceEstimation';
 import ProductCollateral from './ServicePages/ProductCollateral';
+import Transport from './ServicePages/Transport';
+import QualityTesting from './ServicePages/QualityTesting';
+import CoalRiskDisposal from './ServicePages/CoalRiskDisposal';
 import NotFound from './not-found';
 
 // Service slug to component mapping - we only include components that have been implemented
@@ -15,6 +18,9 @@ const serviceComponents: Record<string, React.FC> = {
   'weight-estimation': WeightEstimation,          // 煤重估量服务
   'price-estimation': PriceEstimation,            // 煤价估算服务
   'product-collateral': ProductCollateral,        // 煤品货押服务
+  'transport': Transport,                          // 运输服务
+  'quality-testing': QualityTesting,               // 质量检测服务
+  'coal-risk-disposal': CoalRiskDisposal,          // 煤险处置服务
 };
 
 // Default component for services that don't have a dedicated page yet

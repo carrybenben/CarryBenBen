@@ -46,11 +46,18 @@ export default function CoalStorageMonitoring() {
                 : 'Real-time monitoring of coal stockpiles using advanced technology to prevent losses and ensure security'}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="#features">
-                <Button size="lg" className="bg-white text-slate-900 hover:bg-gray-100">
-                  {i18n.language === 'cn' ? '了解更多' : 'Learn More'}
-                </Button>
-              </Link>
+              <Button 
+                size="lg" 
+                className="bg-white text-slate-900 hover:bg-gray-100"
+                onClick={() => {
+                  const featuresSection = document.getElementById('features');
+                  if (featuresSection) {
+                    featuresSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                {i18n.language === 'cn' ? '了解更多' : 'Learn More'}
+              </Button>
               <Link href="/consultation">
                 <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                   {i18n.language === 'cn' ? '申请演示' : 'Request Demo'}

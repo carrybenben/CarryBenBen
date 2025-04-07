@@ -9,7 +9,9 @@ import { useToast } from '@/hooks/use-toast';
 import { 
   fetchHotInsights, 
   sendAiConsultationMessage, 
-  type IndustryInsight 
+  type IndustryInsight,
+  setModelPriority,
+  getModelPriority
 } from '@/lib/industryInsights';
 
 import {
@@ -29,6 +31,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Separator } from '@/components/ui/separator';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { 
   Lock, 
   TrendingUp, 
@@ -67,6 +70,9 @@ export default function ConsultationPage() {
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
   const [processingAI, setProcessingAI] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<string>('hotInsights');
+  // AI模型优先级设置
+  const [modelPriorityLoading, setModelPriorityLoading] = useState<boolean>(false);
+  const [currentModelPriority, setCurrentModelPriority] = useState<string>('auto'); // 'auto', 'api', 'local', 'fallback'
   
   // 初始化表单
   const form = useForm<ConsultationValues>({
@@ -97,6 +103,23 @@ export default function ConsultationPage() {
     
     loadInsights();
   }, [language, toast]);
+  
+  // 加载当前AI模型优先级
+  useEffect(() => {
+    async function loadModelPriority() {
+      if (activeTab === 'aiConsultation') {
+        try {
+          const priority = await getModelPriority();
+          setCurrentModelPriority(priority);
+        } catch (error) {
+          console.error("Error loading model priority:", error);
+          // 静默失败，使用默认值'auto'
+        }
+      }
+    }
+    
+    loadModelPriority();
+  }, [activeTab]);
   
   // AI对话处理逻辑
   const handleAIConsultation = async (data: ConsultationValues) => {
@@ -280,6 +303,49 @@ export default function ConsultationPage() {
                         ? 'Powered by deepseek-r1, our AI assistant specializes in coal industry knowledge' 
                         : '由deepseek-r1提供支持，我们的AI助手专注于煤炭行业知识'}
                     </CardDescription>
+                    <div className="flex items-center justify-between mt-4">
+                      <div className="text-sm text-gray-500">
+                        {language === 'en' ? 'AI Model Priority:' : 'AI模型优先级:'}
+                      </div>
+                      <Select
+                        value={currentModelPriority}
+                        onValueChange={value => {
+                          setModelPriorityLoading(true);
+                          setModelPriority(value as 'auto' | 'api' | 'local' | 'fallback')
+                            .then(success => {
+                              if (success) {
+                                setCurrentModelPriority(value);
+                                toast({
+                                  title: language === 'en' ? 'Success' : '成功',
+                                  description: language === 'en' 
+                                    ? `AI model priority set to ${value}` 
+                                    : `AI模型优先级已设置为${value}`,
+                                });
+                              } else {
+                                toast({
+                                  title: language === 'en' ? 'Error' : '错误',
+                                  description: language === 'en'
+                                    ? 'Failed to set AI model priority'
+                                    : '设置AI模型优先级失败',
+                                  variant: 'destructive',
+                                });
+                              }
+                            })
+                            .finally(() => setModelPriorityLoading(false));
+                        }}
+                        disabled={modelPriorityLoading}
+                      >
+                        <SelectTrigger className="w-[140px]">
+                          <SelectValue placeholder={language === 'en' ? 'Select model' : '选择模型'} />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="auto">{language === 'en' ? 'Auto' : '自动'}</SelectItem>
+                          <SelectItem value="api">{language === 'en' ? 'DeepSeek API' : 'DeepSeek API'}</SelectItem>
+                          <SelectItem value="local">{language === 'en' ? 'Local Ollama' : '本地Ollama'}</SelectItem>
+                          <SelectItem value="fallback">{language === 'en' ? 'Fallback Only' : '仅使用Fallback'}</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
                   </CardHeader>
                   <CardContent className="flex-grow">
                     <div className="flex flex-col h-[400px]">
